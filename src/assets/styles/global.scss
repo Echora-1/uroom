@@ -1,0 +1,70 @@
+@font-face {
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 400;
+  font-display: auto;
+  src: local("Century Gothic"), url("@/assets/fonts/CenturyGothicMedium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-display: auto;
+  src: local("Century Gothic"), url("@/assets/fonts/CenturyGothicSemiBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Futura PT";
+  font-style: normal;
+  font-weight: 400;
+  font-display: auto;
+  src: local("Futura PT"), url("@/assets/fonts/FuturaPTMedium.ttf") format("truetype");
+}
+
+* {
+  box-sizing: border-box;
+}
+
+* {
+  &::before,
+  &::after {
+    pointer-events: none;
+  }
+}
+
+body {
+  color: rgb(var(--textColor));
+  font-family: "Century Gothic", sans-serif;
+  background: rgb(var(--mainColor));
+  font-size: 14px;
+  line-height: 22px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+.container {
+  width: 100%;
+  padding: 0 20px;
+  margin: 0 auto;
+  max-width: 1016px;
+}
+
+
+.openMenu {
+  max-height: 100vh;
+  overflow: hidden;
+}
