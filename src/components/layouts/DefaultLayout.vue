@@ -9,16 +9,17 @@
     <main class="layout__main" @click="closeMenu">
       <slot />
     </main>
-    <!--    <BaseFooter />-->
+    <BaseFooter />
   </div>
 </template>
 
 <script>
 import BaseHeader from "@/components/base/BaseHeader.vue";
 import BaseMenu from "@/components/base/BaseMenu.vue";
+import BaseFooter from "@/components/base/BaseFooter.vue";
 
 export default {
-  components: { BaseMenu, BaseHeader },
+  components: { BaseFooter, BaseMenu, BaseHeader },
   data() {
     return {
       showMenu: false,

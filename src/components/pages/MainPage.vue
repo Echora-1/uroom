@@ -3,6 +3,7 @@
     <main-screen />
     <about-hotel />
     <address-block />
+    <connect-block />
   </div>
 </template>
 
@@ -10,9 +11,10 @@
 import MainScreen from "@/components/index/MainScreen.vue";
 import AboutHotel from "@/components/index/AboutHotel.vue";
 import AddressBlock from "@/components/index/AddressBlock/AddressBlock.vue";
+import ConnectBlock from "@/components/index/ConnectBlock.vue";
 
 export default {
-  components: { AddressBlock, AboutHotel, MainScreen },
+  components: { ConnectBlock, AddressBlock, AboutHotel, MainScreen },
 };
 </script>
 
