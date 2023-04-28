@@ -2,15 +2,17 @@
   <div>
     <main-screen />
     <about-hotel />
+    <address-block />
   </div>
 </template>
 
 <script>
 import MainScreen from "@/components/index/MainScreen.vue";
 import AboutHotel from "@/components/index/AboutHotel.vue";
+import AddressBlock from "@/components/index/AddressBlock/AddressBlock.vue";
 
 export default {
-  components: { AboutHotel, MainScreen },
+  components: { AddressBlock, AboutHotel, MainScreen },
 };
 </script>
 

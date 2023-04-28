@@ -77,8 +77,8 @@ export default {
   }
 
   &--transparent {
-    background: transparent;
     border-color: rgb(var(--textColor));
+    background: #ffffff;
   }
 
   &--disabled {
