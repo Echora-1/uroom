@@ -21,10 +21,12 @@
   display: flex;
   align-items: center;
   padding-top: 65px;
+  padding-bottom: 180px;
 
   &__left {
     margin-top: 5px;
     margin-left: -10px;
+
     h1 {
       font-family: "Futura PT", sans-serif;
       font-style: normal;
@@ -32,7 +34,7 @@
       font-size: 63px;
       line-height: 115.7%;
       text-transform: uppercase;
-      margin: 0 0 60px;
+      margin: 0 0 50px;
 
       span {
         color: rgb(var(--mainColor));

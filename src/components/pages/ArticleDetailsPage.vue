@@ -7,15 +7,13 @@
       </h1>
     </div>
     <article-details :content="content" :img="img" />
-    <ContactUs />
   </div>
 </template>
 <script>
 import ArticleDetails from "@/components/articles/ArticleDetails.vue";
-import ContactUs from "@/components/index/ContactUs.vue";
 import details from "@/assets/data/details.json";
 export default {
-  components: { ContactUs, ArticleDetails },
+  components: { ArticleDetails },
   data() {
     return {
       content: [],

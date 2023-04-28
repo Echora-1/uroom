@@ -1,14 +1,16 @@
 <template>
   <div>
     <main-screen />
+    <about-hotel />
   </div>
 </template>
 
 <script>
 import MainScreen from "@/components/index/MainScreen.vue";
+import AboutHotel from "@/components/index/AboutHotel.vue";
 
 export default {
-  components: { MainScreen },
+  components: { AboutHotel, MainScreen },
 };
 </script>
 

@@ -49,7 +49,6 @@ export default {
 .layout {
   background: rgb(var(--bg));
   width: calc(100% - 86px);
-  height: 100vh;
   margin: 43px;
   box-shadow: 0 15px 28px rgba(0, 0, 0, 0.15);
   position: relative;

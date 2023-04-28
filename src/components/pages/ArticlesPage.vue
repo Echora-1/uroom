@@ -7,10 +7,8 @@
       </h1>
     </div>
     <articles-list />
-    <ContactUs />
   </div>
 </template>
 <script setup>
-import ContactUs from "@/components/index/ContactUs.vue";
 import ArticlesList from "@/components/articles/ArticlesList.vue";
 </script>
