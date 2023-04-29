@@ -1,6 +1,6 @@
 <template>
   <section class="about container">
-    <div class="about__left">
+    <div class="about__left" v-if="city === 'moscow'">
       <img
         src="../../assets/images/about/about1@2x.png"
         alt="hotel"
@@ -20,31 +20,43 @@
         height="178"
       />
     </div>
+    <div class="about__left" v-else>
+      <img
+        src="../../assets/images/about/about4@2x.png"
+        alt="hotel"
+        width="268"
+        height="188"
+      />
+      <img
+        src="../../assets/images/about/about5@2x.png"
+        alt="hotel"
+        width="335"
+        height="236"
+      />
+      <img
+        src="../../assets/images/about/about6@2x.png"
+        alt="hotel"
+        width="253"
+        height="178"
+      />
+    </div>
     <div class="about__right">
       <h2 class="base-title">Об отеле</h2>
-      <p>
-        В наших отелях очень гармонично объединены все необходимые требования к
-        проживанию современного человека. Номера формата апартаменты, но с
-        отельным сервисом и безопасностью. Полностью соответствуют требованиям
-        нового закона об отелях.
-      </p>
-      <p>
-        Все апартаменты с оборудованы кухней и всем необходимым для
-        самостоятельного приготовления пищи, собственным санузлом с душевой. Они
-        небольшие, но есть все необходимое. Особая изюминка- спальное место на
-        антресольном этаже. Вам будет удобно у нас проживать, как одни сутки,
-        так и долгий период.
-      </p>
-      <p>
-        В апартаментах для пользования гостей- постельное белье, полотенца,
-        туалетно-косметические принадлежности, фен, посуда, чай и кофе –
-        бесплатно.
+      <p v-for="(item, index) in text" :key="index">
+        {{ item }}
       </p>
       <a href="">Посмотреть лицензию</a>
     </div>
   </section>
 </template>
-<script setup></script>
+<script>
+export default {
+  props: {
+    text: { type: Array, default: () => [] },
+    city: { type: String, default: "moscow" },
+  },
+};
+</script>
 
 <style lang="scss" scoped>
 .base-title {

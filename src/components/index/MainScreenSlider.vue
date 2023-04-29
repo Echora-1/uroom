@@ -1,6 +1,7 @@
 <template>
-  <div class="slider">
+  <div :class="['slider', { 'slider--2': city !== 'moscow' }]">
     <swiper
+      v-if="city === 'moscow'"
       :modules="modules"
       :slides-per-view="1"
       :space-between="0"
@@ -38,6 +39,45 @@
         />
       </swiper-slide>
     </swiper>
+    <swiper
+      v-else
+      :modules="modules"
+      :slides-per-view="1"
+      :space-between="0"
+      :centeredSlides="true"
+      :pagination="{
+        clickable: true,
+      }"
+      :autoplay="{
+        delay: 2500,
+        disableOnInteraction: false,
+      }"
+    >
+      <swiper-slide>
+        <img
+          src="@/assets/images/mainSlide2.png"
+          width="416"
+          height="355"
+          alt=""
+        />
+      </swiper-slide>
+      <swiper-slide>
+        <img
+          src="@/assets/images/mainSlide2.png"
+          width="416"
+          height="355"
+          alt=""
+        />
+      </swiper-slide>
+      <swiper-slide>
+        <img
+          src="@/assets/images/mainSlide2.png"
+          width="416"
+          height="355"
+          alt=""
+        />
+      </swiper-slide>
+    </swiper>
   </div>
 </template>
 <script>
@@ -48,6 +88,13 @@ import { Autoplay, Pagination } from "swiper/core";
 
 export default {
   components: { Swiper, SwiperSlide },
+
+  props: {
+    city: {
+      type: String,
+      default: "moscow",
+    },
+  },
 
   setup() {
     return {
@@ -61,6 +108,10 @@ export default {
 .slider {
   max-width: 505px;
   position: relative;
+
+  &--2 {
+    max-width: 416px;
+  }
 
   &::before {
     content: "";

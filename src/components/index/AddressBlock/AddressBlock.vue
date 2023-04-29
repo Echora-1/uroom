@@ -1,6 +1,8 @@
 <template>
   <section class="address container">
-    <h2 class="base-title">Наши адреса</h2>
+    <h2 class="base-title">
+      {{ address.length > 1 ? "Наши адреса" : "Адрес" }}
+    </h2>
     <address-card
       v-for="(item, index) in address"
       :key="index"
@@ -15,39 +17,11 @@ import AddressCard from "@/components/index/AddressBlock/AddressCard.vue";
 
 export default {
   components: { AddressCard },
-  data() {
-    return {
-      address: [
-        {
-          title: "URoom ApartHotel по адресу",
-          address: "ул. Первомайская д. 117",
-          list: [
-            "Удобное месторасположение",
-            "Парковка для авто",
-            "Вблизи МКАД, знаковые достопримечательности",
-            "Зеленый район",
-            "  Стиральная машина, утюг, камера хранения, аппараты по продаже кофе снеков",
-            "до 40 человек",
-          ],
-          map: "address1",
-          reverse: false,
-        },
-        {
-          title: "URoom ApartHotel по адресу",
-          address: "Севастопольский д.3 корп 2",
-          list: [
-            "Удобное месторасположение",
-            "Парковка для авто",
-            "Рядом ТРЦ, продуктовые магазины",
-            "Тихое место",
-            "  Стиральная машина, утюг, кофемашина, питьевая вода.",
-            "до 20 человек",
-          ],
-          map: "address2",
-          reverse: true,
-        },
-      ],
-    };
+  props: {
+    address: {
+      type: Array,
+      default: () => [],
+    },
   },
 };
 </script>

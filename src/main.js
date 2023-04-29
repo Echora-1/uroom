@@ -5,22 +5,14 @@ import { createRouter, createWebHistory } from "vue-router";
 import VueFullscreen from "vue-fullscreen";
 import VueGoogleMaps from "@fawmi/vue-google-maps";
 const routes = [
-  { path: "/", component: MainPage },
+  { path: "/", redirect: "/moscow" },
   {
-    path: "/articles",
-    component: () => import("./components/pages/ArticlesPage.vue"),
+    path: "/moscow",
+    component: MainPage,
   },
   {
-    path: "/articles/:id",
-    component: () => import("./components/pages/ArticleDetailsPage.vue"),
-  },
-  {
-    path: "/services/:id",
-    component: () => import("./components/pages/ServiceDetailsPage.vue"),
-  },
-  {
-    path: "/contact",
-    component: () => import("./components/pages/ContactPage.vue"),
+    path: "/volgograd",
+    component: MainPage,
   },
 ];
 

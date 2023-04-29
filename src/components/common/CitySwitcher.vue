@@ -1,7 +1,7 @@
 <template>
   <div :class="['switcher', { 'switcher--active2': activeCity === 2 }]">
-    <button class="switcher__btn1" @click="activeCity = 1">москва</button>
-    <button class="switcher__btn2" @click="activeCity = 2">волгоград</button>
+    <button class="switcher__btn1" @click="setCity1">москва</button>
+    <button class="switcher__btn2" @click="setCity2">волгоград</button>
   </div>
 </template>
 
@@ -11,6 +11,18 @@ export default {
     return {
       activeCity: 0,
     };
+  },
+
+  methods: {
+    setCity1() {
+      this.activeCity = 1;
+      this.$router.push("/moscow");
+    },
+
+    setCity2() {
+      this.activeCity = 2;
+      this.$router.push("/volgograd");
+    },
   },
 };
 </script>

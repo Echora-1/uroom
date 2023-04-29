@@ -2,16 +2,16 @@
   <section class="main-screen container">
     <div class="main-screen__left">
       <h1>
-        ВАШ
+        ваш
         <br />
-        АПАРТ-ОТЕЛЬ <br />
+        апарт-отель <br />
         <icon-pin />
-        <span>В МОСКВЕ</span>
+        <span>в {{ title }}</span>
       </h1>
       <base-button>забронировать</base-button>
     </div>
     <div class="main-screen__right">
-      <main-screen-slider />
+      <main-screen-slider :city="city" />
     </div>
   </section>
 </template>
@@ -56,8 +56,23 @@
   }
 }
 </style>
-<script setup>
+<script>
 import IconPin from "@/components/icon/IconPin.vue";
 import BaseButton from "@/components/base/BaseButton.vue";
 import MainScreenSlider from "@/components/index/MainScreenSlider.vue";
+
+export default {
+  components: { IconPin, BaseButton, MainScreenSlider },
+
+  props: {
+    title: {
+      type: String,
+      default: "",
+    },
+    city: {
+      type: String,
+      default: "moscow",
+    },
+  },
+};
 </script>
