@@ -1,6 +1,6 @@
 <template>
   <section class="about container">
-    <div class="about__left" v-if="city === 'moscow'">
+    <div class="about__left" v-if="city === 'moscow' && !isMobile()">
       <img
         src="../../assets/images/about/about1@2x.png"
         alt="hotel"
@@ -20,7 +20,7 @@
         height="178"
       />
     </div>
-    <div class="about__left" v-else>
+    <div class="about__left" v-if="city !== 'moscow' && !isMobile()">
       <img
         src="../../assets/images/about/about4@2x.png"
         alt="hotel"
@@ -40,6 +40,7 @@
         height="178"
       />
     </div>
+    <about-slider v-if="isMobile()" class="about__slider" />
     <div class="about__right">
       <h2 class="base-title">Об отеле</h2>
       <p v-for="(item, index) in text" :key="index">
@@ -50,7 +51,15 @@
   </section>
 </template>
 <script>
+import { isMobile } from "mobile-device-detect";
+import AboutSlider from "@/components/index/AboutSlider.vue";
 export default {
+  components: { AboutSlider },
+  methods: {
+    isMobile() {
+      return isMobile;
+    },
+  },
   props: {
     text: { type: Array, default: () => [] },
     city: { type: String, default: "moscow" },
@@ -61,17 +70,42 @@ export default {
 <style lang="scss" scoped>
 .base-title {
   margin-bottom: 25px;
+
+  @media (max-width: 1000px) {
+    margin-bottom: 20px;
+  }
 }
 
 .about {
   display: flex;
   justify-content: space-between;
 
+  @media (max-width: 1000px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  &__slider {
+    margin-bottom: 55px;
+
+    img {
+      object-fit: contain;
+    }
+  }
+
   &__left {
     display: flex;
     flex-direction: column;
     max-width: 432px;
     width: 100%;
+
+    @media (max-width: 1000px) {
+      max-width: 100%;
+      display: none;
+    }
 
     img {
       object-fit: contain;
@@ -100,11 +134,22 @@ export default {
     width: fit-content;
     margin-left: 48px;
 
+    @media (max-width: 1000px) {
+      margin-left: 0;
+    }
+
     p {
       font-size: 14px;
       line-height: 22px;
       margin: 0 0 30px;
       max-width: 440px;
+
+      @media (max-width: 1000px) {
+        margin-bottom: 20px;
+        &:nth-child(4) {
+          margin-bottom: 5px;
+        }
+      }
     }
 
     a {

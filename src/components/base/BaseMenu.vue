@@ -60,8 +60,7 @@ export default {
   z-index: 999;
   width: 365px;
   min-height: calc(200vh - 43px);
-  background: #2b2b2b;
-  opacity: 0.95;
+  background: #2b2b2bf2;
 
   @media (max-width: 1000px) {
     padding: 35px 10px 35px 35px;

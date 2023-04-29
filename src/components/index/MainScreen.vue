@@ -17,6 +17,12 @@
 </template>
 
 <style lang="scss" scoped>
+.container {
+  @media (max-width: 1000px) {
+    padding: 0 10px;
+  }
+}
+
 .main-screen {
   display: flex;
   align-items: center;
