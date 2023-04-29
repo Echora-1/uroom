@@ -23,9 +23,17 @@
   padding-top: 65px;
   padding-bottom: 180px;
 
+  @media (max-width: 1000px) {
+    padding-top: 30px;
+    padding-bottom: 156px;
+    flex-direction: column-reverse;
+  }
+
   &__left {
-    margin-top: 5px;
-    margin-left: -10px;
+    @media (min-width: 1001px) {
+      margin-top: 5px;
+      margin-left: -10px;
+    }
 
     h1 {
       font-family: "Futura PT", sans-serif;
@@ -43,10 +51,30 @@
       svg {
         margin-right: 24px;
       }
+
+      @media (max-width: 1000px) {
+        font-size: 54px;
+        text-align: center;
+        line-height: 69px;
+        margin: 0 0 42px;
+
+        br {
+          display: none;
+        }
+
+        svg {
+          display: none;
+        }
+      }
     }
 
     button {
       min-width: 180px;
+
+      @media (max-width: 1000px) {
+        margin: 0 auto;
+        min-width: 364px;
+      }
     }
   }
 

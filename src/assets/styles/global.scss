@@ -61,6 +61,11 @@ button {
   padding: 0 20px;
   margin: 0 auto;
   max-width: 1016px;
+
+  @media(max-width: 1000px) {
+    max-width: 430px;
+    padding: 0 10px;
+  }
 }
 
 

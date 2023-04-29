@@ -3,9 +3,10 @@
     <div class="container header__container">
       <div class="header__logo-wrap">
         <router-link to="/" class="header__logo">
-          <icon-logo />
+          <icon-logo class="header__logo-desc" />
+          <icon-mb-logo class="header__logo-mb" />
         </router-link>
-        <city-switcher />
+        <city-switcher class="header__switcher" />
       </div>
       <nav class="header__nav">
         <a href="">
@@ -27,9 +28,11 @@ import IconLogo from "@/components/icon/IconLogo.vue";
 import CitySwitcher from "@/components/common/CitySwitcher.vue";
 import IconReserve from "@/components/icon/IconReserve.vue";
 import BtnMenu from "@/components/common/BtnMenu.vue";
+import IconMbLogo from "@/components/icon/IconMbLogo.vue";
 
 export default {
   components: {
+    IconMbLogo,
     BtnMenu,
     IconReserve,
     CitySwitcher,
@@ -59,11 +62,19 @@ export default {
   width: 100%;
   padding: 44px 0;
 
+  @media (max-width: 1000px) {
+    padding: 30px 0;
+  }
+
   &__container {
     display: flex;
     align-items: center;
     max-width: 1060px;
     padding: 0 10px;
+
+    @media (max-width: 1000px) {
+      max-width: 430px;
+    }
   }
 
   &__logo-wrap {
@@ -73,6 +84,29 @@ export default {
     svg {
       margin-right: 55px;
     }
+
+    @media (max-width: 1000px) {
+      margin-right: auto;
+    }
+  }
+
+  &__logo-mb {
+    display: none;
+
+    @media (max-width: 1000px) {
+      display: block;
+    }
+  }
+  &__logo-desc {
+    @media (max-width: 1000px) {
+      display: none;
+    }
+  }
+
+  &__switcher {
+    @media (max-width: 1000px) {
+      display: none;
+    }
   }
 
   &__nav {
@@ -80,6 +114,10 @@ export default {
     align-items: center;
     margin-left: auto;
     margin-right: 43px;
+
+    @media (max-width: 1000px) {
+      display: none;
+    }
 
     a {
       font-weight: 700;

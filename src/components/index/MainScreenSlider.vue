@@ -109,8 +109,25 @@ export default {
   max-width: 505px;
   position: relative;
 
+  @media (max-width: 1000px) {
+    max-width: 395px;
+    width: 100%;
+    right: -10px;
+
+    img {
+      max-width: 395px;
+      max-height: 312px;
+      width: 100%;
+    }
+  }
+
   &--2 {
     max-width: 416px;
+
+    @media (max-width: 1000px) {
+      max-width: 395px;
+      width: 100%;
+    }
   }
 
   &::before {
@@ -121,6 +138,13 @@ export default {
     background: rgb(var(--mainColor));
     right: -50px;
     bottom: -45px;
+
+    @media (max-width: 1000px) {
+      right: 0;
+      bottom: -40px;
+      width: 227px;
+      height: 100px;
+    }
   }
 
   &:deep {

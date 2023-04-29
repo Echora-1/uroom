@@ -66,9 +66,6 @@ export default {
   position: relative;
 
   @media (max-width: 1000px) {
-    font-size: 9px;
-    line-height: 11px;
-    padding: 7px 19px;
   }
 
   &:active {

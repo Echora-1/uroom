@@ -1,6 +1,10 @@
 <template>
   <div class="menu">
     <div class="menu__header">
+      <a href="tel:89777973623" class="menu__phone">
+        <icon-phone />
+        <span> +7 (977) 797 36 23 </span>
+      </a>
       <btn-menu open @click="closeMenu" />
     </div>
     <nav class="menu__nav">
@@ -9,8 +13,8 @@
       <a href="">Документы</a>
       <a href="">Контакты</a>
       <a href="">Обратная связь</a>
+      <city-switcher class="menu__switcher" />
     </nav>
-
     <div class="menu__social">
       <a href="" target="_blank">
         <icon-face />
@@ -30,9 +34,18 @@ import BtnMenu from "@/components/common/BtnMenu.vue";
 import IconTelegram from "@/components/icon/IconTelegram.vue";
 import IconFace from "@/components/icon/IconFace.vue";
 import IconInst from "@/components/icon/IconInst.vue";
+import CitySwitcher from "@/components/common/CitySwitcher.vue";
+import IconPhone from "@/components/icon/IconPhone.vue";
 
 export default {
-  components: { IconInst, IconFace, IconTelegram, BtnMenu },
+  components: {
+    IconPhone,
+    CitySwitcher,
+    IconInst,
+    IconFace,
+    IconTelegram,
+    BtnMenu,
+  },
   methods: {
     closeMenu() {
       this.$emit("close-menu");
@@ -50,16 +63,38 @@ export default {
   background: #2b2b2b;
   opacity: 0.95;
 
+  @media (max-width: 1000px) {
+    padding: 35px 10px 35px 35px;
+    width: 300px;
+  }
+
   &__header {
     display: flex;
     justify-content: flex-end;
     margin-bottom: 98px;
+
+    @media (max-width: 1000px) {
+      margin-bottom: 40px;
+      padding-right: 10px;
+    }
+  }
+
+  &__switcher {
+    display: none;
+    @media (max-width: 1000px) {
+      display: block;
+    }
   }
 
   &__nav {
     display: flex;
     flex-direction: column;
     margin-bottom: 92px;
+    align-items: flex-start;
+
+    @media (max-width: 1000px) {
+      margin-bottom: 40px;
+    }
 
     a {
       font-weight: 700;
@@ -105,6 +140,30 @@ export default {
       &:hover {
         opacity: 0.7;
       }
+    }
+  }
+
+  &__phone {
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 18px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    align-items: center;
+    color: #ffffff;
+    transition: all 0.3s;
+    margin-right: auto;
+    display: none;
+
+    @media (max-width: 1000px) {
+      display: flex;
+    }
+
+    &:hover {
+      opacity: 0.7;
+    }
+    svg {
+      margin-right: 8px;
     }
   }
 }

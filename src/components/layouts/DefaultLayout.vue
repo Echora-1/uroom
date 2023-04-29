@@ -55,6 +55,12 @@ export default {
   position: relative;
   overflow: hidden;
 
+  @media (max-width: 1000px) {
+    margin: 0;
+    width: 100%;
+    box-shadow: none;
+  }
+
   &__menu {
     position: absolute;
     top: 0;

@@ -57,6 +57,11 @@ export default {
     height: 876px;
     z-index: -1;
     background: url("../../assets/images/decorMain.svg") no-repeat center;
+
+    @media (max-width: 1000px) {
+      left: -442px;
+      bottom: -451px;
+    }
   }
 }
 </style>
