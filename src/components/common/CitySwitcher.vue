@@ -9,8 +9,12 @@
 export default {
   data() {
     return {
-      activeCity: 0,
+      activeCity: 1,
     };
+  },
+
+  created() {
+    this.activeCity = this.$route.fullPath.split("/")[1] === "moscow" ? 1 : 2;
   },
 
   methods: {

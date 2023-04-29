@@ -1,6 +1,10 @@
 <template>
   <div>
-    <main-screen :title="content?.mainScreen.title" :city="currentPath" />
+    <main-screen
+      :title="content?.mainScreen.title"
+      :city="currentPath"
+      class="main-screen"
+    />
     <about-hotel :text="content?.about.text" :city="currentPath" />
     <address-block :address="content?.address" />
     <connect-block />
@@ -40,23 +44,19 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.section-services {
-  margin-top: 82px;
-  margin-bottom: 62px;
+.main-screen {
+  position: relative;
+  z-index: 1;
 
-  @media (max-width: 1000px) {
-    margin-top: 40px;
-    margin-bottom: 40px;
-  }
-}
-
-.section-doctors {
-  margin-top: 85px;
-  margin-bottom: 102px;
-
-  @media (max-width: 1000px) {
-    margin-top: 40px;
-    margin-bottom: 40px;
+  &::before {
+    content: "";
+    position: absolute;
+    left: -483px;
+    bottom: -434px;
+    width: 874px;
+    height: 876px;
+    z-index: -1;
+    background: url("../../assets/images/decorMain.svg") no-repeat center;
   }
 }
 </style>
