@@ -62,7 +62,7 @@
         font-size: 54px;
         text-align: center;
         line-height: 69px;
-        margin: 0 0 42px;
+        margin: 50px 0 42px;
 
         br {
           display: none;

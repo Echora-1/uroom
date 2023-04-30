@@ -29,6 +29,17 @@ export default {
 <style lang="scss" scoped>
 .base-title {
   margin-bottom: 30px;
+
+  @media (max-width: 1000px) {
+    margin-top: 45px;
+    margin-bottom: 15px;
+  }
+}
+
+.container {
+  @media (max-width: 1000px) {
+    padding: 0 10px;
+  }
 }
 
 .address {
@@ -39,6 +50,10 @@ export default {
 
   &__item {
     margin-bottom: 100px;
+
+    @media (max-width: 1000px) {
+      margin-bottom: 70px;
+    }
   }
 }
 </style>

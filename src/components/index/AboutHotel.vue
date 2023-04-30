@@ -89,8 +89,6 @@ export default {
   }
 
   &__slider {
-    margin-bottom: 55px;
-
     img {
       object-fit: contain;
     }

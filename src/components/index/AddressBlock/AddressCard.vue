@@ -46,12 +46,20 @@ export default {
   align-items: center;
   justify-content: flex-end;
 
-  &--reverse {
-    flex-direction: row-reverse;
-    justify-content: space-between;
+  @media (max-width: 1000px) {
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    padding: 27px;
+  }
 
-    .card__info {
-      margin-left: 90px;
+  &--reverse {
+    @media (min-width: 1001px) {
+      flex-direction: row-reverse;
+      justify-content: space-between;
+
+      .card__info {
+        margin-left: 90px;
+      }
     }
   }
 
@@ -69,6 +77,10 @@ export default {
   }
 
   &__list {
+    @media (max-width: 1000px) {
+      margin-bottom: 50px;
+    }
+
     li {
       font-size: 13px;
       line-height: 18px;
@@ -88,6 +100,10 @@ export default {
 
       &:not(:last-child) {
         margin-bottom: 29px;
+
+        @media (max-width: 1000px) {
+          margin-bottom: 25px;
+        }
       }
 
       &:last-child {
@@ -100,6 +116,10 @@ export default {
     max-width: 50%;
     width: 100%;
     position: relative;
+
+    @media (max-width: 1000px) {
+      max-width: 100%;
+    }
   }
 
   &__btns {
@@ -109,6 +129,12 @@ export default {
     bottom: -88px;
     left: 0;
 
+    @media (max-width: 1000px) {
+      bottom: -53px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
     button:first-child {
       margin-right: 15px;
     }
@@ -117,6 +143,14 @@ export default {
   &__map {
     img {
       object-fit: contain;
+
+      @media (max-width: 1000px) {
+        max-width: 342px;
+        max-height: 342px;
+        width: 100%;
+        object-fit: cover;
+        margin-bottom: 37px;
+      }
     }
   }
 }

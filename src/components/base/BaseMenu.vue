@@ -61,7 +61,6 @@ export default {
   width: 365px;
   min-height: calc(200vh - 43px);
   background: #2b2b2bf2;
-
   @media (max-width: 1000px) {
     padding: 35px 10px 35px 35px;
     width: 300px;

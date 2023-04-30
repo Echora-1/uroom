@@ -26,6 +26,10 @@
     width: 100%;
     border-bottom: 1px solid #ebebeb;
     margin-bottom: 29px;
+    @media (max-width: 1000px) {
+      max-width: 305px;
+      margin: 0 auto 29px;
+    }
   }
 
   &__list {
@@ -35,6 +39,10 @@
     justify-content: space-between;
     width: fit-content;
     gap: 44px;
+
+    @media (max-width: 1000px) {
+      flex-direction: column;
+    }
 
     a {
       font-size: 13px;
@@ -51,6 +59,10 @@
       text-align: center;
       opacity: 0.5;
       margin: 0 0 26px;
+
+      @media (max-width: 1000px) {
+        margin: 37px 0 47px;
+      }
     }
   }
 }

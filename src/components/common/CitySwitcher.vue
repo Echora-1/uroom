@@ -14,7 +14,21 @@ export default {
   },
 
   created() {
-    this.activeCity = this.$route.fullPath.split("/")[1] === "moscow" ? 1 : 2;
+    this.activeCity =
+      this.$route.fullPath.split("/")?.[1] === "volgograd" ? 2 : 1;
+  },
+
+  computed: {
+    currentPath() {
+      return this.$route.fullPath;
+    },
+  },
+
+  watch: {
+    currentPath() {
+      this.activeCity =
+        this.$route.fullPath.split("/")?.[1] === "volgograd" ? 2 : 1;
+    },
   },
 
   methods: {

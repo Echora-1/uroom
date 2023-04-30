@@ -115,9 +115,13 @@ export default {
   }
 
   &:deep {
+    .swiper {
+      padding-bottom: 55px;
+    }
+
     .swiper-pagination-bullet {
       border-radius: 50%;
-      background: white;
+      background: #d7d7d7;
       opacity: 1;
     }
 
@@ -126,7 +130,7 @@ export default {
     }
 
     .swiper-pagination-horizontal {
-      bottom: 20px;
+      bottom: 25px;
     }
 
     .swiper-button-prev {
