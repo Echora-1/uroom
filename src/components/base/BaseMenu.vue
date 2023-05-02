@@ -8,47 +8,69 @@
       <btn-menu open @click="closeMenu" />
     </div>
     <nav class="menu__nav">
-      <a href="">Об отеле</a>
-      <a href="">Бронирование</a>
-      <a href="">Документы</a>
-      <a href="">Контакты</a>
-      <a href="">Обратная связь</a>
+      <a @click="closeMenu" href="">Об отеле</a>
+      <router-link @click="closeMenu" :to="`/${url}/reservation`"
+        >Бронирование</router-link
+      >
+      <a @click="closeMenu" href="">Документы</a>
+      <router-link @click="closeMenu" :to="`/${url}/contacts`"
+        >Контакты</router-link
+      >
+      <a @click="closeMenu" href="">Обратная связь</a>
       <city-switcher class="menu__switcher" />
     </nav>
-    <div class="menu__social">
-      <a href="" target="_blank">
-        <icon-face />
-      </a>
-      <a href="" target="_blank">
-        <icon-telegram />
-      </a>
-      <a href="" target="_blank">
-        <icon-inst />
-      </a>
-    </div>
+    <base-social class="menu__social" />
   </div>
 </template>
 
 <script>
 import BtnMenu from "@/components/common/BtnMenu.vue";
-import IconTelegram from "@/components/icon/IconTelegram.vue";
-import IconFace from "@/components/icon/IconFace.vue";
-import IconInst from "@/components/icon/IconInst.vue";
 import CitySwitcher from "@/components/common/CitySwitcher.vue";
 import IconPhone from "@/components/icon/IconPhone.vue";
-
+import BaseSocial from "@/components/base/BaseSocial.vue";
 export default {
   components: {
+    BaseSocial,
     IconPhone,
     CitySwitcher,
-    IconInst,
-    IconFace,
-    IconTelegram,
     BtnMenu,
   },
+
+  data() {
+    return {
+      url: "",
+    };
+  },
+
+  created() {
+    this.setUrl();
+  },
+
+  computed: {
+    currentPath() {
+      return this.$route.fullPath;
+    },
+  },
+
+  watch: {
+    currentPath() {
+      this.setUrl();
+    },
+  },
+
   methods: {
     closeMenu() {
       this.$emit("close-menu");
+    },
+
+    setUrl() {
+      const path = this.$route.fullPath;
+      const isMoscow = path.indexOf("moscow") !== -1;
+      if (isMoscow) {
+        this.url = "moscow";
+      } else {
+        this.url = "volgograd";
+      }
     },
   },
 };
@@ -121,22 +143,6 @@ export default {
 
       &:not(:last-child) {
         margin-bottom: 35px;
-      }
-    }
-  }
-
-  &__social {
-    display: flex;
-
-    a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-right: 43px;
-      transition: all 0.3s;
-
-      &:hover {
-        opacity: 0.7;
       }
     }
   }

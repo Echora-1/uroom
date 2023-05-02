@@ -14,6 +14,22 @@ const routes = [
     path: "/volgograd",
     component: MainPage,
   },
+  {
+    path: "/moscow/reservation",
+    component: () => import("./components/pages/ReservationPage.vue"),
+  },
+  {
+    path: "/moscow/contacts",
+    component: () => import("./components/pages/ContactsPage.vue"),
+  },
+  {
+    path: "/volgograd/reservation",
+    component: () => import("./components/pages/ReservationPage.vue"),
+  },
+  {
+    path: "/volgograd/contacts",
+    component: () => import("./components/pages/ContactsPage.vue"),
+  },
 ];
 
 const router = createRouter({

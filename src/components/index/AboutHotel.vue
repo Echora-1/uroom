@@ -46,7 +46,7 @@
       <p v-for="(item, index) in text" :key="index">
         {{ item }}
       </p>
-      <a href="">Посмотреть лицензию</a>
+      <a href="" class="base-link">Посмотреть лицензию</a>
     </div>
   </section>
 </template>
@@ -147,30 +147,6 @@ export default {
         &:nth-child(4) {
           margin-bottom: 5px;
         }
-      }
-    }
-
-    a {
-      color: rgb(var(--mainColor));
-      font-size: 16px;
-      line-height: 30px;
-      position: relative;
-      display: flex;
-      width: fit-content;
-      transition: all 0.3s;
-
-      &:hover {
-        opacity: 0.7;
-      }
-
-      &::before {
-        content: "";
-        position: absolute;
-        width: 100%;
-        height: 1px;
-        bottom: 4px;
-        left: 0;
-        background: rgb(var(--mainColor));
       }
     }
   }

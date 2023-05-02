@@ -14,8 +14,7 @@ export default {
   },
 
   created() {
-    this.activeCity =
-      this.$route.fullPath.split("/")?.[1] === "volgograd" ? 2 : 1;
+    this.setActiveCity();
   },
 
   computed: {
@@ -26,20 +25,31 @@ export default {
 
   watch: {
     currentPath() {
-      this.activeCity =
-        this.$route.fullPath.split("/")?.[1] === "volgograd" ? 2 : 1;
+      this.setActiveCity();
     },
   },
 
   methods: {
     setCity1() {
       this.activeCity = 1;
-      this.$router.push("/moscow");
+      const path = this.$route.fullPath;
+      this.$router.push(path.replace("volgograd", "moscow"));
     },
 
     setCity2() {
       this.activeCity = 2;
-      this.$router.push("/volgograd");
+      const path = this.$route.fullPath;
+      this.$router.push(path.replace("moscow", "volgograd"));
+    },
+
+    setActiveCity() {
+      const path = this.$route.fullPath;
+      const isMoscow = path.indexOf("moscow") !== -1;
+      if (isMoscow) {
+        this.activeCity = 1;
+      } else {
+        this.activeCity = 2;
+      }
     },
   },
 };
