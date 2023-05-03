@@ -23,12 +23,20 @@ const routes = [
     component: () => import("./components/pages/ContactsPage.vue"),
   },
   {
+    path: "/moscow/feedback",
+    component: () => import("./components/pages/FeedbackPage.vue"),
+  },
+  {
     path: "/volgograd/reservation",
     component: () => import("./components/pages/ReservationPage.vue"),
   },
   {
     path: "/volgograd/contacts",
     component: () => import("./components/pages/ContactsPage.vue"),
+  },
+  {
+    path: "/volgograd/feedback",
+    component: () => import("./components/pages/FeedbackPage.vue"),
   },
 ];
 

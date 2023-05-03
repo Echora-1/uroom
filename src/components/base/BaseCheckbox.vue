@@ -45,15 +45,14 @@ export default {
 .wrapper {
   display: block;
   position: relative;
-  padding-left: 35px;
+  padding-left: 30px;
   cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 24px;
+  font-size: 15px;
+  line-height: 22px;
   color: #52525b;
 }
 .wrapper input {
@@ -65,19 +64,17 @@ export default {
 }
 .checkmark {
   position: absolute;
-  top: 50%;
+  top: 4px;
   left: 0;
-  transform: translateY(-50%);
-  height: 20px;
-  width: 20px;
+  height: 16px;
+  width: 16px;
   background: #ffffff;
-  border: 1px solid #d0d5dd;
-  border-radius: 6px;
+  border: 1px solid #000000;
   transition: all 0.5s;
 }
 
 .wrapper:hover input ~ .checkmark > svg {
-  fill: transparent;
+  fill: rgba(var(--mainColor), 0.5);
 }
 .checkmark > svg {
   position: absolute;
@@ -88,6 +85,6 @@ export default {
   transition: all 0.5s;
 }
 .wrapper input:checked ~ .checkmark > svg {
-  fill: #0c74b5;
+  fill: rgb(var(--mainColor));
 }
 </style>

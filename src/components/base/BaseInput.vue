@@ -99,13 +99,12 @@ export default {
 }
 
 .base-input-wrapper {
-  border: 1px solid rgba(82, 82, 91, 0.25);
-  border-radius: 8px;
+  border: 1px solid #000000;
   width: 100%;
   transition: all 0.5s;
   position: relative;
   overflow: hidden;
-  margin: 8px 0 18px;
+  margin: 0;
 }
 
 .base-input {
@@ -113,14 +112,14 @@ export default {
   margin: 0;
   border: none;
   outline: none;
-  padding: 12px 16px;
+  padding: 12px 21px;
   background: transparent;
   font-size: 16px;
   line-height: 24px;
   letter-spacing: 0.05em;
-  color: rgba(0, 0, 0, 0.6);
+  color: rgba(0, 0, 0, 0.4);
   -webkit-box-shadow: inset 0 0 0 50px #ffffff;
-  -webkit-text-fill-color: rgba(0, 0, 0, 0.6);
+  -webkit-text-fill-color: rgba(0, 0, 0, 0.4);
   position: relative;
   transition: color 0.3s;
   resize: none;
@@ -140,12 +139,15 @@ export default {
   &:-webkit-autofill:focus {
     background-color: #ffffff !important;
     background-image: none !important;
-    color: #000000 !important;
+
+    &::placeholder {
+      color: rgba(0, 0, 0, 0.4) !important;
+    }
   }
 }
 
 .base-input::placeholder {
-  color: rgba(0, 0, 0, 0.6);
+  color: rgba(0, 0, 0, 0.4) !important;
 }
 
 .base-label {
@@ -155,7 +157,7 @@ export default {
 
 .input-focused {
   .base-input-wrapper {
-    border-color: #000000;
+    border-color: rgb(var(--mainColor));
   }
 
   .base-input {

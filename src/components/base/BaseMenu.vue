@@ -16,7 +16,9 @@
       <router-link @click="closeMenu" :to="`/${url}/contacts`"
         >Контакты</router-link
       >
-      <a @click="closeMenu" href="">Обратная связь</a>
+      <router-link @click="closeMenu" :to="`/${url}/feedback`"
+        >Обратная связь</router-link
+      >
       <city-switcher class="menu__switcher" />
     </nav>
     <base-social class="menu__social" />
