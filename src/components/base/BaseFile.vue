@@ -49,8 +49,12 @@ export default {
   line-height: 30px;
   transition: opacity 0.3s;
 
+  @media (max-width: 1000px) {
+    line-height: 20px;
+  }
+
   &:hover {
-    opacity: 0.7;
+    opacity: 0.5;
   }
 }
 </style>

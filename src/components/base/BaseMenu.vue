@@ -1,22 +1,37 @@
 <template>
   <div class="menu">
     <div class="menu__header">
-      <a href="tel:89777973623" class="menu__phone">
+      <a :href="phoneLink" class="menu__phone">
         <icon-phone />
-        <span> +7 (977) 797 36 23 </span>
+        <span>{{ phoneView }}</span>
       </a>
       <btn-menu open @click="closeMenu" />
     </div>
     <nav class="menu__nav">
-      <a @click="closeMenu" href="">Об отеле</a>
-      <router-link @click="closeMenu" :to="`/${url}/reservation`"
+      <router-link
+        active-class="active-link"
+        :to="`/${url}#about`"
+        @click="closeMenu"
+      >
+        Об отеле
+      </router-link>
+      <router-link
+        active-class="active-link"
+        @click="closeMenu"
+        :to="`/${url}/reservation`"
         >Бронирование</router-link
       >
       <a @click="closeMenu" href="">Документы</a>
-      <router-link @click="closeMenu" :to="`/${url}/contacts`"
+      <router-link
+        active-class="active-link"
+        @click="closeMenu"
+        :to="`/${url}/contacts`"
         >Контакты</router-link
       >
-      <router-link @click="closeMenu" :to="`/${url}/feedback`"
+      <router-link
+        active-class="active-link"
+        @click="closeMenu"
+        :to="`/${url}/feedback`"
         >Обратная связь</router-link
       >
       <city-switcher class="menu__switcher" />
@@ -51,6 +66,16 @@ export default {
   computed: {
     currentPath() {
       return this.$route.fullPath;
+    },
+
+    phoneLink() {
+      return this.url === "moscow" ? "tel:89777973623" : "tel:89616583202";
+    },
+
+    phoneView() {
+      return this.url === "moscow"
+        ? "+7 (977) 797 36 23"
+        : "+7 (961) 658 32 02";
     },
   },
 
@@ -131,21 +156,21 @@ export default {
         opacity: 0.7;
       }
 
-      &:first-child {
-        &::before {
-          content: "";
-          bottom: 0;
-          left: 0;
-          position: absolute;
-          height: 3px;
-          width: 30px;
-          background: rgb(var(--mainColor));
-        }
-      }
-
       &:not(:last-child) {
         margin-bottom: 35px;
       }
+    }
+  }
+
+  .active-link {
+    &::before {
+      content: "";
+      bottom: 0;
+      left: 0;
+      position: absolute;
+      height: 3px;
+      width: 30px;
+      background: rgb(var(--mainColor));
     }
   }
 

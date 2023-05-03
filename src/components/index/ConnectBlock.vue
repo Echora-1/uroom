@@ -2,10 +2,57 @@
   <section class="container">
     <div class="connect">
       <p>Ждем Вас в гости, готовы Вас принять в любое время суток.</p>
-      <base-button :transparent="isMobile">связаться с нами</base-button>
+      <router-link :to="`/${url}/feedback`">
+        <base-button :transparent="isMobile()">связаться с нами</base-button>
+      </router-link>
     </div>
   </section>
 </template>
+
+<script>
+import BaseButton from "@/components/base/BaseButton.vue";
+import { isMobile } from "mobile-device-detect";
+
+export default {
+  components: { BaseButton },
+  data() {
+    return {
+      url: "",
+    };
+  },
+  created() {
+    this.setUrl();
+  },
+
+  computed: {
+    currentPath() {
+      return this.$route.fullPath;
+    },
+  },
+
+  watch: {
+    currentPath() {
+      this.setUrl();
+    },
+  },
+
+  methods: {
+    isMobile() {
+      return isMobile;
+    },
+
+    setUrl() {
+      const path = this.$route.fullPath;
+      const isMoscow = path.indexOf("moscow") !== -1;
+      if (isMoscow) {
+        this.url = "moscow";
+      } else {
+        this.url = "volgograd";
+      }
+    },
+  },
+};
+</script>
 
 <style lang="scss" scoped>
 .container {
@@ -79,7 +126,3 @@
   }
 }
 </style>
-<script setup>
-import BaseButton from "@/components/base/BaseButton.vue";
-import { isMobile } from "mobile-device-detect";
-</script>

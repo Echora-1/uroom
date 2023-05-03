@@ -6,6 +6,7 @@
       class="main-screen"
     />
     <about-hotel :text="content?.about.text" :city="currentPath" />
+    <div id="about"></div>
     <address-block :address="content?.address" />
     <connect-block />
   </div>
@@ -26,18 +27,18 @@ export default {
     };
   },
   created() {
-    this.content = main[this.$route.fullPath.split("/")[1]];
+    this.content = main[this.$route.path.split("/")[1]];
   },
 
   computed: {
     currentPath() {
-      return this.$route.fullPath.split("/")[1];
+      return this.$route.path.split("/")[1];
     },
   },
 
   watch: {
     currentPath() {
-      this.content = main[this.$route.fullPath.split("/")[1]];
+      this.content = main[this.$route.path.split("/")[1]];
     },
   },
 };

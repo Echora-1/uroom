@@ -8,7 +8,9 @@
         <icon-pin />
         <span>в {{ title }}</span>
       </h1>
-      <base-button>забронировать</base-button>
+      <router-link :to="`${$route.path}/reservation`">
+        <base-button>забронировать</base-button>
+      </router-link>
     </div>
     <div class="main-screen__right">
       <main-screen-slider :city="city" />

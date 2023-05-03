@@ -64,11 +64,14 @@ export default {
   justify-content: center;
   border: 1px solid rgb(var(--mainColor));
   position: relative;
+  transition: all 0.3s;
 
-  @media (max-width: 1000px) {
+  &:hover {
+    transform: scale(1.01);
   }
 
   &:active {
+    transition: all 0s;
     opacity: 0.85;
     transform: translateY(1px);
   }

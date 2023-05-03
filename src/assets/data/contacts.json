@@ -3,7 +3,9 @@
     "info": {
       "address": ["г. Москва, Севастопольский проспект, 3к2", " г. Москва, ул. Первомайская, 117"],
       "phone": "+7 (977) 797-36-23",
-      "email": "msk@urooms.ru"
+      "phoneLink": "tel:89777973623",
+      "email": "msk@urooms.ru",
+      "emailLink": "mailto:msk@urooms.ru"
     },
     "maps": [
       {
@@ -20,7 +22,9 @@
     "info": {
       "address": [ "г. Волгоград, ул. Мира, д. 21"],
       "phone": "+7 (961) 658-32-02",
-      "email": "vlg@urooms.ru"
+      "phoneLink": "tel:89616583202",
+      "email": "vlg@urooms.ru",
+      "emailLink": "mailto:vlg@urooms.ru"
     },
     "maps": [
       {

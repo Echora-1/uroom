@@ -2,20 +2,20 @@
   <header class="header">
     <div class="container header__container">
       <div class="header__logo-wrap">
-        <router-link to="/" class="header__logo">
+        <router-link :to="`/${url}`" class="header__logo">
           <icon-logo class="header__logo-desc" />
           <icon-mb-logo class="header__logo-mb" />
         </router-link>
         <city-switcher class="header__switcher" />
       </div>
       <nav class="header__nav">
-        <a href="">
+        <router-link :to="`/${url}/reservation`">
           <icon-reserve />
           <span> резервация </span>
-        </a>
-        <a href="tel:89777973623">
+        </router-link>
+        <a :href="phoneLink">
           <icon-phone />
-          <span> +7 (977) 797 36 23 </span>
+          <span>{{ phoneView }}</span>
         </a>
       </nav>
       <btn-menu @click="openMenu" />
@@ -43,12 +43,49 @@ export default {
   data() {
     return {
       showMenu: false,
+      url: "",
     };
+  },
+
+  created() {
+    this.setUrl();
+  },
+
+  computed: {
+    currentPath() {
+      return this.$route.fullPath;
+    },
+
+    phoneLink() {
+      return this.url === "moscow" ? "tel:89777973623" : "tel:89616583202";
+    },
+
+    phoneView() {
+      return this.url === "moscow"
+        ? "+7 (977) 797 36 23"
+        : "+7 (961) 658 32 02";
+    },
+  },
+
+  watch: {
+    currentPath() {
+      this.setUrl();
+    },
   },
 
   methods: {
     openMenu() {
       this.$emit("open-menu");
+    },
+
+    setUrl() {
+      const path = this.$route.fullPath;
+      const isMoscow = path.indexOf("moscow") !== -1;
+      if (isMoscow) {
+        this.url = "moscow";
+      } else {
+        this.url = "volgograd";
+      }
     },
   },
 };

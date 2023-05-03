@@ -21,7 +21,7 @@
       width="8.58626"
       height="8.58626"
       transform="rotate(-45 0 62.0713)"
-      fill="#0c74b5"
+      fill="#FFC000"
     />
     <rect
       opacity="0.25"
@@ -30,7 +30,7 @@
       width="8.48513"
       height="8.48513"
       transform="rotate(-45 115 37)"
-      fill="#0c74b5"
+      fill="#FFC000"
     />
     <rect
       x="57"
@@ -38,7 +38,7 @@
       width="4.24248"
       height="4.24248"
       transform="rotate(-45 57 3)"
-      fill="#0c74b5"
+      fill="#FFC000"
     />
     <defs>
       <linearGradient
@@ -49,8 +49,8 @@
         y2="98"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#0c74b5" stop-opacity="0" />
-        <stop offset="1" stop-color="#0c74b5" />
+        <stop stop-color="#FFC000" stop-opacity="0" />
+        <stop offset="1" stop-color="#FFC000" />
       </linearGradient>
       <linearGradient
         id="paint1_linear_1253_2956"
@@ -60,8 +60,8 @@
         y2="97.4818"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#0c74b5" />
-        <stop offset="1" stop-color="#0c74b5" />
+        <stop stop-color="#FFC000" />
+        <stop offset="1" stop-color="#FFC000" />
       </linearGradient>
     </defs>
   </svg>

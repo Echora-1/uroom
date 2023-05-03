@@ -127,7 +127,7 @@ export default {
 
   @media (max-width: 1000px) {
     font-size: 14px;
-    line-height: 15px;
+    line-height: 30px;
   }
 
   @media (max-width: 767px) {

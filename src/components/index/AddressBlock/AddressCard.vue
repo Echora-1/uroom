@@ -7,7 +7,9 @@
         <li v-for="(item, index) in content?.list" :key="index">{{ item }}</li>
       </ul>
       <div class="card__btns">
-        <base-button>забронировать</base-button>
+        <router-link :to="`${$route.path}/reservation`"
+          ><base-button>забронировать</base-button></router-link
+        >
         <base-button transparent>подробнее</base-button>
       </div>
     </div>

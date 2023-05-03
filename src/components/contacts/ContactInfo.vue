@@ -7,11 +7,11 @@
           <icon-address />
           {{ item }}
         </p>
-        <a href="tel:89616583202">
+        <a :href="content?.phoneLink">
           <icon-info-phone />
           {{ content?.phone }}</a
         >
-        <a href="mailto:  vlg@urooms.ru">
+        <a :href="content?.emailLink">
           <icon-email />
           {{ content?.email }}</a
         >

@@ -2,11 +2,11 @@
   <footer class="container footer">
     <div class="footer__wrap">
       <div class="footer__list">
-        <a href="">Об отеле </a>
-        <a href="">Бронирование</a>
+        <router-link :to="`/${url}#about`">Об отеле </router-link>
+        <router-link :to="`/${url}/reservation`">Бронирование</router-link>
         <a href="">Документы</a>
-        <a href="">Контакты</a>
-        <a href="">Обратная связь</a>
+        <router-link :to="`/${url}/contacts`">Контакты</router-link>
+        <router-link :to="`/${url}/feedback`">Обратная связь</router-link>
       </div>
     </div>
     <div class="footer__copir">
@@ -17,6 +17,44 @@
     </div>
   </footer>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      url: "",
+    };
+  },
+
+  created() {
+    this.setUrl();
+  },
+
+  computed: {
+    currentPath() {
+      return this.$route.fullPath;
+    },
+  },
+
+  watch: {
+    currentPath() {
+      this.setUrl();
+    },
+  },
+
+  methods: {
+    setUrl() {
+      const path = this.$route.fullPath;
+      const isMoscow = path.indexOf("moscow") !== -1;
+      if (isMoscow) {
+        this.url = "moscow";
+      } else {
+        this.url = "volgograd";
+      }
+    },
+  },
+};
+</script>
 
 <style lang="scss" scoped>
 .footer {
@@ -49,6 +87,11 @@
       line-height: 18px;
       text-align: center;
       letter-spacing: 0.12em;
+      transition: opacity 0.3s;
+
+      &:hover {
+        opacity: 0.5;
+      }
     }
   }
 
@@ -67,4 +110,3 @@
   }
 }
 </style>
-<script setup></script>
