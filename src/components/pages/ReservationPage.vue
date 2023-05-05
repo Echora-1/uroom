@@ -10,6 +10,11 @@ import ConnectBlock from "@/components/index/ConnectBlock.vue";
 
 export default {
   components: { ConnectBlock },
+  data() {
+    return {
+      rcKey: 1,
+    };
+  },
 
   computed: {
     currentPath() {
@@ -31,8 +36,10 @@ export default {
         window.RC_BOOKINGS_WIDGET.init("bd13394a7af04379f3fb92b106fafa50", {
           apartment_ids: [28570, 24411, 28571, 28573, 28575],
         });
+        console.log("Moscow");
       } else {
         window.RC_BOOKINGS_WIDGET.init("f3ed9e6371c1429587b9df14c1a637d5");
+        console.log("Volg");
       }
     },
   },
