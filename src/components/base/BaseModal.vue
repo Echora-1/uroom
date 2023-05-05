@@ -44,9 +44,9 @@ export default {
   left: 0;
   bottom: 0;
   right: 0;
-  background: rgba(222, 238, 251, 0.4);
+  background: rgba(0, 0, 0, 0.75);
   display: flex;
-  z-index: 100;
+  z-index: 10000;
 }
 .modal {
   top: 50%;

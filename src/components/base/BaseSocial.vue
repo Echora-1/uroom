@@ -3,10 +3,10 @@
     <a href="" target="_blank">
       <icon-face />
     </a>
-    <a href="https//t.me/Uroom_bot/" target="_blank">
+    <a href="https://t.me/Uroom_bot/" target="_blank">
       <icon-telegram />
     </a>
-    <a href="https://www.instagram.com/urooms.ru/">
+    <a href="https://www.instagram.com/urooms.ru/" target="_blank">
       <icon-inst />
     </a>
   </div>

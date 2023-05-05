@@ -21,7 +21,7 @@
         :to="`/${url}/reservation`"
         >Бронирование</router-link
       >
-      <a @click="closeMenu" href="">Документы</a>
+      <a @click="$emit('doc')">Документы</a>
       <router-link
         active-class="active-link"
         @click="closeMenu"
