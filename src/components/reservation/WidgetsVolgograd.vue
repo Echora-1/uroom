@@ -1,5 +1,7 @@
 <template>
-  <div id="rc-bookings-widget-root"></div>
+  <div>
+    <div id="rc-bookings-widget-root"></div>
+  </div>
 </template>
 <script>
 export default {

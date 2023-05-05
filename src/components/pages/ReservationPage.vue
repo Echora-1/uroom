@@ -1,7 +1,15 @@
 <template>
   <div class="reservation container">
-    <widgets-moscow v-if="isMoscow" />
-    <widgets-volgograd v-else />
+    <h1 class="reservation__title">
+      Бронирование <br />
+      (г. {{ isMoscow ? "Москва" : "Волгоград" }})
+    </h1>
+    <p class="reservation__time">
+      Время заезда - 14.00,<br />
+      время выезда - 12.00
+    </p>
+    <widgets-moscow class="wg" v-if="isMoscow" />
+    <widgets-volgograd class="wg" v-else />
     <connect-block class="reservation__connect" />
   </div>
 </template>
@@ -51,9 +59,69 @@ export default {
   width: 100%;
   align-items: center;
   flex-direction: column;
+  overflow: hidden;
+
+  @media (max-width: 1000px) {
+    overflow: visible;
+  }
+
+  &__title {
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 44px;
+    align-self: flex-start;
+    margin: 30px 0 17px;
+
+    br {
+      display: none;
+    }
+
+    @media (max-width: 1000px) {
+      text-align: start;
+
+      br {
+        display: block;
+      }
+    }
+  }
 
   &__connect {
     margin-top: 65px;
+  }
+
+  &__time {
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+    align-self: flex-start;
+
+    br {
+      display: none;
+    }
+
+    @media (max-width: 1000px) {
+      br {
+        display: block;
+      }
+    }
+  }
+}
+
+.wg {
+  min-height: 600px;
+
+  @media (max-width: 1000px) {
+    width: 100%;
+  }
+}
+</style>
+
+<style>
+#rc-bookings-widget-root *,
+#rc-demo-bookings-widget-root *,
+#rc-small-bookings-widget-root * {
+  @media (max-width: 1000px) {
+    max-width: 430px !important;
   }
 }
 </style>
