@@ -11,7 +11,7 @@
       <nav class="header__nav">
         <router-link :to="`/${url}/reservation`">
           <icon-reserve />
-          <span> резервация </span>
+          <span> Бронирование </span>
         </router-link>
         <a :href="phoneLink">
           <icon-phone />
