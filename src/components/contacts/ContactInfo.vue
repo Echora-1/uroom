@@ -26,7 +26,7 @@
           осуществляется <span>круглосуточно!</span>
         </p>
       </div>
-      <a href="" class="base-link">Посмотреть лицензию</a>
+      <a @click="$emit('doc')" class="base-link">Посмотреть лицензию</a>
     </div>
   </div>
 </template>

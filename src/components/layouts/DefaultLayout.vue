@@ -12,8 +12,17 @@
     <a :href="whatLink" target="_blank" class="what">
       <icon-what />
     </a>
-    <base-modal :is-open="showDoc" @close="showDoc = false"> </base-modal>
-    <BaseFooter />
+    <base-modal :is-open="showDoc" @close="showDoc = false">
+      <img
+        @click="show = false"
+        class="image-doc"
+        src="@/assets/images/doc/doc@2x.png"
+        width="519"
+        height="745"
+        alt="doc"
+      />
+    </base-modal>
+    <BaseFooter @doc="showDoc = true" />
   </div>
 </template>
 
@@ -140,6 +149,19 @@ export default {
 
   &:hover {
     transform: scale(1.05);
+  }
+}
+
+.image-doc {
+  object-fit: contain;
+  max-width: 519px;
+  max-height: 745px;
+  width: 100%;
+  height: calc(100vh - 80px);
+
+  @media (max-width: 1000px) {
+    height: calc(100vh - 40px);
+    width: calc(100vw - 60px);
   }
 }
 </style>

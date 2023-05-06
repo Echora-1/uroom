@@ -1,17 +1,33 @@
 <template>
   <div>
-    <contact-info :content="content?.info" class="container contact" />
+    <contact-info
+      @doc="show = true"
+      :content="content?.info"
+      class="container contact"
+    />
     <maps-block class="container maps" :content="content?.maps" />
     <connect-block />
   </div>
+  <base-modal :is-open="show" @close="show = false">
+    <img
+      @click="show = false"
+      class="image-doc"
+      src="@/assets/images/doc/doc@2x.png"
+      width="519"
+      height="745"
+      alt="doc"
+    />
+  </base-modal>
 </template>
 <script>
 import ContactInfo from "@/components/contacts/ContactInfo.vue";
 import MapsBlock from "@/components/contacts/MapsBlock.vue";
 import ConnectBlock from "@/components/index/ConnectBlock.vue";
 import contacts from "@/assets/data/contacts.json";
+import BaseModal from "@/components/base/BaseModal.vue";
 export default {
   components: {
+    BaseModal,
     ConnectBlock,
     MapsBlock,
     ContactInfo,
@@ -20,6 +36,7 @@ export default {
   data() {
     return {
       content: {},
+      show: false,
     };
   },
 
@@ -78,5 +95,18 @@ export default {
 .maps {
   position: relative;
   z-index: 1;
+}
+
+.image-doc {
+  object-fit: contain;
+  max-width: 519px;
+  max-height: 745px;
+  width: 100%;
+  height: calc(100vh - 80px);
+
+  @media (max-width: 1000px) {
+    height: calc(100vh - 40px);
+    width: calc(100vw - 60px);
+  }
 }
 </style>

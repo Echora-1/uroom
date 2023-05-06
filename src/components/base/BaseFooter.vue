@@ -4,7 +4,7 @@
       <div class="footer__list">
         <router-link :to="`/${url}#about`">Об отеле </router-link>
         <router-link :to="`/${url}/reservation`">Бронирование</router-link>
-        <a href="">Документы</a>
+        <a @click="$emit('doc')">Документы</a>
         <router-link :to="`/${url}/contacts`">Контакты</router-link>
         <router-link :to="`/${url}/feedback`">Обратная связь</router-link>
       </div>
