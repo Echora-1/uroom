@@ -20,7 +20,7 @@ import IconTelegram from "@/components/icon/IconTelegram.vue";
 <style lang="scss" scoped>
 .social {
   display: flex;
-
+  color: rgb(var(--mainColor));
   a {
     display: flex;
     align-items: center;

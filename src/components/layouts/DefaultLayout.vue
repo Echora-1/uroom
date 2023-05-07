@@ -12,6 +12,9 @@
     <a :href="whatLink" target="_blank" class="what">
       <icon-what />
     </a>
+    <a href="https://t.me/Uroom_bot/" target="_blank" class="telegram">
+      <icon-telegram />
+    </a>
     <base-modal :is-open="showDoc" @close="showDoc = false">
       <img
         @click="show = false"
@@ -32,9 +35,17 @@ import BaseMenu from "@/components/base/BaseMenu.vue";
 import BaseFooter from "@/components/base/BaseFooter.vue";
 import IconWhat from "@/components/icon/IconWhat.vue";
 import BaseModal from "@/components/base/BaseModal.vue";
+import IconTelegram from "@/components/icon/IconTelegram.vue";
 
 export default {
-  components: { BaseModal, IconWhat, BaseFooter, BaseMenu, BaseHeader },
+  components: {
+    IconTelegram,
+    BaseModal,
+    IconWhat,
+    BaseFooter,
+    BaseMenu,
+    BaseHeader,
+  },
   data() {
     return {
       showMenu: false,
@@ -125,7 +136,38 @@ export default {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background: rgb(var(--mainColor));
+  background: #23d366;
+  position: fixed;
+  right: 130px;
+  bottom: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s;
+  z-index: 1000;
+
+  @media (max-width: 1000px) {
+    width: 40px;
+    height: 40px;
+    right: 60px;
+    bottom: 30px;
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.telegram {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #3290ec;
   position: fixed;
   right: 60px;
   bottom: 50px;
@@ -134,6 +176,7 @@ export default {
   align-items: center;
   transition: all 0.3s;
   z-index: 1000;
+  color: white;
 
   @media (max-width: 1000px) {
     width: 40px;
