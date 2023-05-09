@@ -1,17 +1,17 @@
 <template>
   <div class="card">
     <h2>Как проехать {{ content?.title }}:</h2>
-    <img
-      :src="require(`../../assets/images/maps/${content?.img}.png`)"
-      width="936"
-      height="400"
-      alt="map"
-    />
+    <div class="card_map-wrap">
+      <block-map class="card__map" :coordinates="content?.coord" />
+    </div>
   </div>
 </template>
 
 <script>
+import BlockMap from "@/components/common/BlockMap.vue";
+
 export default {
+  components: { BlockMap },
   props: {
     content: {
       type: Object,
@@ -34,9 +34,12 @@ export default {
     }
   }
 
-  img {
-    object-fit: cover;
+  &__map-wrap {
     width: 100%;
+  }
+
+  &__map {
+    height: 400px;
   }
 }
 </style>

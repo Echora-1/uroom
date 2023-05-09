@@ -41,13 +41,13 @@
           name="email"
         />
       </div>
-      <div class="form__item">
+      <!--      <div class="form__item">
         <p class="form__label">Прикрепить файл / Attach file:</p>
         <div class="form__file">
           <base-file @file-updated="captureFile($event)" />
           <p>{{ this.form.file ? this.form.file.name : "Файл не выбран" }}</p>
         </div>
-      </div>
+      </div>-->
       <div class="form__item">
         <p class="form__label">Сообщение / Message:</p>
 
@@ -85,12 +85,8 @@
   </div>
 </template>
 <script>
-/*
-import emailjs from "@emailjs/browser";
-*/
 import emailjs from "emailjs-com";
 import BaseInput from "@/components/base/BaseInput.vue";
-import BaseFile from "@/components/base/BaseFile.vue";
 import BaseCheckbox from "@/components/base/BaseCheckbox.vue";
 import BaseButton from "@/components/base/BaseButton.vue";
 import BaseLoader from "@/components/base/BaseLoader.vue";
@@ -102,7 +98,6 @@ export default {
     BaseLoader,
     BaseButton,
     BaseCheckbox,
-    BaseFile,
     BaseInput,
   },
   props: {
@@ -126,77 +121,34 @@ export default {
   },
 
   methods: {
-    captureFile($event) {
+    /*    captureFile($event) {
       console.log($event);
       this.form.file = $event;
-    },
+    },*/
 
     submit() {
-      this.loading = true;
-      emailjs
-        .sendForm(
-          "service_zbs4hxe",
-          "template_bv9q4y1",
-          this.$refs.formFeedback,
-          "LrROcGdRYRSBecA74"
-        )
-        .then(
-          (result) => {
-            console.log("SUCCESS!", result.text);
-            this.loading = false;
-            this.success = true;
-          },
-          (error) => {
-            console.log("FAILED...", error.text);
-            this.loading = false;
-          }
-        );
-    },
-
-    /*async sendEmailWithAttachment() {
-      // Создаем объект сообщения
-      const message = {
-        name: this.form.name,
-        phone: this.form.phone,
-        email: this.form.email,
-        message: this.form.message,
-
-        // создаем объект вложения файла
-        attachment: {
-          // имя файла, которое будет отображаться у получателя
-          name: this.form.file.name,
-          // сам файл, который мы отправляем
-          data: await this.getFile(),
-        },
-      };
-      // Отправляем сообщение через EmailJS
-      emailjs.send(
-        "service_zbs4hxe",
-        "template_bv9q4y1",
-        message,
-        "LrROcGdRYRSBecA74"
-      );
-    },
-
-    toBase64(file) {
-      return new Promise((resolve, reject) => {
-        const reader = new FileReader();
-        reader.readAsDataURL(file);
-        reader.onload = () => resolve(reader.result);
-        reader.onerror = reject;
-      });
-    },
-
-    async getFile() {
-      const file = this.form.file;
-      try {
-        const result = await this.toBase64(file);
-        return result;
-      } catch (error) {
-        console.error(error);
-        return;
+      if (this.form.email.length && this.form.name.length) {
+        this.loading = true;
+        emailjs
+          .sendForm(
+            "service_zbs4hxe",
+            "template_bv9q4y1",
+            this.$refs.formFeedback,
+            "LrROcGdRYRSBecA74"
+          )
+          .then(
+            (result) => {
+              console.log("SUCCESS!", result.text);
+              this.loading = false;
+              this.success = true;
+            },
+            (error) => {
+              console.log("FAILED...", error.text);
+              this.loading = false;
+            }
+          );
       }
-    },*/
+    },
   },
 };
 </script>

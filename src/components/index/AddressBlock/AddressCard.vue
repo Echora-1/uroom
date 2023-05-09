@@ -13,22 +13,18 @@
         <base-button transparent>подробнее</base-button>
       </div>
     </div>
-    <div class="card__map">
-      <img
-        :src="require(`../../../assets/images/address/${content?.map}.png`)"
-        width="404"
-        height="404"
-        alt="map"
-      />
+    <div class="card__map-wrap">
+      <block-map :coordinates="content?.coord" class="card__map" />
     </div>
   </div>
 </template>
 
 <script>
 import BaseButton from "@/components/base/BaseButton.vue";
+import BlockMap from "@/components/common/BlockMap.vue";
 
 export default {
-  components: { BaseButton },
+  components: { BlockMap, BaseButton },
 
   props: {
     content: {
@@ -142,17 +138,20 @@ export default {
     }
   }
 
-  &__map {
-    img {
-      object-fit: contain;
+  &__map-wrap {
+    width: 100%;
+    @media (max-width: 1000px) {
+      margin-bottom: 37px;
+    }
+  }
 
-      @media (max-width: 1000px) {
-        max-width: 342px;
-        max-height: 342px;
-        width: 100%;
-        object-fit: cover;
-        margin-bottom: 37px;
-      }
+  &__map {
+    max-width: 404px;
+    height: 404px;
+
+    @media (max-width: 1000px) {
+      max-width: 342px;
+      height: 342px;
     }
   }
 }

@@ -149,7 +149,7 @@ export default {
   @media (max-width: 1000px) {
     width: 40px;
     height: 40px;
-    right: 60px;
+    right: 65px;
     bottom: 30px;
 
     svg {

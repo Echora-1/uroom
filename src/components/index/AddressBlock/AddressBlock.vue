@@ -14,7 +14,6 @@
 
 <script>
 import AddressCard from "@/components/index/AddressBlock/AddressCard.vue";
-
 export default {
   components: { AddressCard },
   props: {
