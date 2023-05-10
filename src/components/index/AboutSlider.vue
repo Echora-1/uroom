@@ -15,28 +15,46 @@
       }"
     >
       <swiper-slide>
-        <img
-          src="@/assets/images/about/about1@2x.png"
-          width="363"
-          height="255"
-          alt=""
-        />
+        <picture>
+          <source
+            type="image/webp"
+            srcset="@/assets/images/about/about1@2x.webp"
+          />
+          <img
+            src="@/assets/images/about/about1@2x.png"
+            width="363"
+            height="255"
+            alt="hotel"
+          />
+        </picture>
       </swiper-slide>
       <swiper-slide>
-        <img
-          src="@/assets/images/about/about2@2x.png"
-          width="363"
-          height="255"
-          alt=""
-        />
+        <picture>
+          <source
+            type="image/webp"
+            srcset="@/assets/images/about/about2@2x.webp"
+          />
+          <img
+            src="@/assets/images/about/about2@2x.png"
+            width="363"
+            height="255"
+            alt="hotel"
+          />
+        </picture>
       </swiper-slide>
       <swiper-slide>
-        <img
-          src="@/assets/images/about/about3@2x.png"
-          width="363"
-          height="255"
-          alt=""
-        />
+        <picture>
+          <source
+            type="image/webp"
+            srcset="@/assets/images/about/about3@2x.webp"
+          />
+          <img
+            src="@/assets/images/about/about3@2x.png"
+            width="363"
+            height="255"
+            alt="hotel"
+          />
+        </picture>
       </swiper-slide>
     </swiper>
     <swiper
@@ -54,28 +72,46 @@
       }"
     >
       <swiper-slide>
-        <img
-          src="@/assets/images/about/about4@2x.png"
-          width="363"
-          height="255"
-          alt=""
-        />
+        <picture>
+          <source
+            type="image/webp"
+            srcset="@/assets/images/about/about4@2x.webp"
+          />
+          <img
+            src="@/assets/images/about/about4@2x.png"
+            width="363"
+            height="255"
+            alt="hotel"
+          />
+        </picture>
       </swiper-slide>
       <swiper-slide>
-        <img
-          src="@/assets/images/about/about5@2x.png"
-          width="363"
-          height="255"
-          alt=""
-        />
+        <picture>
+          <source
+            type="image/webp"
+            srcset="@/assets/images/about/about5@2x.webp"
+          />
+          <img
+            src="@/assets/images/about/about5@2x.png"
+            width="363"
+            height="255"
+            alt="hotel"
+          />
+        </picture>
       </swiper-slide>
       <swiper-slide>
-        <img
-          src="@/assets/images/about/about6@2x.png"
-          width="363"
-          height="255"
-          alt=""
-        />
+        <picture>
+          <source
+            type="image/webp"
+            srcset="@/assets/images/about/about6@2x.webp"
+          />
+          <img
+            src="@/assets/images/about/about6@2x.png"
+            width="363"
+            height="255"
+            alt="hotel"
+          />
+        </picture>
       </swiper-slide>
     </swiper>
   </div>

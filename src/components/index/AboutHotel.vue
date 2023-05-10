@@ -1,46 +1,106 @@
 <template>
   <section class="about container">
     <div class="about__left" v-if="city === 'moscow' && !isMobile()">
-      <img
-        src="../../assets/images/about/about1@2x.png"
-        alt="hotel"
-        width="268"
-        height="188"
-      />
-      <img
-        src="../../assets/images/about/about2@2x.png"
-        alt="hotel"
-        width="335"
-        height="236"
-      />
-      <img
-        src="../../assets/images/about/about3@2x.png"
-        alt="hotel"
-        width="253"
-        height="178"
-      />
+      <picture>
+        <source
+          type="image/webp"
+          srcset="
+            ../../assets/images/about/about1.webp    1x,
+            ../../assets/images/about/about1@2x.webp 2x
+          "
+        />
+        <img
+          src="../../assets/images/about/about1.png"
+          width="268"
+          height="188"
+          alt="hotel"
+          srcset="../../assets/images/about/about1@2x.png 2x"
+        />
+      </picture>
+      <picture>
+        <source
+          type="image/webp"
+          srcset="
+            ../../assets/images/about/about2.webp    1x,
+            ../../assets/images/about/about2@2x.webp 2x
+          "
+        />
+        <img
+          src="../../assets/images/about/about2.png"
+          width="335"
+          height="236"
+          alt="hotel"
+          srcset="../../assets/images/about/about2@2x.png 2x"
+        />
+      </picture>
+      <picture>
+        <source
+          type="image/webp"
+          srcset="
+            ../../assets/images/about/about3.webp    1x,
+            ../../assets/images/about/about3@2x.webp 2x
+          "
+        />
+        <img
+          src="../../assets/images/about/about3.png"
+          width="253"
+          height="178"
+          alt="hotel"
+          srcset="../../assets/images/about/about3@2x.png 2x"
+        />
+      </picture>
     </div>
     <div class="about__left" v-if="city !== 'moscow' && !isMobile()">
-      <img
-        src="../../assets/images/about/about4@2x.png"
-        alt="hotel"
-        width="268"
-        height="188"
-      />
-      <img
-        src="../../assets/images/about/about5@2x.png"
-        alt="hotel"
-        width="335"
-        height="236"
-      />
-      <img
-        src="../../assets/images/about/about6@2x.png"
-        alt="hotel"
-        width="253"
-        height="178"
-      />
+      <picture>
+        <source
+          type="image/webp"
+          srcset="
+            ../../assets/images/about/about4.webp    1x,
+            ../../assets/images/about/about4@2x.webp 2x
+          "
+        />
+        <img
+          src="../../assets/images/about/about4.png"
+          width="268"
+          height="188"
+          alt="hotel"
+          srcset="../../assets/images/about/about4@2x.png 2x"
+        />
+      </picture>
+      <picture>
+        <source
+          type="image/webp"
+          srcset="
+            ../../assets/images/about/about5.webp    1x,
+            ../../assets/images/about/about5@2x.webp 2x
+          "
+        />
+        <img
+          src="../../assets/images/about/about5.png"
+          width="335"
+          height="236"
+          alt="hotel"
+          srcset="../../assets/images/about/about5@2x.png 2x"
+        />
+      </picture>
+      <picture>
+        <source
+          type="image/webp"
+          srcset="
+            ../../assets/images/about/about6.webp    1x,
+            ../../assets/images/about/about6@2x.webp 2x
+          "
+        />
+        <img
+          src="../../assets/images/about/about6.png"
+          width="253"
+          height="178"
+          alt="hotel"
+          srcset="../../assets/images/about/about6@2x.png 2x"
+        />
+      </picture>
     </div>
-    <about-slider v-if="isMobile()" class="about__slider" />
+    <about-slider v-if="isMobile()" :city="city" class="about__slider" />
     <div class="about__right">
       <h2 class="base-title">Об отеле</h2>
       <p v-for="(item, index) in text" :key="index">
@@ -107,7 +167,9 @@ export default {
 
     img {
       object-fit: contain;
+    }
 
+    picture {
       &:nth-child(1) {
         position: relative;
         z-index: 2;

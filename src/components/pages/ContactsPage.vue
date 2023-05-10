@@ -10,12 +10,23 @@
   </div>
   <base-modal :is-open="show" @close="show = false">
     <img
+      v-if="url === 'moscow'"
       @click="show = false"
       class="image-doc"
-      src="@/assets/images/doc/doc@2x.png"
+      src="@/assets/images/doc/docMsk.jpg"
       width="519"
       height="745"
       alt="doc"
+    />
+    <img
+      v-else
+      @click="show = false"
+      class="image-doc"
+      src="@/assets/images/doc/doc.png"
+      width="519"
+      height="745"
+      alt="doc"
+      srcset="@/assets/images/doc/doc@2x.png 2x"
     />
   </base-modal>
 </template>
@@ -37,6 +48,7 @@ export default {
     return {
       content: {},
       show: false,
+      url: "moscow",
     };
   },
 
@@ -61,8 +73,10 @@ export default {
       const path = this.$route.fullPath;
       const isMoscow = path.indexOf("moscow") !== -1;
       if (isMoscow) {
+        this.url = "moscow";
         this.content = contacts["moscow"];
       } else {
+        this.url = "volgograd";
         this.content = contacts["volgograd"];
       }
     },

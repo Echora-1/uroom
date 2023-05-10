@@ -17,12 +17,23 @@
     </a>
     <base-modal :is-open="showDoc" @close="showDoc = false">
       <img
+        v-if="url === 'moscow'"
         @click="show = false"
         class="image-doc"
-        src="@/assets/images/doc/doc@2x.png"
+        src="@/assets/images/doc/docMsk.jpg"
         width="519"
         height="745"
         alt="doc"
+      />
+      <img
+        v-else
+        @click="show = false"
+        class="image-doc"
+        src="@/assets/images/doc/doc.png"
+        width="519"
+        height="745"
+        alt="doc"
+        srcset="@/assets/images/doc/doc@2x.png 2x"
       />
     </base-modal>
     <BaseFooter @doc="showDoc = true" />

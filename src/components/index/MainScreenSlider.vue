@@ -15,28 +15,61 @@
       }"
     >
       <swiper-slide>
-        <img
-          src="@/assets/images/mainSlide.png"
-          width="505"
-          height="354"
-          alt=""
-        />
+        <picture>
+          <source
+            type="image/webp"
+            srcset="
+              ../../assets/images/mainSlide.webp    1x,
+              ../../assets/images/mainSlide@2x.webp 2x
+            "
+          />
+          <img
+            src="../../assets/images/mainSlide.png"
+            width="505"
+            height="354"
+            alt=""
+            srcset="../../assets/images/mainSlide@2x.png 2x"
+            class="main-screen__img"
+          />
+        </picture>
       </swiper-slide>
       <swiper-slide>
-        <img
-          src="@/assets/images/mainSlide.png"
-          width="505"
-          height="354"
-          alt=""
-        />
+        <picture>
+          <source
+            type="image/webp"
+            srcset="
+              ../../assets/images/mainSlide.webp    1x,
+              ../../assets/images/mainSlide@2x.webp 2x
+            "
+          />
+          <img
+            src="../../assets/images/mainSlide.png"
+            width="505"
+            height="354"
+            alt=""
+            srcset="../../assets/images/mainSlide@2x.png 2x"
+            class="main-screen__img"
+          />
+        </picture>
       </swiper-slide>
       <swiper-slide>
-        <img
-          src="@/assets/images/mainSlide.png"
-          width="505"
-          height="354"
-          alt=""
-        />
+        <picture>
+          <source
+            type="image/webp"
+            srcset="
+              ../../assets/images/mainSlide.webp    1x,
+              ../../assets/images/mainSlide@2x.webp 2x
+            "
+          />
+          <img
+            src="../../assets/images/mainSlide.png"
+            width="505"
+            height="354"
+            alt=""
+            srcset="../../assets/images/mainSlide@2x.png 2x"
+            class="main-screen__img"
+          />
+        </picture>
       </swiper-slide>
     </swiper>
     <swiper
@@ -54,28 +87,61 @@
       }"
     >
       <swiper-slide>
-        <img
-          src="@/assets/images/mainSlide2.png"
-          width="416"
-          height="355"
-          alt=""
-        />
+        <picture>
+          <source
+            type="image/webp"
+            srcset="
+              ../../assets/images/mainSlide2.webp    1x,
+              ../../assets/images/mainSlide2@2x.webp 2x
+            "
+          />
+          <img
+            src="../../assets/images/mainSlide2.png"
+            width="416"
+            height="355"
+            alt=""
+            srcset="../../assets/images/mainSlide2@2x.png 2x"
+            class="main-screen__img"
+          />
+        </picture>
       </swiper-slide>
       <swiper-slide>
-        <img
-          src="@/assets/images/mainSlide2.png"
-          width="416"
-          height="355"
-          alt=""
-        />
+        <picture>
+          <source
+            type="image/webp"
+            srcset="
+              ../../assets/images/mainSlide2.webp    1x,
+              ../../assets/images/mainSlide2@2x.webp 2x
+            "
+          />
+          <img
+            src="../../assets/images/mainSlide2.png"
+            width="416"
+            height="355"
+            alt=""
+            srcset="../../assets/images/mainSlide2@2x.png 2x"
+            class="main-screen__img"
+          />
+        </picture>
       </swiper-slide>
       <swiper-slide>
-        <img
-          src="@/assets/images/mainSlide2.png"
-          width="416"
-          height="355"
-          alt=""
-        />
+        <picture>
+          <source
+            type="image/webp"
+            srcset="
+              ../../assets/images/mainSlide2.webp    1x,
+              ../../assets/images/mainSlide2@2x.webp 2x
+            "
+          />
+          <img
+            src="../../assets/images/mainSlide2.png"
+            width="416"
+            height="355"
+            alt=""
+            srcset="../../assets/images/mainSlide2@2x.png 2x"
+            class="main-screen__img"
+          />
+        </picture>
       </swiper-slide>
     </swiper>
   </div>
