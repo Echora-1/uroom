@@ -2,7 +2,7 @@
   font-family: "Century Gothic";
   font-style: normal;
   font-weight: 400;
-  font-display: auto;
+  font-display: swap;
   src: local("Century Gothic"), url("@/assets/fonts/CenturyGothicMedium.ttf") format("truetype");
 }
 
@@ -10,7 +10,7 @@
   font-family: "Century Gothic";
   font-style: normal;
   font-weight: 700;
-  font-display: auto;
+  font-display: swap;
   src: local("Century Gothic"), url("@/assets/fonts/CenturyGothicSemiBold.ttf") format("truetype");
 }
 
@@ -18,7 +18,7 @@
   font-family: "Futura PT";
   font-style: normal;
   font-weight: 400;
-  font-display: auto;
+  font-display: swap;
   src: local("Futura PT"), url("@/assets/fonts/FuturaPTMedium.ttf") format("truetype");
 }
 

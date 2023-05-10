@@ -5,6 +5,7 @@
     :controls="[]"
     :coordinates="coordinates"
     :zoom="13"
+    :style="mapOptions"
   >
     <YandexMarker
       markerId="123"
@@ -49,6 +50,17 @@ export default {
             stylers: [{ hue: "#000000" }, { saturation: -100 }],
           },
         ],
+      },
+      mapStyle: {
+        // Указываем стиль отображения карты
+        style: "dark#gray",
+        // Задаем опции стиля
+        options: {
+          // Устанавливаем яркость карты
+          brightness: -20,
+          // Устанавливаем насыщенность карты
+          saturation: -100,
+        },
       },
     };
   },
