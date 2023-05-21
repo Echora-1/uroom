@@ -1,90 +1,93 @@
 <template>
-  <header class="header">
+  <header :class="['header', { 'header--scroll': scroll }]">
     <div class="container header__container">
-      <div class="header__logo-wrap">
-        <router-link :to="`/${url}`" class="header__logo">
-          <icon-logo class="header__logo-desc" />
-          <icon-mb-logo class="header__logo-mb" />
-        </router-link>
-        <city-switcher class="header__switcher" />
-      </div>
-      <nav class="header__nav">
-        <router-link :to="`/${url}/reservation`">
-          <icon-reserve />
-          <span> Бронирование </span>
-        </router-link>
-        <a :href="phoneLink">
-          <icon-phone />
-          <span>{{ phoneView }}</span>
-        </a>
+      <nav class="header__nav-list">
+        <router-link to="">О компании</router-link>
+        <router-link to="">Производство</router-link>
+        <router-link to="">Доставка и оплата</router-link>
+        <router-link to="">Новости</router-link>
+        <router-link to="">Магазин</router-link>
+        <router-link to="">Контакты</router-link>
       </nav>
-      <btn-menu @click="openMenu" />
+    </div>
+    <div class="header__main-wrap">
+      <div class="header__main container header__container">
+        <div class="header__info-list">
+          <a href="" class="header__info-item">
+            <span>Звоните нам!</span><br />
+            +7 (925) 43-77-300
+          </a>
+          <p class="header__info-item">
+            <span>понедельник - суббота</span><br />
+            с 8.00 до 21.00
+          </p>
+        </div>
+        <base-logo class="header__logo" />
+        <div class="header__connect-list">
+          <theme-switcher class="header__connect-item" />
+          <a href="" class="header__connect-item">
+            <icon-phone />
+          </a>
+          <a href="" class="header__connect-item header__connect-item--telega">
+            <icon-telega />
+          </a>
+          <base-button class="header__btn">
+            <icon-call />
+            <span
+              >Вызвать <br />
+              замерщика</span
+            ></base-button
+          >
+        </div>
+      </div>
+      <div class="header__footer container header__container">
+        <a href="">Перегородки в квартиру Лофт</a>
+        <span>|</span>
+        <a href="">Перегородки Лофт для бизнеса</a>
+        <span>|</span>
+        <a href="">Лофт перегородки для душевых</a>
+        <span>|</span>
+        <a href="">Остекленение лестниц</a>
+        <span>|</span>
+        <a href="">Цельностеклянные конструкции</a>
+      </div>
     </div>
   </header>
 </template>
 <script>
+import BaseLogo from "@/components/base/BaseLogo.vue";
 import IconPhone from "@/components/icon/IconPhone.vue";
-import IconLogo from "@/components/icon/IconLogo.vue";
-import CitySwitcher from "@/components/common/CitySwitcher.vue";
-import IconReserve from "@/components/icon/IconReserve.vue";
-import BtnMenu from "@/components/common/BtnMenu.vue";
-import IconMbLogo from "@/components/icon/IconMbLogo.vue";
+import IconTelega from "@/components/icon/IconTelega.vue";
+import BaseButton from "@/components/base/BaseButton.vue";
+import IconCall from "@/components/icon/IconCall.vue";
+import ThemeSwitcher from "@/components/common/ThemeSwitcher.vue";
 
 export default {
   components: {
-    IconMbLogo,
-    BtnMenu,
-    IconReserve,
-    CitySwitcher,
-    IconLogo,
+    ThemeSwitcher,
+    IconCall,
+    BaseButton,
+    IconTelega,
     IconPhone,
+    BaseLogo,
   },
 
   data() {
     return {
-      showMenu: false,
-      url: "",
+      scroll: false,
     };
   },
 
-  created() {
-    this.setUrl();
-  },
-
-  computed: {
-    currentPath() {
-      return this.$route.fullPath;
-    },
-
-    phoneLink() {
-      return this.url === "moscow" ? "tel:89777973623" : "tel:89616583202";
-    },
-
-    phoneView() {
-      return this.url === "moscow"
-        ? "+7 (977) 797 36 23"
-        : "+7 (961) 658 32 02";
-    },
-  },
-
-  watch: {
-    currentPath() {
-      this.setUrl();
-    },
+  mounted() {
+    window.addEventListener("scroll", this.scrollHeader);
   },
 
   methods: {
-    openMenu() {
-      this.$emit("open-menu");
-    },
-
-    setUrl() {
-      const path = this.$route.fullPath;
-      const isMoscow = path.indexOf("moscow") !== -1;
-      if (isMoscow) {
-        this.url = "moscow";
+    scrollHeader() {
+      if (window.scrollY >= 65) {
+        this.scroll = true;
       } else {
-        this.url = "volgograd";
+        this.scroll = false;
       }
     },
   },
@@ -93,21 +96,58 @@ export default {
 
 <style lang="scss" scoped>
 .header {
-  display: flex;
   align-items: center;
-  min-height: 55px;
   width: 100%;
-  padding: 44px 0;
+  background: rgb(var(--bg));
+  z-index: 2;
+  position: fixed;
+  top: 65px;
+  left: 0;
+  right: 0;
+  transition: all 0.3s;
+
+  &--scroll {
+    top: -40px;
+
+    img {
+      width: 140px;
+      height: 44px;
+    }
+
+    .header__info-item {
+      font-size: 16px;
+
+      span {
+        font-size: 10px;
+      }
+    }
+
+    .header__btn {
+      font-size: 9px;
+      line-height: 12px;
+
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    .header__footer {
+      padding: 8px 0;
+      a {
+        font-size: 12px;
+      }
+    }
+  }
 
   @media (max-width: 1000px) {
     padding: 30px 0;
   }
 
   &__container {
-    display: flex;
     align-items: center;
-    max-width: 1060px;
-    padding: 0 10px;
+    max-width: 1300px;
+    padding: 0;
 
     @media (max-width: 1000px) {
       max-width: 430px;
@@ -115,73 +155,105 @@ export default {
     }
   }
 
-  &__logo-wrap {
+  &__nav-list {
     display: flex;
     align-items: center;
-
-    svg {
-      margin-right: 55px;
-    }
-
-    @media (max-width: 1000px) {
-      margin-right: auto;
-    }
-  }
-
-  &__logo-mb {
-    display: none;
-
-    @media (max-width: 1000px) {
-      display: block;
-    }
-  }
-  &__logo-desc {
-    @media (max-width: 1000px) {
-      display: none;
-    }
-  }
-
-  &__switcher {
-    @media (max-width: 1000px) {
-      display: none;
-    }
-  }
-
-  &__nav {
-    display: flex;
-    align-items: center;
-    margin-left: auto;
-    margin-right: 43px;
-
-    @media (max-width: 1000px) {
-      display: none;
-    }
+    gap: 20px;
+    justify-content: space-between;
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
 
     a {
-      font-weight: 700;
+      font-weight: 500;
+      font-size: 13px;
+      line-height: 40px;
+    }
+  }
+
+  &__main-wrap {
+    background: rgb(var(--header));
+  }
+
+  &__main {
+    display: flex;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 0.5px solid rgb(var(--header-border));
+  }
+
+  &__logo {
+    margin: 0 auto;
+    transition: all 0.3s;
+  }
+
+  &__info-list {
+    display: flex;
+    width: calc(50% - 140px);
+  }
+
+  &__info-item {
+    margin: 0;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+
+    &:first-child {
+      margin-right: 35px;
+    }
+
+    span {
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 17px;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+    }
+  }
+
+  &__connect-list {
+    display: flex;
+    align-items: center;
+    width: calc(50% - 140px);
+    justify-content: flex-end;
+  }
+
+  &__connect-item {
+    display: flex;
+    margin-right: 20px;
+
+    &--telega {
+      margin-right: 0;
+    }
+  }
+
+  &__btn {
+    padding: 11px 15px;
+    text-align: start;
+    margin-left: 27px;
+
+    svg {
+      margin-right: 12px;
+    }
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    padding: 17px 0;
+    transition: all 0.3s;
+    a {
+      font-weight: 600;
       font-size: 13px;
       line-height: 18px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      display: flex;
-      align-items: center;
-      color: #000000;
-      transition: all 0.3s;
-      &:hover {
-        opacity: 0.7;
-      }
+    }
 
-      &:first-child {
-        margin-right: 57px;
-      }
-
-      &:last-child {
-        font-size: 15px;
-      }
-
-      svg {
-        margin-right: 8px;
-      }
+    span {
+      display: inline-block;
+      margin: 0 auto;
+      font-weight: 100;
+      text-align: center;
+      line-height: 19px;
     }
   }
 }

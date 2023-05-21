@@ -1,68 +1,46 @@
 <template>
-  <div>
-    <main-screen
-      :title="content?.mainScreen.title"
-      :city="currentPath"
-      class="main-screen"
-    />
-    <about-hotel :text="content?.about.text" :city="currentPath" />
-    <div id="about"></div>
-    <address-block :address="content?.address" />
-    <connect-block />
-  </div>
+  <div class="line line1"></div>
+  <div class="line line2"></div>
+  <div class="line"></div>
+  <div class="line line4"></div>
+  <div class="line line5"></div>
+  <mainscreen-wrap>
+    <main-screen />
+  </mainscreen-wrap>
+  <main-content-wrap>
+    <product-block />
+    <about-company />
+    <advantages-block />
+    <peculiarities-block />
+    <news-block />
+  </main-content-wrap>
 </template>
 
-<script>
-import MainScreen from "@/components/index/MainScreen.vue";
-import AboutHotel from "@/components/index/AboutHotel.vue";
-import AddressBlock from "@/components/index/AddressBlock/AddressBlock.vue";
-import ConnectBlock from "@/components/index/ConnectBlock.vue";
-import main from "@/assets/data/main.json";
-
-export default {
-  components: { ConnectBlock, AddressBlock, AboutHotel, MainScreen },
-  data() {
-    return {
-      content: [],
-    };
-  },
-  created() {
-    this.content = main[this.$route.path.split("/")[1]];
-  },
-
-  computed: {
-    currentPath() {
-      return this.$route.path.split("/")[1];
-    },
-  },
-
-  watch: {
-    currentPath() {
-      this.content = main[this.$route.path.split("/")[1]];
-    },
-  },
-};
-</script>
-
 <style lang="scss" scoped>
-.main-screen {
-  position: relative;
-  z-index: 1;
+.line1 {
+  left: 3%;
+}
 
-  &::before {
-    content: "";
-    position: absolute;
-    left: -483px;
-    bottom: -434px;
-    width: 874px;
-    height: 876px;
-    z-index: -1;
-    background: url("../../assets/images/decorMain.svg") no-repeat center;
+.line2 {
+  left: 25%;
+}
 
-    @media (max-width: 1000px) {
-      left: -442px;
-      bottom: -451px;
-    }
-  }
+.line4 {
+  left: 75%;
+}
+
+.line5 {
+  left: unset;
+  right: 3%;
 }
 </style>
+<script setup>
+import MainscreenWrap from "@/components/index/MainscreenWrap.vue";
+import MainContentWrap from "@/components/index/MainContentWrap.vue";
+import MainScreen from "@/components/index/MainScreen.vue";
+import ProductBlock from "@/components/index/ProductBlock.vue";
+import AboutCompany from "@/components/index/AboutCompany.vue";
+import AdvantagesBlock from "@/components/index/AdvantagesBlock.vue";
+import PeculiaritiesBlock from "@/components/index/PeculiaritiesBlock.vue";
+import NewsBlock from "@/components/index/NewsBlock.vue";
+</script>

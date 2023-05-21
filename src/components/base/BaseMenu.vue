@@ -2,7 +2,6 @@
   <div class="menu">
     <div class="menu__header">
       <a :href="phoneLink" class="menu__phone">
-        <icon-phone />
         <span>{{ phoneView }}</span>
       </a>
       <btn-menu open @click="closeMenu" />
@@ -34,7 +33,6 @@
         :to="`/${url}/feedback`"
         >Обратная связь</router-link
       >
-      <city-switcher class="menu__switcher" />
     </nav>
     <base-social class="menu__social" />
   </div>
@@ -42,14 +40,10 @@
 
 <script>
 import BtnMenu from "@/components/common/BtnMenu.vue";
-import CitySwitcher from "@/components/common/CitySwitcher.vue";
-import IconPhone from "@/components/icon/IconPhone.vue";
 import BaseSocial from "@/components/base/BaseSocial.vue";
 export default {
   components: {
     BaseSocial,
-    IconPhone,
-    CitySwitcher,
     BtnMenu,
   },
 

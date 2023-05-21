@@ -1,114 +1,47 @@
 <template>
-  <section class="main-screen container">
-    <div class="main-screen__left">
-      <h1>
-        ваш
-        <br />
-        апарт-отель <br />
-        <icon-pin />
-        <span>в {{ title }}</span>
-      </h1>
-      <router-link :to="`${$route.path}/reservation`">
-        <base-button>забронировать</base-button>
-      </router-link>
-    </div>
-    <div class="main-screen__right">
-      <main-screen-slider :city="city" />
-    </div>
-  </section>
+  <div class="main-screen">
+    <rain-img class="rain" />
+    <h1>
+      Стеклянные Перегородки <br />
+      в стиле Лофт, под ключ
+    </h1>
+    <p>В Москве и Московской области</p>
+    <base-button border>Рассчитать стоимость</base-button>
+  </div>
 </template>
+<script setup>
+import BaseButton from "@/components/base/BaseButton.vue";
+import RainImg from "@/components/common/RainImg.vue";
+</script>
 
 <style lang="scss" scoped>
-.container {
-  @media (max-width: 1000px) {
-    padding: 0 10px;
-  }
+.rain {
+  right: 0;
+  bottom: -136px;
+  width: 234px;
+  height: 442px;
 }
 
 .main-screen {
+  text-align: center;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  padding-top: 65px;
-  padding-bottom: 180px;
+  padding: 210px 0 217px;
 
-  @media (max-width: 1000px) {
-    padding-top: 30px;
-    padding-bottom: 156px;
-    flex-direction: column-reverse;
+  h1 {
+    font-family: "Halvar Breitschrift", sans-serif;
+    font-size: 52px;
+    line-height: 63px;
+    letter-spacing: 2.6px;
+    text-transform: uppercase;
+    margin: 0 0 23px;
   }
 
-  &__left {
-    @media (min-width: 1001px) {
-      margin-top: 5px;
-      margin-left: -10px;
-    }
-
-    h1 {
-      font-family: "Futura PT", sans-serif;
-      font-style: normal;
-      font-weight: 400;
-      font-size: 63px;
-      line-height: 115.7%;
-      text-transform: uppercase;
-      margin: 0 0 50px;
-
-      span {
-        color: rgb(var(--mainColor));
-      }
-
-      svg {
-        margin-right: 24px;
-      }
-
-      @media (max-width: 1000px) {
-        font-size: 54px;
-        text-align: center;
-        line-height: 69px;
-        margin: 50px 0 42px;
-
-        br {
-          display: none;
-        }
-
-        svg {
-          display: none;
-        }
-      }
-    }
-
-    button {
-      min-width: 180px;
-
-      @media (max-width: 1000px) {
-        margin: 0 auto;
-        min-width: 364px;
-      }
-    }
-  }
-
-  &__right {
-    height: 355px;
-    margin-left: auto;
+  p {
+    margin: 0 0 51px;
+    font-size: 25px;
+    line-height: 38px;
   }
 }
 </style>
-<script>
-import IconPin from "@/components/icon/IconPin.vue";
-import BaseButton from "@/components/base/BaseButton.vue";
-import MainScreenSlider from "@/components/index/MainScreenSlider.vue";
-
-export default {
-  components: { IconPin, BaseButton, MainScreenSlider },
-
-  props: {
-    title: {
-      type: String,
-      default: "",
-    },
-    city: {
-      type: String,
-      default: "moscow",
-    },
-  },
-};
-</script>

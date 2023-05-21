@@ -1,21 +1,10 @@
 <template>
   <div class="social">
-    <a href="" target="_blank">
-      <icon-face />
-    </a>
-    <a href="https://t.me/Uroom_bot/" target="_blank">
-      <icon-telegram />
-    </a>
-    <a href="https://www.instagram.com/urooms.ru/" target="_blank">
-      <icon-inst />
-    </a>
+    <a href="" target="_blank"> </a>
+    <a href="https://t.me/Uroom_bot/" target="_blank"> </a>
+    <a href="https://www.instagram.com/urooms.ru/" target="_blank"> </a>
   </div>
 </template>
-<script setup>
-import IconFace from "@/components/icon/IconFace.vue";
-import IconInst from "@/components/icon/IconInst.vue";
-import IconTelegram from "@/components/icon/IconTelegram.vue";
-</script>
 
 <style lang="scss" scoped>
 .social {

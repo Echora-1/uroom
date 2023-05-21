@@ -1,115 +1,32 @@
 <template>
   <div class="layout">
-    <BaseHeader @open-menu="showMenu = true" />
-    <base-menu
-      :class="['layout__menu', { 'layout__menu--open': showMenu }]"
-      @close-menu="closeMenu"
-      @doc="showDoc = true"
-    />
-    <main class="layout__main" @click="closeMenu">
+    <BaseHeader />
+    <main class="layout__main">
       <slot />
     </main>
-    <a :href="whatLink" target="_blank" class="what">
-      <icon-what />
-    </a>
-    <a href="https://t.me/Uroom_bot/" target="_blank" class="telegram">
-      <icon-telegram />
-    </a>
-    <base-modal :is-open="showDoc" @close="showDoc = false">
-      <img
-        v-if="url === 'moscow'"
-        @click="show = false"
-        class="image-doc"
-        src="@/assets/images/doc/docMsk.jpg"
-        width="519"
-        height="745"
-        alt="doc"
-      />
-      <img
-        v-else
-        @click="show = false"
-        class="image-doc"
-        src="@/assets/images/doc/doc.png"
-        width="519"
-        height="745"
-        alt="doc"
-        srcset="@/assets/images/doc/doc@2x.png 2x"
-      />
-    </base-modal>
-    <BaseFooter @doc="showDoc = true" />
+    <a target="_blank" class="what"> </a>
+    <base-button @click="up" class="telegram"> <icon-up /></base-button>
+    <BaseFooter />
   </div>
 </template>
 
 <script>
 import BaseHeader from "@/components/base/BaseHeader.vue";
-import BaseMenu from "@/components/base/BaseMenu.vue";
 import BaseFooter from "@/components/base/BaseFooter.vue";
-import IconWhat from "@/components/icon/IconWhat.vue";
-import BaseModal from "@/components/base/BaseModal.vue";
-import IconTelegram from "@/components/icon/IconTelegram.vue";
+import BaseButton from "@/components/base/BaseButton.vue";
+import IconUp from "@/components/icon/IconUp.vue";
 
 export default {
   components: {
-    IconTelegram,
-    BaseModal,
-    IconWhat,
+    IconUp,
+    BaseButton,
     BaseFooter,
-    BaseMenu,
     BaseHeader,
-  },
-  data() {
-    return {
-      showMenu: false,
-      url: "",
-      showDoc: false,
-    };
-  },
-
-  watch: {
-    showMenu() {
-      if (this.showMenu) {
-        document.body.classList.add("openMenu");
-      } else {
-        document.body.classList.remove("openMenu");
-      }
-    },
-
-    currentPath() {
-      this.setUrl();
-    },
   },
 
   methods: {
-    closeMenu() {
-      if (this.showMenu) {
-        this.showMenu = false;
-      }
-    },
-
-    setUrl() {
-      const path = this.$route.fullPath;
-      const isMoscow = path.indexOf("moscow") !== -1;
-      if (isMoscow) {
-        this.url = "moscow";
-      } else {
-        this.url = "volgograd";
-      }
-    },
-  },
-
-  created() {
-    this.setUrl();
-  },
-
-  computed: {
-    currentPath() {
-      return this.$route.fullPath;
-    },
-
-    whatLink() {
-      return this.url === "moscow"
-        ? "https://wa.me/79777973623?text=Хочу%20забронировать%20номер!"
-        : "https://wa.me/79616583202?text=Хочу%20забронировать%20номер!";
+    up() {
+      window.scrollTo(0, 0);
     },
   },
 };
@@ -117,105 +34,79 @@ export default {
 
 <style lang="scss" scoped>
 .layout {
-  background: rgb(var(--bg));
-  width: calc(100% - 86px);
-  margin: 43px;
-  box-shadow: 0 15px 28px rgba(0, 0, 0, 0.15);
   position: relative;
   overflow: hidden;
+  width: 100%;
 
-  @media (max-width: 1000px) {
-    margin: 0;
-    width: 100%;
-    box-shadow: none;
-  }
+  &__main {
+    position: relative;
+    margin-top: 177px;
 
-  &__menu {
-    position: absolute;
-    top: 0;
-    right: 0;
-    transform: translateX(150%);
-    transition: all 0.3s;
-
-    &--open {
-      transform: translateX(0);
-    }
+    z-index: 1;
   }
 }
 
+.line {
+  height: 100%;
+  width: 0.5px;
+  background: gray;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  background: linear-gradient(
+    270deg,
+    rgba(201, 201, 201, 0.134974) 24.2%,
+    rgba(201, 201, 201, 0.0441321) 42.35%,
+    rgba(201, 201, 201, 0.2) 78.09%,
+    rgba(201, 201, 201, 0) 100%
+  );
+}
+
 .what {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background: #23d366;
+  width: 83px;
+  height: 83px;
+  background: #ffffff;
+  border-radius: 83.19px;
   position: fixed;
-  right: 130px;
-  bottom: 50px;
+  right: 25px;
+  bottom: 150px;
   display: flex;
   justify-content: center;
   align-items: center;
   transition: all 0.3s;
   z-index: 1000;
-
-  @media (max-width: 1000px) {
-    width: 40px;
-    height: 40px;
-    right: 65px;
-    bottom: 30px;
-
-    svg {
-      width: 20px;
-      height: 20px;
-    }
-  }
-
+  animation: 1s cubic-bezier(0.6, 0, 0, 1) 0s infinite normal none running pulse;
+  border: 0 solid rgb(255, 255, 255);
+  box-shadow: rgba(var(--mainColor), 0.7) 0 0 0 0,
+    rgb(var(--mainColor)) 0 1px 0 inset;
   &:hover {
     transform: scale(1.05);
+  }
+}
+
+@keyframes pulse {
+  100% {
+    box-shadow: 0 0 0 15px rgba(var(--mainColor), 0), inset 0 1px 0 #abcbe9;
   }
 }
 
 .telegram {
   width: 60px;
   height: 60px;
-  border-radius: 50%;
-  background: #3290ec;
   position: fixed;
-  right: 60px;
+  right: 36px;
   bottom: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
   transition: all 0.3s;
   z-index: 1000;
-  color: white;
-
-  @media (max-width: 1000px) {
-    width: 40px;
-    height: 40px;
-    right: 20px;
-    bottom: 30px;
-
-    svg {
-      width: 20px;
-      height: 20px;
-    }
-  }
+  padding: 0;
 
   &:hover {
     transform: scale(1.05);
-  }
-}
-
-.image-doc {
-  object-fit: contain;
-  max-width: 519px;
-  max-height: 745px;
-  width: 100%;
-  height: calc(100vh - 80px);
-
-  @media (max-width: 1000px) {
-    height: calc(100vh - 40px);
-    width: calc(100vw - 60px);
   }
 }
 </style>

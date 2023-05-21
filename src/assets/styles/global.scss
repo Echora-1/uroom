@@ -1,25 +1,49 @@
 @font-face {
-  font-family: "Century Gothic";
+  font-family: "Halvar Breitschrift";
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: local("Century Gothic"), url("@/assets/fonts/CenturyGothicMedium.ttf") format("truetype");
+  src: local("Halvar Breitschrift"), url("@/assets/fonts/HalvarBreit-Rg.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: local("Montserrat"), url("@/assets/fonts/Montserrat-Thin.ttf") format("truetype");
+}
+
+
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Montserrat"), url("@/assets/fonts/Montserrat-Regular.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: "Century Gothic";
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: local("Montserrat"), url("@/assets/fonts/Montserrat-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: local("Montserrat"), url("@/assets/fonts/Montserrat-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Montserrat";
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: local("Century Gothic"), url("@/assets/fonts/CenturyGothicSemiBold.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "Futura PT";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: local("Futura PT"), url("@/assets/fonts/FuturaPTMedium.ttf") format("truetype");
+  src: local("Montserrat"), url("@/assets/fonts/Montserrat-Bold.ttf") format("truetype");
 }
 
 * {
@@ -35,15 +59,20 @@
 
 body {
   color: rgb(var(--textColor));
-  font-family: "Century Gothic", sans-serif;
-  background: rgb(var(--mainColor));
-  font-size: 14px;
-  line-height: 22px;
+  font-family: "Montserrat", sans-serif;
+  background: rgb(var(--body));
+  font-size: 16px;
+  line-height: 29px;
 }
 
 a {
   text-decoration: none;
   color: inherit;
+  transition: opacity 0.3s;
+
+  &:hover {
+    opacity: 0.7;
+  }
 }
 
 ul {
@@ -60,7 +89,7 @@ button {
   width: 100%;
   padding: 0 20px;
   margin: 0 auto;
-  max-width: 1016px;
+  max-width: 1340px;
 
   @media(max-width: 1000px) {
     max-width: 430px;
@@ -75,32 +104,28 @@ button {
 }
 
 .base-title {
+  font-family: 'Halvar Breitschrift', sans-serif;
   font-weight: 400;
-  font-size: 36px;
-  line-height: 44px;
+  font-size: 40px;
+  line-height: 56px;
   margin: 0;
 }
 
-.base-link {
-  color: rgb(var(--mainColor));
-  font-size: 16px;
-  line-height: 30px;
-  position: relative;
-  display: flex;
-  width: fit-content;
-  transition: all 0.3s;
-
-  &:hover {
-    opacity: 0.7;
-  }
-
-  &::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 1px;
-    bottom: 4px;
-    left: 0;
-    background: rgb(var(--mainColor));
-  }
+.line {
+  height: 100%;
+  width: 0.5px;
+  background: gray;
+  position: absolute;
+  pointer-events: none;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  background: linear-gradient(
+                  270deg,
+                  rgba(201, 201, 201, 0.13) 24.2%,
+                  rgba(201, 201, 201, 0.044) 42.35%,
+                  rgba(201, 201, 201, 0.2) 78.09%,
+                  rgba(201, 201, 201, 0) 100%
+  );
 }

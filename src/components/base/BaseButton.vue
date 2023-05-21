@@ -6,6 +6,7 @@
         'common-button--transparent': transparent,
         'common-button--disabled': disabled,
         'common-button--loading': loading,
+        'common-button--border': border,
       },
     ]"
     :disabled="disabled"
@@ -33,7 +34,7 @@ export default {
       type: Boolean,
       default: false,
     },
-    black: {
+    border: {
       type: Boolean,
       default: false,
     },
@@ -52,23 +53,19 @@ export default {
   background: rgb(var(--mainColor));
   cursor: pointer;
   color: rgb(var(--textColor));
-  font-weight: bold;
-  font-size: 13px;
-  line-height: 18px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
   text-align: center;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.7px;
   text-transform: uppercase;
   display: flex;
   align-items: center;
-  padding: 18px 20px;
+  padding: 17px 32px;
   justify-content: center;
   border: 1px solid rgb(var(--mainColor));
   position: relative;
   transition: all 0.3s;
-
-  &:hover {
-    transform: scale(1.01);
-  }
 
   &:active {
     transition: all 0s;
@@ -90,6 +87,10 @@ export default {
   &--loading {
     color: transparent;
     pointer-events: none;
+  }
+
+  &--border {
+    box-shadow: 0 0 0 13px rgba(255, 146, 132, 0.2);
   }
 }
 

@@ -1,112 +1,256 @@
 <template>
-  <footer class="container footer">
-    <div class="footer__wrap">
-      <div class="footer__list">
-        <router-link :to="`/${url}#about`">Об отеле </router-link>
-        <router-link :to="`/${url}/reservation`">Бронирование</router-link>
-        <a @click="$emit('doc')">Документы</a>
-        <router-link :to="`/${url}/contacts`">Контакты</router-link>
-        <router-link :to="`/${url}/feedback`">Обратная связь</router-link>
+  <footer class="footer">
+    <div class="footer__wrap container">
+      <div class="footer__advantages">
+        <h2 class="base-title">Ключевые преимущества Dark Loft</h2>
+        <div class="footer__advantages-list">
+          <div class="footer__advantages-item">
+            <div class="footer__advantages-img">
+              <img
+                src="@/assets/images/footer/warranty.png"
+                width="44"
+                height="44"
+                alt="warranty"
+              />
+            </div>
+            <p>Гарантия по договору</p>
+          </div>
+          <div class="footer__advantages-item">
+            <div class="footer__advantages-img">
+              <img
+                src="@/assets/images/footer/fast.png"
+                width="44"
+                height="44"
+                alt="warranty"
+              />
+            </div>
+            <p>Быстрая реализация</p>
+          </div>
+          <div class="footer__advantages-item">
+            <div class="footer__advantages-img">
+              <img
+                src="@/assets/images/footer/dev.png"
+                width="44"
+                height="44"
+                alt="warranty"
+              />
+            </div>
+            <p>Собственное производство</p>
+          </div>
+          <div class="footer__advantages-item">
+            <div class="footer__advantages-img">
+              <img
+                src="@/assets/images/footer/ruble.png"
+                width="44"
+                height="44"
+                alt="warranty"
+              />
+            </div>
+            <p>Конкурентоспособные цены</p>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="footer__copir">
-      <p>
-        ИП Трухменева С.В. ОГРИП 307345905700016 <br />
-        свидетельство от 26.02.2007 года серия 34 № 003020722
-      </p>
+      <div class="footer__nav">
+        <router-link to="/">О компании</router-link>
+        <span>|</span>
+        <router-link to="/">Производство</router-link>
+        <span>|</span>
+        <router-link to="/">Доставка и оплата</router-link>
+        <span>|</span>
+        <router-link to="/">Новости</router-link>
+        <span>|</span>
+        <router-link to="/">Магазин</router-link>
+        <span>|</span>
+        <router-link to="/">Контакты</router-link>
+      </div>
+      <div class="footer__main">
+        <div class="footer__info">
+          <p class="footer__city">
+            <img
+              src="@/assets/images/footer/pin.png"
+              alt="pin"
+              width="16"
+              height="16"
+            />
+            г. Москва
+          </p>
+          <p class="footer__info-key">Офис:</p>
+          <p class="footer__info-value">ул. Волоколамское шоссе 142</p>
+          <p class="footer__info-key">Производство:</p>
+          <p class="footer__info-value">Булатниковский проезд 10Б, стр.2</p>
+        </div>
+        <base-logo />
+        <div class="footer__connect">
+          <a href="">+7 (925) 43-77-300</a>
+          <p>понедельник - суббота <br />с 8.00 до 21.00</p>
+        </div>
+      </div>
+      <div class="footer__coopir">
+        <p>© DarkLoft - Стеклянные перегородки в стиле Лофт, 2022</p>
+        <a href="" class="footer__inst"> <icon-inst /></a>
+        <a class="footer__dev" href=""
+          >Разработка и продвижение: <span>dinvex.ru</span></a
+        >
+      </div>
     </div>
   </footer>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      url: "",
-    };
-  },
-
-  created() {
-    this.setUrl();
-  },
-
-  computed: {
-    currentPath() {
-      return this.$route.fullPath;
-    },
-  },
-
-  watch: {
-    currentPath() {
-      this.setUrl();
-    },
-  },
-
-  methods: {
-    setUrl() {
-      const path = this.$route.fullPath;
-      const isMoscow = path.indexOf("moscow") !== -1;
-      if (isMoscow) {
-        this.url = "moscow";
-      } else {
-        this.url = "volgograd";
-      }
-    },
-  },
-};
-</script>
-
 <style lang="scss" scoped>
 .footer {
-  &__wrap {
+  padding-top: 86px;
+  padding-bottom: 43px;
+  background: rgb(var(--bg));
+  position: relative;
+  z-index: 1;
+  &__advantages {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
-    border-bottom: 1px solid #ebebeb;
-    margin-bottom: 29px;
-    @media (max-width: 1000px) {
-      max-width: 305px;
-      margin: 0 auto 29px;
-    }
   }
 
-  &__list {
+  &__advantages-list {
     display: flex;
     align-items: center;
-    margin-bottom: 30px;
+    max-width: 1240px;
+    width: 100%;
     justify-content: space-between;
-    width: fit-content;
-    gap: 44px;
+    gap: 25px;
+    margin-top: 74px;
+    margin-bottom: 109px;
+  }
 
-    @media (max-width: 1000px) {
-      flex-direction: column;
-    }
+  &__advantages-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-    a {
-      font-size: 13px;
-      line-height: 18px;
+    p {
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 20px;
+      margin: 0;
+      letter-spacing: 0.7px;
+      text-transform: uppercase;
       text-align: center;
-      letter-spacing: 0.12em;
-      transition: opacity 0.3s;
-
-      &:hover {
-        opacity: 0.5;
-      }
     }
   }
 
-  &__copir {
-    p {
-      font-size: 12px;
-      line-height: 22px;
-      text-align: center;
-      opacity: 0.5;
-      margin: 0 0 26px;
+  &__advantages-img {
+    width: 104px;
+    height: 104px;
+    background: rgb(var(--mainColor));
+    box-shadow: 0 0 0 10px rgba(var(--mainColor), 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
 
-      @media (max-width: 1000px) {
-        margin: 37px 0 47px;
-      }
+    img {
+      object-fit: contain;
     }
+  }
+
+  &__nav {
+    padding: 30px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+
+    a {
+      font-size: 15px;
+      line-height: 27px;
+    }
+
+    span {
+      font-weight: 100;
+      color: rgba(255, 255, 255, 0.2);
+    }
+  }
+
+  &__main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 54px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 30px;
+  }
+
+  &__city {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+    margin-bottom: 34px;
+    img {
+      object-fit: contain;
+      margin-right: 10px;
+    }
+  }
+
+  &__info-key {
+    font-weight: 700;
+  }
+
+  &__info-key,
+  &__info-value {
+    margin: 0 0 1px;
+    font-size: 14px;
+    line-height: 25px;
+  }
+
+  &__connect {
+    a {
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 29px;
+      text-align: right;
+    }
+    p {
+      font-size: 14px;
+      line-height: 23px;
+      text-align: right;
+      margin: 0;
+    }
+  }
+
+  &__coopir {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    p {
+      margin: 0;
+      font-size: 13px;
+      line-height: 23px;
+      width: calc(50% - 20px);
+    }
+  }
+
+  &__dev {
+    text-align: right;
+    font-size: 13px;
+    line-height: 23px;
+    width: calc(50% - 20px);
+    span {
+      color: rgb(var(--mainColor));
+    }
+  }
+
+  &__inst {
+    display: flex;
   }
 }
 </style>
+<script setup>
+import BaseLogo from "@/components/base/BaseLogo.vue";
+import IconInst from "@/components/icon/IconInst.vue";
+</script>
