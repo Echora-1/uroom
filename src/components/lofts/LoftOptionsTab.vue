@@ -8,7 +8,6 @@
         alt="options"
         width="471"
         height="352"
-        loading="lazy"
         class="options-tab__img"
       />
       <div class="options-tab__toggles">
