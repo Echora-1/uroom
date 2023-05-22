@@ -12,7 +12,7 @@
       width="24"
       height="24"
       rx="12"
-      fill="#FF6D5B"
+      fill="#EC2D24"
     />
     <g clip-path="url(#clip0_120_191)">
       <path

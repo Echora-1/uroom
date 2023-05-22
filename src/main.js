@@ -5,6 +5,11 @@ import { createRouter, createWebHistory } from "vue-router";
 
 const routes = [
   { path: "/", meta: { title: "Darkloft" }, component: MainPage },
+  {
+    path: "/lofts/:id",
+    meta: { title: "Перегородки в квартиру Лофт" },
+    component: () => import("./components/pages/LoftDetailPage.vue"),
+  },
 ];
 
 const router = createRouter({

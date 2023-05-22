@@ -9,7 +9,9 @@
   >
     <p class="card__title">{{ content?.title }}</p>
     <p class="card__price">от {{ content?.price }} руб./кв.м</p>
-    <base-button class="card__btn">Подробнее</base-button>
+    <router-link class="card__btn" :to="`/lofts/${content?.url}`">
+      <base-button>Подробнее</base-button>
+    </router-link>
   </div>
 </template>
 <script>
@@ -78,7 +80,10 @@ export default {
 
   &__btn {
     margin-top: auto;
-    max-width: 167px;
+
+    button {
+      max-width: 167px;
+    }
   }
 }
 </style>

@@ -29,7 +29,7 @@
       </div>
       <div class="advantage__item">
         <img
-          src="@/assets/images/advantages/adv3.png"
+          src="../../assets/images/advantages/adv44.png"
           width="56"
           height="56"
           alt="advantages"
