@@ -6,6 +6,7 @@
     alt=""
     srcset="@/assets/images/rain/rain@2x.png 2x"
     class="rain-pic"
+    loading="lazy"
   />
 </template>
 

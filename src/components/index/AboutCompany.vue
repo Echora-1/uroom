@@ -20,6 +20,7 @@
             alt=""
             srcset="@/assets/images/about/about@2x.png 2x"
             class="about-company__img"
+            loading="lazy"
           />
         </div>
         <div class="about-company__right">

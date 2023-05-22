@@ -7,6 +7,7 @@
           width="56"
           height="56"
           alt="advantages"
+          loading="lazy"
         />
         <p>
           От эконом до элитных вариантов <br />
@@ -19,6 +20,7 @@
           width="56"
           height="56"
           alt="advantages"
+          loading="lazy"
         />
         <p>
           Выезд мастера на замер <br />
@@ -31,6 +33,7 @@
           width="56"
           height="56"
           alt="advantages"
+          loading="lazy"
         />
         <p>
           Бесплатная парковка для <br />

@@ -41,6 +41,7 @@ export default {
   &__main {
     position: relative;
     margin-top: 177px;
+    min-height: 100vh;
 
     z-index: 1;
   }

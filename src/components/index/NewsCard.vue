@@ -5,6 +5,7 @@
       alt="news"
       width="354"
       height="188"
+      loading="lazy"
     />
     <router-link :to="content?.url">
       <span>{{ content?.name }}</span

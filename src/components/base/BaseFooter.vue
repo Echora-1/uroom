@@ -11,6 +11,7 @@
                 width="44"
                 height="44"
                 alt="warranty"
+                loading="lazy"
               />
             </div>
             <p>Гарантия по договору</p>
@@ -22,6 +23,7 @@
                 width="44"
                 height="44"
                 alt="warranty"
+                loading="lazy"
               />
             </div>
             <p>Быстрая реализация</p>
@@ -33,6 +35,7 @@
                 width="44"
                 height="44"
                 alt="warranty"
+                loading="lazy"
               />
             </div>
             <p>Собственное производство</p>
@@ -44,6 +47,7 @@
                 width="44"
                 height="44"
                 alt="warranty"
+                loading="lazy"
               />
             </div>
             <p>Конкурентоспособные цены</p>
@@ -71,6 +75,7 @@
               alt="pin"
               width="16"
               height="16"
+              loading="lazy"
             />
             г. Москва
           </p>
