@@ -75,7 +75,8 @@ export default {
 
   &--transparent {
     border-color: rgb(var(--textColor));
-    background: #ffffff;
+    background: transparent;
+    border-width: 2px;
   }
 
   &--disabled {

@@ -1,5 +1,8 @@
 <template>
   <div class="main-block">
+    <rain-img class="rain" />
+    <rain-img class="rain2" />
+    <rain-img class="rain3" />
     <loft-text-content class="main-block__text" />
     <loft-keys class="main-block__keys" />
     <loft-text-content class="main-block__text2" :content="text2" />
@@ -10,6 +13,7 @@
 import LoftTextContent from "@/components/lofts/LoftTextContent.vue";
 import LoftKeys from "@/components/lofts/LoftKeys.vue";
 import LoftTextContentCheck from "@/components/lofts/LoftTextContentCheck.vue";
+import RainImg from "@/components/common/RainImg.vue";
 
 const text2 = [
   "Перегородки из стекла стали неотъемлемым атрибутом в повсеместном использовании в квартирах и домах. Возможность получения личного\n" +
@@ -21,6 +25,32 @@ const text2 = [
 </script>
 
 <style lang="scss" scoped>
+.rain {
+  left: -72px;
+  top: 640px;
+  width: 234px;
+  height: 442px;
+  z-index: -1;
+}
+
+.rain2 {
+  right: -206px;
+  top: 1175px;
+  width: 322px;
+  height: 608px;
+  transform: rotate(9.26deg);
+  z-index: -1;
+}
+
+.rain3 {
+  left: -243px;
+  bottom: -371px;
+  width: 356px;
+  height: 673px;
+  transform: rotate(50.67deg);
+  z-index: -1;
+}
+
 .main-block {
   padding: 70px 0 110px;
   background: linear-gradient(
@@ -32,6 +62,7 @@ const text2 = [
     rgba(32, 32, 33, 0.9) 96.51%
   );
   backdrop-filter: blur(10px);
+  position: relative;
 
   &__text {
     margin-bottom: 90px;

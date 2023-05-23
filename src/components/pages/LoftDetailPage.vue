@@ -5,6 +5,7 @@
     <main-content-wrap>
       <loft-main-block />
       <loft-options />
+      <loft-faq />
     </main-content-wrap>
   </div>
 </template>
@@ -14,4 +15,5 @@ import BreadCrumbs from "@/components/common/BreadCrumbs.vue";
 import MainContentWrap from "@/components/index/MainContentWrap.vue";
 import LoftMainBlock from "@/components/lofts/LoftMainBlock.vue";
 import LoftOptions from "@/components/lofts/LoftOptions.vue";
+import LoftFaq from "@/components/lofts/LoftFaq.vue";
 </script>

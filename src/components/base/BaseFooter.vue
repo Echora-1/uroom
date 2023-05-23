@@ -86,13 +86,19 @@
         </div>
         <base-logo />
         <div class="footer__connect">
-          <a href="">+7 (925) 43-77-300</a>
+          <a href="tel:+79254377300">+7 (925) 43-77-300</a>
           <p>понедельник - суббота <br />с 8.00 до 21.00</p>
         </div>
       </div>
       <div class="footer__coopir">
         <p>© DarkLoft - Стеклянные перегородки в стиле Лофт, 2022</p>
-        <a href="" class="footer__inst"> <icon-inst /></a>
+        <a
+          href="https://www.instagram.com/darkloft.ru/"
+          target="_blank"
+          class="footer__inst"
+        >
+          <icon-inst
+        /></a>
         <a class="footer__dev" href=""
           >Разработка и продвижение: <span>dinvex.ru</span></a
         >

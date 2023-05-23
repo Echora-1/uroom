@@ -4,7 +4,11 @@ import MainPage from "@/components/pages/MainPage";
 import { createRouter, createWebHistory } from "vue-router";
 
 const routes = [
-  { path: "/", meta: { title: "Darkloft" }, component: MainPage },
+  {
+    path: "/",
+    meta: { title: "Главная | DarkLoft - Стеклянные перегородки в стиле Лофт" },
+    component: MainPage,
+  },
   {
     path: "/lofts/:id",
     meta: { title: "Перегородки в квартиру Лофт" },

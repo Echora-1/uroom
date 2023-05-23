@@ -15,7 +15,6 @@
     }"
   >
     <div class="main-screen">
-      <rain-img class="rain" />
       <h1>
         {{ content?.title }}
       </h1>
@@ -26,10 +25,9 @@
 </template>
 <script>
 import BaseButton from "@/components/base/BaseButton.vue";
-import RainImg from "@/components/common/RainImg.vue";
 
 export default {
-  components: { BaseButton, RainImg },
+  components: { BaseButton },
 
   props: {
     content: {

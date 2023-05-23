@@ -13,7 +13,7 @@
     <div class="header__main-wrap">
       <div class="header__main container header__container">
         <div class="header__info-list">
-          <a href="" class="header__info-item">
+          <a href="tel:+79254377300" class="header__info-item">
             <span>Звоните нам!</span><br />
             +7 (925) 43-77-300
           </a>
