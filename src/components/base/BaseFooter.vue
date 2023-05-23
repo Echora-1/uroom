@@ -65,7 +65,7 @@
         <span>|</span>
         <router-link to="/">Магазин</router-link>
         <span>|</span>
-        <router-link to="/">Контакты</router-link>
+        <router-link to="/contacts">Контакты</router-link>
       </div>
       <div class="footer__main">
         <div class="footer__info">

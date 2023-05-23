@@ -99,7 +99,7 @@ export default {
 }
 
 .base-input-wrapper {
-  border: 1px solid #000000;
+  border-bottom: 0.75px solid #e1e1e1;
   width: 100%;
   transition: all 0.5s;
   position: relative;
@@ -112,14 +112,12 @@ export default {
   margin: 0;
   border: none;
   outline: none;
-  padding: 12px 21px;
+  padding: 12px 0;
   background: transparent;
-  font-size: 16px;
-  line-height: 24px;
-  letter-spacing: 0.05em;
-  color: rgba(0, 0, 0, 0.4);
-  -webkit-box-shadow: inset 0 0 0 50px #ffffff;
-  -webkit-text-fill-color: rgba(0, 0, 0, 0.4);
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+  color: rgb(var(--textColor));
   position: relative;
   transition: color 0.3s;
   resize: none;
@@ -133,21 +131,11 @@ export default {
   @media (max-width: 767px) {
     padding: 10px 20px;
   }
-
-  &:-webkit-autofill,
-  &:-webkit-autofill:hover,
-  &:-webkit-autofill:focus {
-    background-color: #ffffff !important;
-    background-image: none !important;
-
-    &::placeholder {
-      color: rgba(0, 0, 0, 0.4) !important;
-    }
-  }
 }
 
 .base-input::placeholder {
-  color: rgba(0, 0, 0, 0.4) !important;
+  text-transform: uppercase;
+  color: rgba(var(--textColor), 0.6);
 }
 
 .base-label {
@@ -158,10 +146,6 @@ export default {
 .input-focused {
   .base-input-wrapper {
     border-color: rgb(var(--mainColor));
-  }
-
-  .base-input {
-    -webkit-text-fill-color: #000000 !important;
   }
 }
 

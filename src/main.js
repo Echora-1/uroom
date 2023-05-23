@@ -14,6 +14,13 @@ const routes = [
     meta: { title: "Перегородки в квартиру Лофт" },
     component: () => import("./components/pages/LoftDetailPage.vue"),
   },
+  {
+    path: "/contacts",
+    meta: {
+      title: "Контакты | DarkLoft - Стеклянные перегородки в стиле Лофт",
+    },
+    component: () => import("./components/pages/ContactPage.vue"),
+  },
 ];
 
 const router = createRouter({

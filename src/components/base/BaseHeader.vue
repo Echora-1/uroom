@@ -7,7 +7,7 @@
         <router-link to="">Доставка и оплата</router-link>
         <router-link to="">Новости</router-link>
         <router-link to="">Магазин</router-link>
-        <router-link to="">Контакты</router-link>
+        <router-link to="/contacts">Контакты</router-link>
       </nav>
     </div>
     <div class="header__main-wrap">
