@@ -59,9 +59,9 @@
         <span>|</span>
         <router-link to="/">Производство</router-link>
         <span>|</span>
-        <router-link to="/">Доставка и оплата</router-link>
+        <router-link to="/delivery">Доставка и оплата</router-link>
         <span>|</span>
-        <router-link to="/">Новости</router-link>
+        <router-link to="/news">Новости</router-link>
         <span>|</span>
         <router-link to="/">Магазин</router-link>
         <span>|</span>

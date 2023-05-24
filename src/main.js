@@ -21,6 +21,29 @@ const routes = [
     },
     component: () => import("./components/pages/ContactPage.vue"),
   },
+  {
+    path: "/news",
+    meta: {
+      title: "Новости | DarkLoft - Стеклянные перегородки в стиле Лофт",
+    },
+    component: () => import("./components/pages/NewsPage.vue"),
+  },
+  {
+    path: "/news/:id",
+    meta: {
+      title:
+        "Особенности перегородок в стиле Лофт | DarkLoft - Стеклянные перегородки в стиле Лофт",
+    },
+    component: () => import("./components/pages/NewsDetailPage.vue"),
+  },
+  {
+    path: "/delivery",
+    meta: {
+      title:
+        "Доставка и оплата | DarkLoft - Стеклянные перегородки в стиле Лофт",
+    },
+    component: () => import("./components/pages/DeliveryPage.vue"),
+  },
 ];
 
 const router = createRouter({

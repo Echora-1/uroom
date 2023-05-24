@@ -1,11 +1,12 @@
 <template>
   <div class="image-map">
     <img
-      class="image-map__img"
-      src="@/assets/images/map.png"
+      src="../../assets/images/map.png"
       width="1940"
       height="804"
       alt="map"
+      srcset="@/assets/images/map@2x.png 2x"
+      class="image-map__img"
     />
   </div>
 </template>
@@ -52,3 +53,4 @@
   }
 }
 </style>
+<script setup></script>
