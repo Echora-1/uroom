@@ -57,7 +57,7 @@
       <div class="footer__nav">
         <router-link to="/">О компании</router-link>
         <span>|</span>
-        <router-link to="/">Производство</router-link>
+        <router-link to="/production">Производство</router-link>
         <span>|</span>
         <router-link to="/delivery">Доставка и оплата</router-link>
         <span>|</span>

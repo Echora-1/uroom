@@ -20,7 +20,13 @@
           <p class="block__text">Безналичный расчет</p>
         </div>
         <div class="block__right">
-          <img src="@/assets/images/delivery.png" width="639" height="568" />
+          <img
+            src="../../assets/images/delivery.png"
+            width="639"
+            height="568"
+            alt="delivery"
+            srcset="../../assets/images/delivery@2x.png 2x"
+          />
         </div>
       </div>
     </div>

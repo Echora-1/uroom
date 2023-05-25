@@ -1,11 +1,14 @@
 <template>
   <main-content-wrap class="wrap-page">
-    <bread-crumbs start :links="[{ name: 'Новости', url: '/news' }]" />
-    <news-main-block />
+    <bread-crumbs
+      start
+      :links="[{ name: 'Производство', url: '/production' }]"
+    />
+    <production-block />
   </main-content-wrap>
 </template>
 <script setup>
-import NewsMainBlock from "@/components/news/NewsMainBlock.vue";
 import MainContentWrap from "@/components/index/MainContentWrap.vue";
 import BreadCrumbs from "@/components/common/BreadCrumbs.vue";
+import ProductionBlock from "@/components/production/ProductionBlock.vue";
 </script>

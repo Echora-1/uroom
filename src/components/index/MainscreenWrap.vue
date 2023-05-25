@@ -19,7 +19,7 @@
       rgba(27, 27, 27, 0.879068) 73.98%,
       #202021 96.51%
     ),
-    url("@/assets/images/mainscreen/msBg.png") center/cover;
+    url("@/assets/images/mainscreen/msBg.jpg") center/cover;
 
   @media (min-resolution: 2dppx) {
     background: linear-gradient(
@@ -30,7 +30,7 @@
         rgba(27, 27, 27, 0.879068) 73.98%,
         #202021 96.51%
       ),
-      url("@/assets/images/mainscreen/msBg@2x.png") center/cover;
+      url("@/assets/images/mainscreen/msBg@2x.jpg") center/cover;
   }
 }
 </style>

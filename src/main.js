@@ -44,6 +44,13 @@ const routes = [
     },
     component: () => import("./components/pages/DeliveryPage.vue"),
   },
+  {
+    path: "/production",
+    meta: {
+      title: "Производство | DarkLoft - Стеклянные перегородки в стиле Лофт",
+    },
+    component: () => import("./components/pages/ProductionPage.vue"),
+  },
 ];
 
 const router = createRouter({

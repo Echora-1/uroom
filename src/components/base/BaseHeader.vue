@@ -3,7 +3,7 @@
     <div class="container header__container">
       <nav class="header__nav-list">
         <router-link to="">О компании</router-link>
-        <router-link to="">Производство</router-link>
+        <router-link to="/production">Производство</router-link>
         <router-link to="/delivery">Доставка и оплата</router-link>
         <router-link to="/news">Новости</router-link>
         <router-link to="">Магазин</router-link>

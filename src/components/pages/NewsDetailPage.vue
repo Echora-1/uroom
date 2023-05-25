@@ -1,5 +1,5 @@
 <template>
-  <main-content-wrap class="wrap-news-details">
+  <main-content-wrap class="wrap-page">
     <bread-crumbs
       start
       :links="[
@@ -15,9 +15,3 @@ import MainContentWrap from "@/components/index/MainContentWrap.vue";
 import NewsDetailBlock from "@/components/news/NewsDetailBlock.vue";
 import BreadCrumbs from "@/components/common/BreadCrumbs.vue";
 </script>
-
-<style lang="scss" scoped>
-.wrap-news-details {
-  margin-top: 263px;
-}
-</style>
