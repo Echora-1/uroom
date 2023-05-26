@@ -69,7 +69,7 @@ const text2 = [
   }
 
   &__keys {
-    margin-bottom: 60px;
+    margin-bottom: 30px;
   }
 
   &__text2 {
