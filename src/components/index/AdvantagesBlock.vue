@@ -47,7 +47,7 @@
 <style lang="scss" scoped>
 .advantage {
   padding: 80px 0;
-  background: rgba(44, 45, 46, 0.8);
+  background: var(--block-bg2);
 
   &__wrap {
     display: flex;

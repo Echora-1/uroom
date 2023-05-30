@@ -45,6 +45,7 @@ export default {
   flex-direction: column;
   position: relative;
   z-index: 1;
+  color: #ffffff;
 
   &::before {
     top: 0;

@@ -40,21 +40,14 @@
 
 .block {
   padding: 96px 0 142px;
-  background: linear-gradient(
-    0deg,
-    #202021 3.18%,
-    rgba(27, 28, 29, 0.816544) 29.84%,
-    rgba(17, 17, 17, 0.66) 50.91%,
-    rgba(27, 27, 27, 0.879068) 73.98%,
-    rgba(32, 32, 33, 0.9) 96.51%
-  );
+  background: var(--block-gradient);
   backdrop-filter: blur(10px);
 
   &__form {
     min-height: 556px;
     width: 100%;
     max-width: 1300px;
-    background: #26282a;
+    background: rgb(var(--form-bg));
     box-shadow: 0px 0px 158px rgba(255, 146, 132, 0.06);
     position: relative;
     display: flex;
@@ -65,7 +58,7 @@
   }
 
   &__right {
-    background: #191919;
+    background: rgb(var(--form-bg2));
     flex-grow: 1;
     display: flex;
     justify-content: center;

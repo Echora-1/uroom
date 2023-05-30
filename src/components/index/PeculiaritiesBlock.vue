@@ -77,7 +77,7 @@ const activeToggle = ref(0);
 
 <style lang="scss" scoped>
 .pec {
-  background: rgba(32, 32, 33, 0.9);
+  background: var(--block-bg);
   backdrop-filter: blur(10px);
   padding: 112px 0 100px;
 

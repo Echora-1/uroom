@@ -78,7 +78,7 @@
 
 .about-company {
   width: 100%;
-  background: rgba(32, 32, 33, 0.9);
+  background: var(--block-bg);
   backdrop-filter: blur(10px);
   padding: 100px 0 144px;
   display: flex;

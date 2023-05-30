@@ -1,6 +1,7 @@
 <template>
   <div class="icon-theme">
     <svg
+      v-show="!isLight"
       width="43"
       height="42"
       viewBox="0 0 43 42"
@@ -18,6 +19,7 @@
         fill="white"
       />
     </svg>
+    <icon-light v-show="isLight" />
   </div>
 </template>
 
@@ -51,4 +53,16 @@
   }
 }
 </style>
-<script setup></script>
+<script>
+import IconLight from "@/components/icon/IconLight.vue";
+
+export default {
+  components: { IconLight },
+  props: {
+    isLight: {
+      type: Boolean,
+      default: false,
+    },
+  },
+};
+</script>

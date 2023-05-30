@@ -52,7 +52,7 @@ export default {
 .common-button {
   background: rgb(var(--mainColor));
   cursor: pointer;
-  color: rgb(var(--textColor));
+  color: #ffffff;
   font-weight: 600;
   font-size: 14px;
   line-height: 20px;
@@ -74,7 +74,7 @@ export default {
   }
 
   &--transparent {
-    border-color: rgb(var(--textColor));
+    border-color: #ffffff;
     background: transparent;
     border-width: 2px;
   }

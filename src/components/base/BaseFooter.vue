@@ -84,7 +84,9 @@
           <p class="footer__info-key">Производство:</p>
           <p class="footer__info-value">Булатниковский проезд 10Б, стр.2</p>
         </div>
-        <base-logo />
+        <router-link class="footer__logo" to="/">
+          <base-logo />
+        </router-link>
         <div class="footer__connect">
           <a href="tel:+79254377300">+7 (925) 43-77-300</a>
           <p>понедельник - суббота <br />с 8.00 до 21.00</p>
@@ -111,7 +113,8 @@
 .footer {
   padding-top: 86px;
   padding-bottom: 43px;
-  background: rgb(var(--bg));
+  background: rgb(var(--footer));
+  color: #ffffff;
   position: relative;
   z-index: 1;
   &__advantages {
@@ -209,6 +212,10 @@
 
   &__info-key {
     font-weight: 700;
+  }
+
+  &__logo {
+    display: flex;
   }
 
   &__info-key,

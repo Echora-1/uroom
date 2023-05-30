@@ -1,10 +1,7 @@
 <template>
   <div class="tab">
     <input :id="content.title" type="checkbox" :checked="active" />
-    <label
-      :class="['tab-label', { 'tab-label--bold': bold }]"
-      :for="content.title"
-    >
+    <label :class="['tab-label']" :for="content.title">
       <slot> </slot>
       {{ content.title }}
     </label>

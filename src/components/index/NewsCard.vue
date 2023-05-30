@@ -63,6 +63,7 @@ export default {
       position: absolute;
       top: 50%;
       right: 0;
+      color: rgb(var(--arrow));
       transform: translateY(-50%);
     }
   }

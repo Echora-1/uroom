@@ -5,4 +5,44 @@
   --body: 37, 40, 43;
   --header: 32, 32, 33;
   --header-border: 56, 56, 56;
+  --main-screen-bg: linear-gradient(0deg, #212324 3.18%, rgba(27, 28, 29, 0.816544) 29.84%, rgba(17, 17, 17, 0.66) 50.91%, rgba(27, 27, 27, 0.879068) 73.98%, #202021 96.51%);
+  --theme-switcher-bg: 40, 42, 45;
+  --theme-switcher-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);;
+  --block-gradient: linear-gradient(
+                  0deg,
+                  #212324 3.18%,
+                  rgba(27, 28, 29, 0.816544) 29.84%,
+                  rgba(17, 17, 17, 0.66) 50.91%,
+                  rgba(27, 27, 27, 0.879068) 73.98%,
+                  rgba(32, 32, 33, 0.9) 96.51%
+  );
+  --block-bg: rgba(32, 32, 33, 0.9);
+  --block-bg2: rgba(44, 45, 46, 0.8);
+  --footer: 26, 26, 26;
+  --icon: #202021;
+    --arrow: 255, 255, 255;
+      --form-bg: 38, 40, 42;
+  --form-bg2: 25, 25, 25;
+}
+
+
+.light {
+  --textColor: 41, 43, 45;
+  --mainColor: 236, 45, 36;
+  --bg: 244, 244, 244;
+  --body: 255, 255, 255;
+  --header: 255, 255, 255;
+  --header-border: 56, 56, 56;
+  --main-screen-bg: rgba(37, 37, 37, 0.45);
+  --theme-switcher-bg: 243, 243, 243;
+  --theme-switcher-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.1);
+  --block-gradient: linear-gradient(180deg, rgba(222, 222, 222, 0) 0%, rgba(244, 244, 244, 0.79) 0.01%, rgba(244, 244, 244, 0) 100%);
+  --block-bg: linear-gradient(180deg, rgba(236, 236, 236, 0.04) 0%, rgba(255, 255, 255, 0.86) 70.24%);
+  --block-bg2: rgba(244, 244, 244, 1);
+  --footer: 35, 35, 35;
+  --icon: #ffffff;
+  --arrow: 236, 45, 36;
+  --form-bg: 255, 255, 255;
+  --form-bg2: 250, 250, 250;
+
 }

@@ -22,7 +22,10 @@
             с 8.00 до 21.00
           </p>
         </div>
-        <base-logo class="header__logo" />
+        <router-link to="/" class="header__logo">
+          <base-logo v-if="!store.themeLight" class="header__logo" />
+          <base-light-logo v-else class="header__logo" />
+        </router-link>
         <div class="header__connect-list">
           <theme-switcher class="header__connect-item" />
           <a
@@ -49,15 +52,15 @@
         </div>
       </div>
       <div class="header__footer container header__container">
-        <a href="">Перегородки в квартиру Лофт</a>
+        <router-link :to="`/lofts/1`">Перегородки в квартиру Лофт</router-link>
         <span>|</span>
-        <a href="">Перегородки Лофт для бизнеса</a>
+        <router-link :to="`/lofts/2`">Перегородки Лофт для бизнеса</router-link>
         <span>|</span>
-        <a href="">Лофт перегородки для душевых</a>
+        <router-link :to="`/lofts/3`">Лофт перегородки для душевых</router-link>
         <span>|</span>
-        <a href="">Остекленение лестниц</a>
+        <router-link :to="`/lofts/4`">Остекленение лестниц</router-link>
         <span>|</span>
-        <a href="">Цельностеклянные конструкции</a>
+        <router-link :to="`/lofts/5`">Цельностеклянные конструкции</router-link>
       </div>
     </div>
   </header>
@@ -69,9 +72,12 @@ import IconTelega from "@/components/icon/IconTelega.vue";
 import BaseButton from "@/components/base/BaseButton.vue";
 import IconCall from "@/components/icon/IconCall.vue";
 import ThemeSwitcher from "@/components/common/ThemeSwitcher.vue";
+import BaseLightLogo from "@/components/base/BaseLightLogo.vue";
+import { useThemeStore } from "@/store/theme";
 
 export default {
   components: {
+    BaseLightLogo,
     ThemeSwitcher,
     IconCall,
     BaseButton,
@@ -98,6 +104,12 @@ export default {
         this.scroll = false;
       }
     },
+  },
+
+  setup() {
+    const store = useThemeStore();
+
+    return { store };
   },
 };
 </script>
@@ -193,6 +205,7 @@ export default {
   &__logo {
     margin: 0 auto;
     transition: all 0.3s;
+    display: flex;
   }
 
   &__info-list {
@@ -239,6 +252,7 @@ export default {
     padding: 11px 15px;
     text-align: start;
     margin-left: 27px;
+    color: #ffffff;
 
     svg {
       margin-right: 12px;

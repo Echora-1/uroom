@@ -70,19 +70,13 @@ const products = [
 
 .base-title {
   text-align: center;
+  margin-top: 33px;
   margin-bottom: 53px;
 }
 
 .product {
   width: 100%;
-  background: linear-gradient(
-    0deg,
-    #212324 3.18%,
-    rgba(27, 28, 29, 0.816544) 29.84%,
-    rgba(17, 17, 17, 0.66) 50.91%,
-    rgba(27, 27, 27, 0.879068) 73.98%,
-    rgba(32, 32, 33, 0.9) 96.51%
-  );
+  background: var(--block-gradient);
   backdrop-filter: blur(10px);
   transform: matrix(1, 0, 0, -1, 0, 0);
   display: flex;

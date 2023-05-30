@@ -53,7 +53,7 @@ export default {
 
 <style lang="scss" scoped>
 .breadcrumbs {
-  background: rgba(var(--bg), 0.8);
+  background: rgba(var(--bg), 1);
   padding: 14px 0;
 
   &__wrap {

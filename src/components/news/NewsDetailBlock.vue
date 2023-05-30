@@ -4,20 +4,20 @@
       <div class="detail__main">
         <div class="detail__left">
           <h2 class="base-title">{{ content?.title }}</h2>
-
-          <p>
-            {{ content?.subtitle }}
-          </p>
         </div>
         <div class="detail__right">
           <img
             :src="`${require('@/assets/images/newsDetail/' + content?.img)}`"
-            width="625"
-            height="398"
+            width="740"
+            height="630"
             alt="news"
           />
         </div>
       </div>
+      <p class="detail__subtitle">
+        <span>{{ content?.boldSubtitle }}</span>
+        {{ content?.subtitle }}
+      </p>
       <news-text
         v-for="(item, index) in content?.text"
         :content="item"
@@ -39,9 +39,9 @@ export default {
         return {
           title: "Особенности перегородок в стиле Лофт",
           img: "1/main.jpg",
+          boldSubtitle:
+            "Лофт – это популярный стиль интерьера, который подходит  ля студий, однокомнатных квартир, небольших домов, жилых гаражей, офисов и т.д. ",
           subtitle:
-            "      Лофт – это популярный стиль интерьера, который подходит ля студий,\n" +
-            "            однокомнатных квартир, небольших домов, жилых гаражей, офисов и т.д.\n" +
             "            Но каждая деталь в нем должна идеально вписываться в единую стилевую\n" +
             "            концепцию. Использование неподходящих аксессуаров, мебели или\n" +
             "            техники может превратить комнату в безвкусно обставленное\n" +
@@ -70,41 +70,61 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.base-title {
+  text-shadow: 0px 0px 34px rgba(0, 0, 0, 0.56);
+  font-size: 96px;
+  line-height: 108px;
+  top: 50%;
+  transform: translateY(-50%);
+  position: absolute;
+  z-index: 1;
+  width: 800px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 10px;
+    left: 0;
+    height: 14px;
+    width: 100%;
+    z-index: -1;
+    background: rgba(var(--mainColor), 0.8);
+  }
+}
+
 .detail {
-  padding: 70px 0 120px;
-  background: linear-gradient(
-    0deg,
-    #202021 3.18%,
-    rgba(27, 28, 29, 0.816544) 29.84%,
-    rgba(17, 17, 17, 0.66) 50.91%,
-    rgba(27, 27, 27, 0.879068) 73.98%,
-    rgba(32, 32, 33, 0.9) 96.51%
-  );
+  padding: 0 0 120px;
+  background: var(--block-gradient);
   backdrop-filter: blur(10px);
+
+  &__subtitle {
+    font-size: 16px;
+    line-height: 27px;
+    margin: 0 0 40px;
+
+    span {
+      font-weight: 600;
+      font-style: italic;
+    }
+  }
+
   &__main {
     display: flex;
     gap: 36px;
     margin-bottom: 34px;
   }
 
-  &__left,
-  &__right {
-    width: calc(50% - 18px);
-  }
-
   &__left {
-    p {
-      font-size: 16px;
-      line-height: 27px;
-      margin: 0;
-    }
+    position: relative;
   }
 
   &__right {
+    margin-left: auto;
     img {
-      margin-top: 15px;
-      object-fit: contain;
+      object-fit: cover;
       width: 100%;
+      filter: grayscale(1);
     }
   }
 }

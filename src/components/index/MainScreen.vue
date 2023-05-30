@@ -1,12 +1,14 @@
 <template>
   <div class="main-screen">
-    <rain-img class="rain" />
-    <h1>
-      Стеклянные Перегородки <br />
-      в стиле Лофт, под ключ
-    </h1>
-    <p>В Москве и Московской области</p>
-    <base-button border>Рассчитать стоимость</base-button>
+    <div class="container">
+      <rain-img class="rain" />
+      <h1>
+        Стеклянные Перегородки <br />
+        в стиле Лофт, под ключ
+      </h1>
+      <p>В Москве и Московской области</p>
+      <base-button border>Рассчитать стоимость</base-button>
+    </div>
   </div>
 </template>
 <script setup>
@@ -22,12 +24,23 @@ import RainImg from "@/components/common/RainImg.vue";
   height: 442px;
 }
 
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .main-screen {
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 210px 0 217px;
+  min-height: 723px;
+  color: #ffffff;
+  height: 100%;
+  background: var(--main-screen-bg);
 
   h1 {
     font-family: "Halvar Breitschrift", sans-serif;

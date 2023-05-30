@@ -2,7 +2,9 @@ import { createApp } from "vue";
 import App from "./App.vue";
 import MainPage from "@/components/pages/MainPage";
 import { createRouter, createWebHistory } from "vue-router";
+import { createPinia } from "pinia";
 
+const pinia = createPinia();
 const routes = [
   {
     path: "/",
@@ -11,7 +13,10 @@ const routes = [
   },
   {
     path: "/lofts/:id",
-    meta: { title: "Перегородки в квартиру Лофт" },
+    meta: {
+      title:
+        "Перегородки в квартиру Лофт | DarkLoft - Стеклянные перегородки в стиле Лофт",
+    },
     component: () => import("./components/pages/LoftDetailPage.vue"),
   },
   {
@@ -73,4 +78,5 @@ router.beforeEach((to, from, next) => {
 const app = createApp(App);
 
 app.use(router);
+app.use(pinia);
 app.mount("#app");

@@ -1,23 +1,28 @@
 <template>
   <button class="switcher" @click="switchTheme">
     <icon-theme
-      :class="['switcher__icon', { 'switcher__icon--active': theme }]"
+      :is-light="store.themeLight"
+      :class="[
+        'switcher__icon',
+        { 'switcher__icon--active': store.themeLight },
+      ]"
     />
   </button>
 </template>
 <script setup>
 import IconTheme from "@/components/icon/IconTheme.vue";
-import { ref } from "vue";
-const theme = ref(false);
+import { useThemeStore } from "@/store/theme";
+const store = useThemeStore();
 function switchTheme() {
-  theme.value = !theme.value;
+  store.toggleTheme();
+  document.body.classList.toggle("light");
 }
 </script>
 
 <style lang="scss" scoped>
 .switcher {
-  background: #282a2d;
-  box-shadow: inset 0 4px 4px rgba(0, 0, 0, 0.25);
+  background: rgb(var(--theme-switcher-bg));
+  box-shadow: var(--theme-switcher-shadow);
   border-radius: 27.6804px;
   width: 86px;
   height: 42px;

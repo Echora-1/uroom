@@ -2,24 +2,19 @@
   <div
     class="mainscreen-wrap"
     :style="{
-      background: `linear-gradient(
-      0deg,
-      #212324 3.18%,
-      rgba(27, 28, 29, 0.816544) 29.84%,
-      rgba(17, 17, 17, 0.66) 50.91%,
-      rgba(27, 27, 27, 0.879068) 73.98%,
-      #202021 96.51%
-    ), url(${require('@/assets/images/lofts/' +
-      content?.img +
-      '/loftms.jpg')}) center/cover`,
+      background: `url(${require('@/assets/images/lofts/' +
+        content?.img +
+        '/loftms.jpg')}) center/cover`,
     }"
   >
     <div class="main-screen">
-      <h1>
-        {{ content?.title }}
-      </h1>
-      <p>{{ content?.subtitle }}</p>
-      <base-button border>Рассчитать стоимость</base-button>
+      <div class="main-screen__wrap container">
+        <h1>
+          {{ content?.title }}
+        </h1>
+        <p>{{ content?.subtitle }}</p>
+        <base-button border>Рассчитать стоимость</base-button>
+      </div>
     </div>
   </div>
 </template>
@@ -61,11 +56,17 @@ export default {
 }
 
 .main-screen {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   padding: 210px 0 217px;
+  color: #ffffff;
+  background: var(--main-screen-bg);
+  width: 100%;
+
+  &__wrap {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
   h1 {
     font-family: "Halvar Breitschrift", sans-serif;

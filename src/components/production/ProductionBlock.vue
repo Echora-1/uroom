@@ -81,14 +81,7 @@
 
 .production {
   padding: 40px 0 82px;
-  background: linear-gradient(
-    0deg,
-    #202021 3.18%,
-    rgba(27, 28, 29, 0.816544) 29.84%,
-    rgba(17, 17, 17, 0.66) 50.91%,
-    rgba(27, 27, 27, 0.879068) 73.98%,
-    rgba(32, 32, 33, 0.9) 96.51%
-  );
+  background: var(--block-gradient);
   backdrop-filter: blur(10px);
 
   &__main {
@@ -129,6 +122,7 @@
     align-items: center;
     padding: 50px 20px 44px;
     margin-bottom: 20px;
+    color: #ffffff;
 
     p {
       font-size: 24px;

@@ -20,6 +20,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  color: #ffffff;
 
   h2 {
     font-weight: 600;

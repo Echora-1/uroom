@@ -22,7 +22,7 @@ export default {
 .text {
   &__title {
     font-weight: 700;
-    font-size: 18px;
+    font-size: 27px;
     line-height: 27px;
     margin: 0 0 34px;
   }

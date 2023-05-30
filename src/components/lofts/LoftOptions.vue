@@ -39,7 +39,7 @@ export default {
 }
 
 .options {
-  background: rgba(44, 45, 46, 0.8);
+  background: var(--block-bg2);
   padding: 68px 0 74px;
 
   &__wrap {
