@@ -26,6 +26,11 @@
   border: 10px solid rgba(255, 146, 132, 0.2);
   position: relative;
 
+  @media (max-width: 1000px) {
+    width: 27px;
+    height: 27px;
+  }
+
   &::before {
     content: "";
     width: 25px;
@@ -35,6 +40,11 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+
+    @media (max-width: 1000px) {
+      width: 11px;
+      height: 11px;
+    }
   }
 
   svg {
@@ -42,6 +52,11 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+
+    @media (max-width: 1000px) {
+      width: 20px;
+      height: 20px;
+    }
   }
 }
 </style>

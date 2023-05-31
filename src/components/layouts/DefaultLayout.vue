@@ -1,6 +1,10 @@
 <template>
   <div class="layout">
-    <BaseHeader />
+    <BaseHeader @open-menu="showMenu = true" />
+    <base-menu
+      :class="['layout__menu', { 'layout__menu--open': showMenu }]"
+      @close-menu="closeMenu"
+    />
     <main class="layout__main">
       <slot />
     </main>
@@ -20,16 +24,40 @@ import BaseHeader from "@/components/base/BaseHeader.vue";
 import BaseFooter from "@/components/base/BaseFooter.vue";
 import BaseButton from "@/components/base/BaseButton.vue";
 import IconUp from "@/components/icon/IconUp.vue";
+import BaseMenu from "@/components/base/BaseMenu.vue";
 
 export default {
   components: {
+    BaseMenu,
     IconUp,
     BaseButton,
     BaseFooter,
     BaseHeader,
   },
 
+  data() {
+    return {
+      showMenu: false,
+    };
+  },
+
+  watch: {
+    showMenu() {
+      if (this.showMenu) {
+        document.body.classList.add("openMenu");
+      } else {
+        document.body.classList.remove("openMenu");
+      }
+    },
+  },
+
   methods: {
+    closeMenu() {
+      if (this.showMenu) {
+        this.showMenu = false;
+      }
+    },
+
     up() {
       window.scrollTo(0, 0);
     },
@@ -48,6 +76,18 @@ export default {
     margin-top: 177px;
 
     z-index: 1;
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    transform: translateX(150%);
+    transition: all 0.3s;
+
+    &--open {
+      transform: translateX(0);
+    }
   }
 }
 
@@ -89,6 +129,10 @@ export default {
   &:hover {
     transform: scale(1.05);
   }
+
+  @media (max-width: 1000px) {
+    display: none;
+  }
 }
 
 @keyframes pulse {
@@ -112,6 +156,10 @@ export default {
 
   &:hover {
     transform: scale(1.05);
+  }
+
+  @media (max-width: 1000px) {
+    display: none;
   }
 }
 </style>

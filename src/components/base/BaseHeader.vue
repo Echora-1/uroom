@@ -27,7 +27,7 @@
           <base-light-logo v-else class="header__logo" />
         </router-link>
         <div class="header__connect-list">
-          <theme-switcher class="header__connect-item" />
+          <theme-switcher class="header__theme-switcher header__connect-item" />
           <a
             target="_blank"
             href="https://wa.me/%2B79254377300?text=%D0%97%D0%B4%D1%80%D0%B0%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A3%20%D0%BC%D0%B5%D0%BD%D1%8F%20%D0%B2%D0%BE%D0%BF%D1%80%D0%BE%D1%81..."
@@ -49,6 +49,7 @@
               замерщика</span
             ></base-button
           >
+          <btn-menu @click="openMenu" class="header__menu-btn" />
         </div>
       </div>
       <div class="header__footer container header__container">
@@ -74,9 +75,11 @@ import IconCall from "@/components/icon/IconCall.vue";
 import ThemeSwitcher from "@/components/common/ThemeSwitcher.vue";
 import BaseLightLogo from "@/components/base/BaseLightLogo.vue";
 import { useThemeStore } from "@/store/theme";
+import BtnMenu from "@/components/common/BtnMenu.vue";
 
 export default {
   components: {
+    BtnMenu,
     BaseLightLogo,
     ThemeSwitcher,
     IconCall,
@@ -104,6 +107,10 @@ export default {
         this.scroll = false;
       }
     },
+
+    openMenu() {
+      this.$emit("open-menu");
+    },
   },
 
   setup() {
@@ -126,12 +133,26 @@ export default {
   right: 0;
   transition: all 0.3s;
 
+  @media (max-width: 1000px) {
+    top: 0;
+    padding: 22px 0 0;
+  }
+
   &--scroll {
     top: -40px;
+
+    @media (max-width: 1000px) {
+      top: -22px;
+    }
 
     img {
       width: 140px;
       height: 44px;
+
+      @media (max-width: 1000px) {
+        width: 164px;
+        height: 56px;
+      }
     }
 
     .header__info-item {
@@ -150,6 +171,17 @@ export default {
         width: 20px;
         height: 20px;
       }
+
+      @media (max-width: 1000px) {
+        font-size: 6px;
+        line-height: 8px;
+        padding: 4px 6px;
+
+        svg {
+          width: 11px;
+          height: 11px;
+        }
+      }
     }
 
     .header__footer {
@@ -158,10 +190,6 @@ export default {
         font-size: 12px;
       }
     }
-  }
-
-  @media (max-width: 1000px) {
-    padding: 30px 0;
   }
 
   &__container {
@@ -189,10 +217,17 @@ export default {
       font-size: 13px;
       line-height: 40px;
     }
+
+    @media (max-width: 1000px) {
+      display: none;
+    }
   }
 
   &__main-wrap {
     background: rgb(var(--header));
+    @media (max-width: 1000px) {
+      background: rgb(var(--body));
+    }
   }
 
   &__main {
@@ -200,17 +235,33 @@ export default {
     align-items: center;
     padding: 8px 0;
     border-bottom: 0.5px solid rgb(var(--header-border));
+
+    @media (max-width: 1000px) {
+      border-bottom: unset;
+    }
   }
 
   &__logo {
     margin: 0 auto;
     transition: all 0.3s;
     display: flex;
+
+    @media (max-width: 1000px) {
+      margin: 0;
+      position: relative;
+      left: -14px;
+      width: 164px;
+      height: 56px;
+    }
   }
 
   &__info-list {
     display: flex;
     width: calc(50% - 140px);
+
+    @media (max-width: 1000px) {
+      display: none;
+    }
   }
 
   &__info-item {
@@ -237,14 +288,30 @@ export default {
     align-items: center;
     width: calc(50% - 140px);
     justify-content: flex-end;
+
+    @media (max-width: 1000px) {
+      width: auto;
+      margin-right: 12px;
+      margin-left: auto;
+    }
   }
 
   &__connect-item {
     display: flex;
     margin-right: 20px;
 
+    @media (max-width: 1000px) {
+      margin-right: 12px;
+    }
+
     &--telega {
       margin-right: 0;
+    }
+  }
+
+  &__theme-switcher {
+    @media (max-width: 1000px) {
+      display: none;
     }
   }
 
@@ -253,6 +320,19 @@ export default {
     text-align: start;
     margin-left: 27px;
     color: #ffffff;
+
+    @media (max-width: 1000px) {
+      font-size: 6px;
+      line-height: 8px;
+      padding: 4px 6px;
+      margin-left: 15px;
+      margin-right: 12px;
+
+      svg {
+        width: 11px;
+        height: 11px;
+      }
+    }
 
     svg {
       margin-right: 12px;
@@ -264,6 +344,11 @@ export default {
     align-items: center;
     padding: 17px 0;
     transition: all 0.3s;
+
+    @media (max-width: 1000px) {
+      display: none;
+    }
+
     a {
       font-weight: 600;
       font-size: 13px;
@@ -276,6 +361,12 @@ export default {
       font-weight: 100;
       text-align: center;
       line-height: 19px;
+    }
+  }
+
+  &__menu-btn {
+    @media (min-width: 1001px) {
+      display: none;
     }
   }
 }
