@@ -67,6 +67,17 @@
   height: 608px;
 }
 
+.base-title {
+  @media (max-width: 1000px) {
+    font-size: 18px;
+    line-height: 26px;
+    max-width: 338px;
+    text-align: center;
+    font-weight: 400;
+    letter-spacing: 0.93px;
+  }
+}
+
 .rain2 {
   left: -62px;
   bottom: -216px;
@@ -85,6 +96,11 @@
   flex-direction: column;
   align-items: center;
 
+  @media (max-width: 1000px) {
+    padding-top: 0;
+    padding-bottom: 65px;
+  }
+
   &__wrap {
     position: relative;
   }
@@ -101,41 +117,114 @@
       line-height: 24px;
       text-transform: uppercase;
       letter-spacing: 0.8px;
+
+      @media (max-width: 1000px) {
+        margin-top: 0;
+        margin-bottom: 30px;
+        font-size: 15px;
+        line-height: 24px;
+        color: rgb(var(--mainColor));
+        display: inline-block;
+        padding-bottom: 5px;
+        border-bottom: 0.5px solid #646464;
+      }
+    }
+
+    @media (max-width: 1000px) {
+      flex-direction: column;
+      text-align: center;
+      align-items: center;
+      margin-bottom: 43px;
+    }
+
+    br {
+      @media (max-width: 1000px) {
+        display: none;
+      }
     }
   }
 
   &__main {
     display: flex;
+
+    @media (max-width: 1000px) {
+      flex-direction: column;
+    }
   }
 
   &__left,
   &__right {
     max-width: 50%;
     width: 100%;
+
+    @media (max-width: 1000px) {
+      max-width: 100%;
+    }
   }
 
   &__img {
     object-fit: contain;
+
+    @media (max-width: 1000px) {
+      height: 343px;
+      width: calc(100% + 16px);
+      object-fit: cover;
+      left: -8px;
+      position: relative;
+      margin-bottom: 35px;
+    }
   }
 
   &__right {
     p {
       max-width: 600px;
       margin: 0 0 29px;
+
+      @media (max-width: 1000px) {
+        text-align: center;
+        font-size: 12px;
+        line-height: 20px;
+        margin: 0 0 20px;
+      }
     }
 
     span {
       display: flex;
       align-items: center;
+
+      @media (max-width: 1000px) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-size: 12px;
+        line-height: 18px;
+        border: 0.5px solid #646464;
+        background: #212223;
+        position: relative;
+        padding: 22px;
+        margin-top: 30px;
+      }
     }
 
     svg {
       margin-right: 16px;
+
+      @media (max-width: 1000px) {
+        position: absolute;
+        top: -13px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
     }
   }
 
   &__btn {
     margin-top: 35px;
+
+    @media (max-width: 1000px) {
+      margin: 35px auto 0;
+    }
   }
 }
 </style>

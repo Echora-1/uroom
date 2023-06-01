@@ -72,6 +72,10 @@ const products = [
   text-align: center;
   margin-top: 33px;
   margin-bottom: 53px;
+
+  @media (max-width: 1000px) {
+    margin: 30px 0;
+  }
 }
 
 .product {
@@ -97,10 +101,21 @@ const products = [
     width: 100%;
     margin: 0 auto;
     padding-bottom: 30px;
+
+    @media (max-width: 1000px) {
+      flex-direction: column;
+      gap: 25px;
+      align-items: center;
+      padding-bottom: 0;
+    }
   }
 
   &__list-item {
     width: calc(100% / 3 - 20px);
+
+    @media (max-width: 1000px) {
+      width: 100%;
+    }
   }
 }
 </style>

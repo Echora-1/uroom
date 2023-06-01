@@ -7,7 +7,9 @@
         в стиле Лофт, под ключ
       </h1>
       <p>В Москве и Московской области</p>
-      <base-button border>Рассчитать стоимость</base-button>
+      <base-button class="main-screen__btn" border
+        >Рассчитать стоимость</base-button
+      >
     </div>
   </div>
 </template>
@@ -42,6 +44,11 @@ import RainImg from "@/components/common/RainImg.vue";
   height: 100%;
   background: var(--main-screen-bg);
 
+  @media (max-width: 1000px) {
+    padding: 94px 0 103px;
+    min-height: auto;
+  }
+
   h1 {
     font-family: "Halvar Breitschrift", sans-serif;
     font-size: 52px;
@@ -49,12 +56,32 @@ import RainImg from "@/components/common/RainImg.vue";
     letter-spacing: 2.6px;
     text-transform: uppercase;
     margin: 0 0 23px;
+
+    @media (max-width: 1000px) {
+      font-size: 17px;
+      line-height: 26px;
+      margin: 0 0 10px;
+    }
   }
 
   p {
     margin: 0 0 51px;
     font-size: 25px;
     line-height: 38px;
+
+    @media (max-width: 1000px) {
+      font-size: 12px;
+      line-height: 13px;
+      margin: 0 0 29px;
+    }
+  }
+
+  &__btn {
+    @media (max-width: 1000px) {
+      font-size: 8px;
+      line-height: 9px;
+      padding: 8px 10px;
+    }
   }
 }
 </style>

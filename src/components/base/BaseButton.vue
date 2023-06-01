@@ -67,6 +67,12 @@ export default {
   position: relative;
   transition: all 0.3s;
 
+  @media (max-width: 1000px) {
+    font-size: 11px;
+    line-height: 15px;
+    padding: 11px 22px;
+  }
+
   &:active {
     transition: all 0s;
     opacity: 0.85;
@@ -92,6 +98,10 @@ export default {
 
   &--border {
     box-shadow: 0 0 0 13px rgba(255, 146, 132, 0.2);
+
+    @media (max-width: 1000px) {
+      box-shadow: 0 0 0 6.41745px rgba(255, 146, 132, 0.2);
+    }
   }
 }
 

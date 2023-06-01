@@ -47,6 +47,12 @@ export default {
   z-index: 1;
   color: #ffffff;
 
+  @media (max-width: 1000px) {
+    min-height: 367px;
+    max-width: 307px;
+    padding: 37px 0 29px 31px;
+  }
+
   &::before {
     top: 0;
     left: 0;
@@ -70,6 +76,13 @@ export default {
     line-height: 36px;
     max-width: 350px;
     margin: 0 0 42px;
+
+    @media (max-width: 1000px) {
+      font-size: 18px;
+      line-height: 23px;
+      max-width: 250px;
+      margin-bottom: 10px;
+    }
   }
 
   &__price {
@@ -77,6 +90,11 @@ export default {
     font-size: 18px;
     line-height: 29px;
     margin: 0;
+
+    @media (max-width: 1000px) {
+      font-size: 12px;
+      line-height: 21px;
+    }
   }
 
   &__btn {

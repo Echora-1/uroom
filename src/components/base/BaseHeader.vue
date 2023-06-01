@@ -150,7 +150,8 @@ export default {
       height: 44px;
 
       @media (max-width: 1000px) {
-        width: 164px;
+        width: 100%;
+        max-width: 164px;
         height: 56px;
       }
     }
@@ -250,8 +251,9 @@ export default {
       margin: 0;
       position: relative;
       left: -14px;
-      width: 164px;
       height: 56px;
+      width: 100%;
+      max-width: 164px;
     }
   }
 

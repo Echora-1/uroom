@@ -75,6 +75,10 @@ export default {
     position: relative;
     margin-top: 177px;
 
+    @media (max-width: 1000px) {
+      margin-top: 94px;
+    }
+
     z-index: 1;
   }
 

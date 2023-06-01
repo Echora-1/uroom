@@ -19,19 +19,33 @@
 <style lang="scss" scoped>
 .line1 {
   left: 3%;
+  @media (max-width: 1000px) {
+    left: 8%;
+  }
 }
 
 .line2 {
   left: 25%;
+  @media (max-width: 1000px) {
+    display: none;
+  }
 }
 
 .line4 {
   left: 75%;
+
+  @media (max-width: 1000px) {
+    display: none;
+  }
 }
 
 .line5 {
   left: unset;
   right: 3%;
+
+  @media (max-width: 1000px) {
+    right: 8%;
+  }
 }
 </style>
 <script setup>
