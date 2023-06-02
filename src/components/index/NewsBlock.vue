@@ -7,12 +7,20 @@
         <h2 class="base-title">Новости и статьи</h2>
         <router-link to="/">Смотреть все <icon-arrow /></router-link>
       </div>
-      <div class="news-block__list">
+      <div class="news-block__list" v-if="!isMobile">
         <news-card
           v-for="(item, index) in newsContent"
           :content="item"
           :key="index"
         />
+      </div>
+      <div v-else class="news-block__slider">
+        <swiper :slides-per-view="1" :space-between="25">
+          <swiper-slide v-for="(item, index) in newsContent" :key="index">
+            <news-card :content="item" />
+          </swiper-slide>
+        </swiper>
+        <router-link to="/">Смотреть все <icon-arrow /></router-link>
       </div>
     </div>
   </div>
@@ -40,6 +48,11 @@
   background: var(--block-gradient);
   backdrop-filter: blur(10px);
 
+  @media (max-width: 1000px) {
+    padding: 30px 0;
+    background: rgba(32, 32, 33, 0.4);
+  }
+
   &__wrap {
     position: relative;
   }
@@ -50,6 +63,10 @@
     justify-content: space-between;
     margin-bottom: 54px;
 
+    @media (max-width: 1000px) {
+      margin-bottom: 35px;
+    }
+
     a {
       display: flex;
       align-items: center;
@@ -59,6 +76,10 @@
       letter-spacing: 0.7px;
       text-transform: uppercase;
       color: rgb(var(--mainColor));
+
+      @media (max-width: 1000px) {
+        display: none;
+      }
 
       svg {
         margin-left: 10px;
@@ -71,6 +92,33 @@
     justify-content: space-between;
     gap: 25px;
   }
+
+  &__slider {
+    max-width: 240px;
+
+    &:deep {
+      .swiper {
+        overflow: visible;
+      }
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 20px;
+      letter-spacing: 0.7px;
+      text-transform: uppercase;
+      color: rgb(var(--mainColor));
+      margin-top: 40px;
+      margin-bottom: 40px;
+
+      svg {
+        margin-left: 10px;
+      }
+    }
+  }
 }
 </style>
 
@@ -78,6 +126,9 @@
 import IconArrow from "@/components/icon/IconArrow.vue";
 import NewsCard from "@/components/index/NewsCard.vue";
 import RainImg from "@/components/common/RainImg.vue";
+import { isMobile } from "mobile-device-detect";
+import { Swiper, SwiperSlide } from "swiper/vue";
+import "swiper/css";
 
 const newsContent = [
   {

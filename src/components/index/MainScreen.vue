@@ -24,6 +24,10 @@ import RainImg from "@/components/common/RainImg.vue";
   bottom: -136px;
   width: 234px;
   height: 442px;
+
+  @media (max-width: 1000px) {
+    display: none;
+  }
 }
 
 .container {
@@ -47,6 +51,14 @@ import RainImg from "@/components/common/RainImg.vue";
   @media (max-width: 1000px) {
     padding: 94px 0 103px;
     min-height: auto;
+    background: linear-gradient(
+      360deg,
+      #171717 9.28%,
+      rgba(27, 28, 29, 0.816544) 29.84%,
+      rgba(17, 17, 17, 0.66) 50.91%,
+      rgba(27, 27, 27, 0.879068) 73.98%,
+      #2e2e30 96.51%
+    );
   }
 
   h1 {

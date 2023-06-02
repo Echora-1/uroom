@@ -65,6 +65,10 @@
   top: 0;
   width: 332px;
   height: 608px;
+
+  @media (max-width: 1000px) {
+    display: none;
+  }
 }
 
 .base-title {
@@ -85,6 +89,10 @@
   height: 608px;
   transform: rotate(50.67deg);
   z-index: -1;
+
+  @media (max-width: 1000px) {
+    display: none;
+  }
 }
 
 .about-company {
@@ -99,6 +107,13 @@
   @media (max-width: 1000px) {
     padding-top: 0;
     padding-bottom: 65px;
+    background: linear-gradient(
+      360deg,
+      rgba(27, 27, 27, 0.9) 9.28%,
+      rgba(27, 28, 29, 0.816544) 29.84%,
+      rgba(17, 17, 17, 0.66) 50.91%,
+      #2e2e30 96.51%
+    );
   }
 
   &__wrap {

@@ -227,7 +227,7 @@ export default {
   &__main-wrap {
     background: rgb(var(--header));
     @media (max-width: 1000px) {
-      background: rgb(var(--body));
+      background: #2d2e30;
     }
   }
 

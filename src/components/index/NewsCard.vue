@@ -34,8 +34,18 @@ export default {
   display: flex;
   flex-direction: column;
 
+  @media (max-width: 1000px) {
+    max-width: 240px;
+  }
+
   img {
     object-fit: contain;
+
+    @media (max-width: 1000px) {
+      height: 146px;
+      object-fit: cover;
+      width: 100%;
+    }
   }
 
   a {
@@ -52,6 +62,14 @@ export default {
     line-height: 29px;
     position: relative;
 
+    @media (max-width: 1000px) {
+      font-size: 14px;
+      line-height: 22px;
+      border: none;
+      margin-bottom: 0;
+      padding: 10px 0;
+    }
+
     span {
       max-width: calc(100% - 25px);
     }
@@ -65,6 +83,10 @@ export default {
       right: 0;
       color: rgb(var(--arrow));
       transform: translateY(-50%);
+
+      @media (max-width: 1000px) {
+        display: none;
+      }
     }
   }
 
@@ -73,6 +95,11 @@ export default {
     max-width: 354px;
     font-size: 16px;
     line-height: 29px;
+
+    @media (max-width: 1000px) {
+      font-size: 12px;
+      line-height: 22px;
+    }
   }
 }
 </style>

@@ -88,6 +88,17 @@ const products = [
   align-items: center;
   position: relative;
 
+  @media (max-width: 1000px) {
+    background: linear-gradient(
+      360deg,
+      #171717 9.28%,
+      rgba(27, 28, 29, 0.816544) 29.84%,
+      rgba(17, 17, 17, 0.66) 50.91%,
+      rgba(27, 27, 27, 0.879068) 73.98%,
+      #2e2e30 96.51%
+    );
+  }
+
   &__wrap {
     padding-top: 20px;
     transform: matrix(1, 0, 0, -1, 0, 0);

@@ -102,8 +102,31 @@
           <icon-inst
         /></a>
         <a class="footer__dev" href=""
-          >Разработка и продвижение: <span>dinvex.ru</span></a
+          >Разработка сайта: <span>ux-wizards.com </span></a
         >
+      </div>
+      <div class="footer__mb" v-if="isMobile">
+        <div class="footer__mb-address">
+          <p>
+            Офис: <br />
+            <span>ул. Волоколамское шоссе 142</span>
+          </p>
+          <p>
+            Производство: <br />
+            <span>Булатниковский проезд 10Б, стр.2</span>
+          </p>
+        </div>
+        <div class="footer__mb-connect">
+          <a href="">+7 (925) 43-77-300</a>
+          <p>
+            понедельник - суббота <br />
+            с 8.00 до 21.00
+          </p>
+        </div>
+        <div class="footer__mb-copir">
+          <span>© DarkLoft - Стеклянные перегородки в стиле Лофт, 2022</span>
+          <a href="">Разработка сайта: <span>ux-wizards.com </span></a>
+        </div>
       </div>
     </div>
   </footer>
@@ -117,11 +140,24 @@
   color: #ffffff;
   position: relative;
   z-index: 1;
+
+  @media (max-width: 1000px) {
+    padding-top: 45px;
+    padding-bottom: 0;
+  }
+
   &__advantages {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
+
+    .base-title {
+      @media (max-width: 1000px) {
+        text-align: center;
+        max-width: 300px;
+      }
+    }
   }
 
   &__advantages-list {
@@ -133,6 +169,12 @@
     gap: 25px;
     margin-top: 74px;
     margin-bottom: 109px;
+
+    @media (max-width: 1000px) {
+      flex-direction: column;
+      margin-top: 25px;
+      margin-bottom: 67px;
+    }
   }
 
   &__advantages-item {
@@ -148,6 +190,11 @@
       letter-spacing: 0.7px;
       text-transform: uppercase;
       text-align: center;
+
+      @media (max-width: 1000px) {
+        font-size: 12px;
+        line-height: 20px;
+      }
     }
   }
 
@@ -161,8 +208,20 @@
     justify-content: center;
     margin-bottom: 40px;
 
+    @media (max-width: 1000px) {
+      width: 67px;
+      height: 67px;
+      box-shadow: 0 0 0 6px rgba(var(--mainColor), 0.2);
+      margin-bottom: 20px;
+    }
+
     img {
       object-fit: contain;
+
+      @media (max-width: 1000px) {
+        width: 29px;
+        height: 29px;
+      }
     }
   }
 
@@ -174,6 +233,10 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 50px;
+
+    @media (max-width: 1000px) {
+      display: none;
+    }
 
     a {
       font-size: 15px;
@@ -193,6 +256,15 @@
     padding-bottom: 54px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     margin-bottom: 30px;
+
+    @media (max-width: 1000px) {
+      flex-direction: column-reverse;
+      padding-bottom: 20px;
+      position: relative;
+      width: calc(100% + 16px);
+      left: -8px;
+      right: -8px;
+    }
   }
 
   &__city {
@@ -204,9 +276,21 @@
     letter-spacing: 0.7px;
     text-transform: uppercase;
     margin-bottom: 34px;
+
+    @media (max-width: 1000px) {
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 0;
+    }
+
     img {
       object-fit: contain;
       margin-right: 10px;
+
+      @media (max-width: 1000px) {
+        margin-right: 0;
+        margin-bottom: 5px;
+      }
     }
   }
 
@@ -216,6 +300,9 @@
 
   &__logo {
     display: flex;
+    @media (max-width: 1000px) {
+      margin-bottom: 35px;
+    }
   }
 
   &__info-key,
@@ -223,9 +310,17 @@
     margin: 0 0 1px;
     font-size: 14px;
     line-height: 25px;
+
+    @media (max-width: 1000px) {
+      display: none;
+    }
   }
 
   &__connect {
+    @media (max-width: 1000px) {
+      display: none;
+    }
+
     a {
       font-weight: 700;
       font-size: 24px;
@@ -244,6 +339,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @media (max-width: 1000px) {
+      display: none;
+    }
 
     p {
       margin: 0;
@@ -266,9 +365,78 @@
   &__inst {
     display: flex;
   }
+
+  &__mb-address {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 32px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 30px;
+
+    p {
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 25px;
+      text-align: center;
+      margin: 0;
+
+      &:first-child {
+        margin-bottom: 6px;
+      }
+
+      span {
+        font-weight: 400;
+      }
+    }
+  }
+
+  &__mb {
+    width: calc(100% + 16px);
+    left: -8px;
+    right: -8px;
+    position: relative;
+  }
+
+  &__mb-connect {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 48px;
+
+    a {
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 29px;
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 25px;
+      margin: 10px 0 0;
+    }
+  }
+
+  &__mb-copir {
+    background: #2d2e30;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 10px;
+    line-height: 20px;
+    padding: 20px 0;
+
+    a {
+      span {
+        color: rgb(var(--mainColor));
+      }
+    }
+  }
 }
 </style>
 <script setup>
 import BaseLogo from "@/components/base/BaseLogo.vue";
 import IconInst from "@/components/icon/IconInst.vue";
+import { isMobile } from "mobile-device-detect";
 </script>

@@ -26,6 +26,7 @@
     z-index: -1;
     object-fit: cover;
     width: 100%;
+    opacity: 0.6;
 
     @media (max-width: 1000px) {
       height: 328px;

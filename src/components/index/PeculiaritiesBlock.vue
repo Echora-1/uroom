@@ -10,19 +10,34 @@
       </div>
       <div class="pec__main">
         <div class="pec__toggle-list">
-          <button
+          <div
+            v-for="(t, index) in toggles"
+            :key="index"
             :class="[
               'pec__toggle-item',
               { 'pec__toggle-item--active': index === activeToggle },
             ]"
-            v-for="(t, index) in toggles"
-            :key="index"
-            @click="activeToggle = index"
           >
-            {{ t }}
-          </button>
+            <button @click="activeToggle = index">
+              {{ t }}
+            </button>
+            <div v-if="activeToggle === index">
+              <div :class="['pec__content-item']">
+                <span>Особенности</span>
+                <div class="pec__content-text">
+                  <icon-check />
+                  <p>
+                    {{ togglesContent[index] }}
+                  </p>
+                </div>
+                <router-link class="pec__content-link" to="/"
+                  >Подробнее <icon-arrow
+                /></router-link>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="pec__content-list">
+        <div class="pec__content-list" v-if="!isMobile">
           <div
             :class="[
               'pec__content-item',
@@ -51,6 +66,7 @@
 import { ref } from "vue";
 import IconCheck from "@/components/icon/IconCheck.vue";
 import IconArrow from "@/components/icon/IconArrow.vue";
+import { isMobile } from "mobile-device-detect";
 
 const toggles = [
   "Перегородки из закаленного стекла",
@@ -81,9 +97,18 @@ const activeToggle = ref(0);
   backdrop-filter: blur(10px);
   padding: 112px 0 100px;
 
+  @media (max-width: 1000px) {
+    padding: 60px 0;
+    background: rgba(32, 32, 33, 0.4);
+  }
+
   &__header {
     display: flex;
     margin-bottom: 20px;
+
+    @media (max-width: 1000px) {
+      flex-direction: column;
+    }
 
     p {
       margin: 10px 0 0;
@@ -92,44 +117,91 @@ const activeToggle = ref(0);
       line-height: 24px;
       text-transform: uppercase;
       letter-spacing: 0.8px;
+
+      @media (max-width: 1000px) {
+        margin: 0;
+      }
     }
 
     h2 {
       display: inline-block;
       margin-left: 142px;
+
+      @media (max-width: 1000px) {
+        display: none;
+      }
     }
   }
 
   &__main {
     display: flex;
+
+    @media (max-width: 1000px) {
+      flex-direction: column-reverse;
+    }
   }
 
   &__toggle-list {
     max-width: 383px;
     width: 100%;
     margin-right: 60px;
+
+    @media (max-width: 1000px) {
+      max-width: 100%;
+      position: relative;
+      right: -8px;
+    }
   }
 
   &__toggle-item {
-    background: transparent;
-    color: rgb(var(--textColor));
-    padding: 21px 0;
-    border-bottom: 1px solid rgb(var(--textColor));
-    width: 100%;
-    text-align: start;
-    display: block;
+    button {
+      background: transparent;
+      color: rgb(var(--textColor));
+      padding: 21px 0;
+      border-bottom: 1px solid rgb(var(--textColor));
+      width: 100%;
+      text-align: start;
+      display: block;
+
+      @media (max-width: 1000px) {
+        font-size: 14px;
+        line-height: 27px;
+        border-color: rgb(var(--mainColor));
+      }
+    }
 
     &:last-child {
-      border: none;
+      button {
+        border: none;
+      }
     }
 
     &--active {
-      border-color: rgb(var(--mainColor));
+      button {
+        border-color: rgb(var(--mainColor));
+
+        @media (max-width: 1000px) {
+          color: rgb(var(--mainColor));
+          border-color: rgb(var(--textColor));
+        }
+      }
     }
   }
 
   &__content-item {
     display: none;
+
+    @media (max-width: 1000px) {
+      display: block;
+
+      span {
+        font-size: 22px;
+        line-height: 26px;
+        letter-spacing: 0.9px;
+        display: inline-block;
+        margin: 30px 0;
+      }
+    }
 
     &--active {
       display: block;
@@ -138,6 +210,11 @@ const activeToggle = ref(0);
   &__content-text {
     margin-bottom: 34px;
     display: flex;
+
+    @media (max-width: 1000px) {
+      margin-bottom: 30px;
+    }
+
     svg {
       margin-top: 4px;
       margin-right: 16px;
@@ -148,6 +225,12 @@ const activeToggle = ref(0);
       font-size: 17px;
       line-height: 31px;
       max-width: 780px;
+
+      @media (max-width: 1000px) {
+        font-size: 12px;
+        line-height: 20px;
+        max-width: 267px;
+      }
     }
   }
 
@@ -159,6 +242,11 @@ const activeToggle = ref(0);
     text-transform: uppercase;
     display: flex;
     align-items: center;
+
+    @media (max-width: 1000px) {
+      font-size: 12px;
+      line-height: 20px;
+    }
 
     svg {
       margin-left: 10px;
