@@ -24,37 +24,37 @@ const products = [
     img: "pr1",
     title: "Лофт перегородки в квартиру",
     price: "18 000",
-    url: "1",
+    url: "/lofts/1",
   },
   {
     img: "pr2",
     title: "Лофт перегородки для бизнеса",
     price: "15 000",
-    url: "2",
+    url: "/lofts/2",
   },
   {
     img: "pr3",
     title: "Лофт перегородки для душевых и саун",
     price: "20 000",
-    url: "3",
+    url: "/lofts/3",
   },
   {
     img: "pr4",
     title: "Остекленение лестниц",
     price: "20 000",
-    url: "4",
+    url: "/lofts/4",
   },
   {
     img: "pr5",
     title: "Цельностеклянные конструкции",
     price: "8 000",
-    url: "5",
+    url: "/lofts/5",
   },
   {
     img: "pr6",
     title: "Эксклюзивный проект",
     price: "30 000",
-    url: "6",
+    url: "/",
   },
 ];
 </script>

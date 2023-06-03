@@ -44,6 +44,11 @@ export default {
     object-fit: contain;
     height: auto;
     max-height: 650px;
+
+    @media (max-width: 1000px) {
+      height: 370px;
+      object-fit: cover;
+    }
   }
 
   &__main {
@@ -53,6 +58,12 @@ export default {
     border-bottom: 1px solid rgba(var(--mainColor), 0.4);
     padding: 20px 0;
     margin-bottom: 30px;
+
+    @media (max-width: 1000px) {
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 20px;
+    }
   }
 
   &__name {
@@ -60,12 +71,24 @@ export default {
     line-height: 56px;
     position: relative;
     margin: 0;
+
+    @media (max-width: 1000px) {
+      font-size: 20px;
+      line-height: 27px;
+      margin-bottom: 10px;
+    }
   }
 
   &__text {
     margin: 0 0 30px;
     font-size: 17px;
     line-height: 35px;
+
+    @media (max-width: 1000px) {
+      font-size: 12px;
+      line-height: 20px;
+      margin-bottom: 20px;
+    }
 
     span {
       font-weight: 600;
@@ -77,6 +100,11 @@ export default {
     line-height: 56px;
     margin: 0;
     color: rgb(var(--mainColor));
+
+    @media (max-width: 1000px) {
+      font-size: 20px;
+      line-height: 27px;
+    }
   }
 }
 </style>

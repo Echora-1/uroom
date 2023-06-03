@@ -10,7 +10,7 @@
           понедельник - суббота <br />
           <span> с 8.00 до 21.00</span>
         </p>
-        <a href="" class="menu__info-item">
+        <a href="tel:+79254377300" class="menu__info-item">
           Звоните нам!<br />
           <span>+7 (925) 43-77-300</span></a
         >
@@ -50,7 +50,7 @@
         >
       </nav>
       <div class="menu__footer">
-        <router-link active-class="active-link" @click="closeMenu" to="">
+        <router-link active-class="active-link" @click="closeMenu" to="/">
           <IconMenu1 />
           <span> О компании</span></router-link
         >

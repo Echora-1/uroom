@@ -31,6 +31,12 @@ export default {
     font-size: 17px;
     line-height: 31px;
     margin: 0 0 35px;
+
+    @media (max-width: 1000px) {
+      font-size: 12px;
+      line-height: 20px;
+      margin: 0 0 20px;
+    }
   }
 }
 </style>

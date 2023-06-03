@@ -36,11 +36,23 @@ export default {
 <style lang="scss" scoped>
 .base-title {
   margin-bottom: 50px;
+
+  @media (max-width: 1000px) {
+    font-size: 22px;
+    line-height: 27px;
+    text-align: center;
+    max-width: 320px;
+    margin-bottom: 40px;
+  }
 }
 
 .options {
   background: var(--block-bg2);
   padding: 68px 0 74px;
+
+  @media (max-width: 1000px) {
+    padding: 35px 0 70px;
+  }
 
   &__wrap {
     display: flex;
@@ -52,6 +64,12 @@ export default {
     display: flex;
     gap: 27px;
     flex-wrap: wrap;
+
+    @media (max-width: 1000px) {
+      flex-direction: column;
+      width: 100%;
+      gap: 20px;
+    }
   }
 
   &__item {
@@ -62,9 +80,19 @@ export default {
     filter: grayscale(1);
     transition: all 0.3s;
 
+    @media (max-width: 1000px) {
+      width: 100%;
+      max-width: 100%;
+      max-height: 202px;
+    }
+
     &:hover {
       filter: none;
       box-shadow: 0 0 0 15px rgba(255, 146, 132, 0.2);
+
+      @media (max-width: 1000px) {
+        box-shadow: 0px 0px 0px 8px rgba(255, 146, 132, 0.2);
+      }
     }
   }
 }

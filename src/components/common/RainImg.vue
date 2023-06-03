@@ -14,6 +14,5 @@
 .rain-pic {
   object-fit: contain;
   position: absolute;
-  pointer-events: none;
 }
 </style>

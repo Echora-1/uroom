@@ -9,7 +9,10 @@
     />
     <loft-keys class="main-block__keys" :content="content.keys" />
     <loft-text-content class="main-block__text2" :content="content.text" />
-    <loft-text-content-check :content="content.textContentCheck" />
+    <loft-text-content-check
+      class="main-block__text3"
+      :content="content.textContentCheck"
+    />
   </div>
 </template>
 <script>
@@ -47,6 +50,14 @@ export default {
   width: 234px;
   height: 442px;
   z-index: -1;
+
+  @media (max-width: 1000px) {
+    width: 118px;
+    height: 223px;
+    left: unset;
+    right: -52px;
+    top: 218px;
+  }
 }
 
 .rain2 {
@@ -56,6 +67,15 @@ export default {
   height: 608px;
   transform: rotate(9.26deg);
   z-index: -1;
+
+  @media (max-width: 1000px) {
+    width: 118px;
+    height: 223px;
+    right: unset;
+    transform: rotate(-41.54deg);
+    left: -86px;
+    top: 1126px;
+  }
 }
 
 .rain3 {
@@ -65,6 +85,13 @@ export default {
   height: 673px;
   transform: rotate(50.67deg);
   z-index: -1;
+  @media (max-width: 1000px) {
+    width: 118px;
+    height: 223px;
+    left: -80px;
+    bottom: 637px;
+    transform: rotate(13.34deg);
+  }
 }
 
 .main-block {
@@ -73,16 +100,39 @@ export default {
   backdrop-filter: blur(10px);
   position: relative;
 
+  @media (max-width: 1000px) {
+    padding: 45px 0;
+  }
+
   &__text {
     margin-bottom: 90px;
+
+    @media (max-width: 1000px) {
+      text-align: center;
+      margin-bottom: 50px;
+    }
   }
 
   &__keys {
     margin-bottom: 30px;
+
+    @media (max-width: 1000px) {
+      margin-bottom: 0;
+    }
   }
 
   &__text2 {
     margin-bottom: 45px;
+
+    @media (max-width: 1000px) {
+      max-width: 323px;
+    }
+  }
+
+  &__text3 {
+    @media (max-width: 1000px) {
+      max-width: 323px;
+    }
   }
 }
 </style>

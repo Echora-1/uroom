@@ -16,7 +16,7 @@
         }"
       >
         <swiper-slide v-for="(item, index) in content?.keys" :key="index">
-          <loft-keys-card :content="item"
+          <loft-keys-card class="keys__item-slider" :content="item"
         /></swiper-slide>
       </swiper>
       <div ref="prev" class="swiper-button-prev"><icon-slider-arrow /></div>
@@ -139,14 +139,32 @@ export default {
   opacity: 0.8;
   color: rgb(var(--mainColor));
   cursor: pointer;
+
+  @media (max-width: 1000px) {
+    top: 175px;
+
+    svg {
+      width: 10px;
+      height: 25px;
+    }
+  }
 }
+
 .swiper-button-prev {
   left: -45px;
+
+  @media (max-width: 1000px) {
+    left: -25px;
+  }
 }
 
 .swiper-button-next {
   right: -45px;
   transform: scaleX(-1);
+
+  @media (max-width: 1000px) {
+    right: -25px;
+  }
 }
 
 .swiper-button-disabled {
@@ -158,6 +176,11 @@ export default {
 .base-title {
   max-width: 1200px;
   margin-bottom: 28px;
+
+  @media (max-width: 1000px) {
+    font-size: 21px;
+    line-height: 27px;
+  }
 }
 
 .keys {
@@ -176,10 +199,21 @@ export default {
     text-transform: uppercase;
     margin: 0 0 79px;
     max-width: 820px;
+
+    @media (max-width: 1000px) {
+      font-size: 12px;
+      line-height: 24px;
+      margin-bottom: 30px;
+    }
   }
 
   &__list {
     position: relative;
+
+    @media (max-width: 1000px) {
+      max-width: 307px;
+      margin: 0 auto;
+    }
   }
 
   &__item {

@@ -9,7 +9,7 @@
   >
     <p class="card__title">{{ content?.title }}</p>
     <p class="card__price">от {{ content?.price }} руб./кв.м</p>
-    <router-link class="card__btn" :to="`/lofts/${content?.url}`">
+    <router-link class="card__btn" :to="`${content?.url}`">
       <base-button>Подробнее</base-button>
     </router-link>
   </div>

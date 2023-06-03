@@ -31,12 +31,24 @@ export default {
     margin: 0 0 25px;
     display: flex;
 
+    @media (max-width: 1000px) {
+      font-size: 12px;
+      line-height: 20px;
+    }
+
     svg {
       display: block;
       min-width: 24px;
       min-height: 24px;
       margin-top: 3px;
       margin-right: 16px;
+
+      @media (max-width: 1000px) {
+        min-width: 17px;
+        min-height: 17px;
+        margin-right: 10px;
+        margin-top: 0;
+      }
     }
   }
 }

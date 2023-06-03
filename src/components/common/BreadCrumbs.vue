@@ -56,6 +56,10 @@ export default {
   background: rgba(var(--bg), 1);
   padding: 14px 0;
 
+  @media (max-width: 1000px) {
+    padding: 9px 0;
+  }
+
   &__wrap {
     display: flex;
     justify-content: center;
@@ -66,6 +70,11 @@ export default {
     font-weight: 500;
     font-size: 17px;
     line-height: 25px;
+
+    @media (max-width: 1000px) {
+      font-size: 12px;
+      line-height: 18px;
+    }
   }
 
   &__main-link {

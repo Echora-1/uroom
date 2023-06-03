@@ -19,6 +19,10 @@
 <style lang="scss" scoped>
 .base-title {
   margin-bottom: 36px;
+
+  @media (max-width: 1000px) {
+    text-align: center;
+  }
 }
 .rain {
   left: -259px;
@@ -34,6 +38,10 @@
   padding: 75px 0 88px;
   position: relative;
 
+  @media (max-width: 1000px) {
+    padding: 45px 0 60px;
+  }
+
   &__wrap {
     display: flex;
     flex-direction: column;
@@ -44,6 +52,12 @@
 
   &__accordions {
     margin-bottom: 90px;
+    @media (max-width: 1000px) {
+      position: relative;
+      width: calc(100% + 16px);
+      left: 0;
+      right: -8px;
+    }
   }
 }
 </style>

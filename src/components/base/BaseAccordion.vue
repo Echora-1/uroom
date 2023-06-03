@@ -44,10 +44,19 @@ input:checked {
     &::before {
       transform: translateY(-50%) rotate(90deg);
     }
+
+    @media (max-width: 1000px) {
+      border-bottom: 1px solid rgb(var(--mainColor));
+    }
   }
   ~ .tab-content {
     max-height: 500px;
     padding: 0 0 20px;
+
+    @media (max-width: 1000px) {
+      padding-top: 20px;
+      padding-left: 10px;
+    }
   }
 }
 
@@ -68,6 +77,12 @@ input:checked {
     position: relative;
     transition: color 0.3s;
 
+    @media (max-width: 1000px) {
+      font-size: 15px;
+      padding: 20px 50px 20px 10px;
+      line-height: 20px;
+    }
+
     &::before,
     &::after {
       content: "";
@@ -79,11 +94,10 @@ input:checked {
       transform: translateY(-50%);
       position: absolute;
       transition: all 0.3s;
-    }
 
-    @media (max-width: 767px) {
-      font-size: 16px;
-      padding: 18px 60px 18px 48px;
+      @media (max-width: 1000px) {
+        right: 15px;
+      }
     }
   }
   &-content {
@@ -97,6 +111,11 @@ input:checked {
 
     @media (min-width: 768px) {
       transition: all 0.3s;
+    }
+
+    @media (max-width: 1000px) {
+      font-size: 12px;
+      line-height: 20px;
     }
 
     p {

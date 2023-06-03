@@ -22,12 +22,24 @@
   align-items: center;
   color: #ffffff;
 
+  @media (max-width: 1000px) {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 30px;
+  }
+
   h2 {
     font-weight: 600;
     font-size: 26px;
     line-height: 39px;
     letter-spacing: 1px;
     margin: 0 0 24px;
+
+    @media (max-width: 1000px) {
+      font-size: 15px;
+      line-height: 20px;
+      margin: 0 0 14px;
+    }
   }
 
   p {
@@ -35,6 +47,12 @@
     line-height: 32px;
     max-width: 820px;
     margin: 0;
+
+    @media (max-width: 1000px) {
+      font-size: 12px;
+      line-height: 20px;
+      margin-bottom: 25px;
+    }
   }
 }
 </style>

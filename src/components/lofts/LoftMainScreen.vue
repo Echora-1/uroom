@@ -61,6 +61,19 @@ export default {
   background: var(--main-screen-bg);
   width: 100%;
 
+  @media (max-width: 1000px) {
+    background: linear-gradient(
+      360deg,
+      #1a1a1a 9.28%,
+      rgba(27, 28, 29, 0.816544) 29.84%,
+      rgba(17, 17, 17, 0.66) 50.91%,
+      rgba(27, 27, 27, 0.879068) 73.98%,
+      #2e2e30 96.51%
+    );
+    padding: 100px 0 120px;
+    min-height: 370px;
+  }
+
   &__wrap {
     text-align: center;
     display: flex;
@@ -76,12 +89,33 @@ export default {
     text-transform: uppercase;
     margin: 0 0 23px;
     max-width: 840px;
+
+    @media (max-width: 1000px) {
+      font-size: 18px;
+      line-height: 26px;
+      letter-spacing: 0.9px;
+      margin: 0 0 10px;
+    }
   }
 
   p {
     margin: 0 0 51px;
     font-size: 25px;
     line-height: 38px;
+
+    @media (max-width: 1000px) {
+      font-size: 12px;
+      line-height: 13px;
+      margin: 0 0 27px;
+    }
+  }
+
+  button {
+    @media (max-width: 1000px) {
+      font-size: 8px;
+      line-height: 9px;
+      padding: 8px 10px;
+    }
   }
 }
 </style>

@@ -4,7 +4,7 @@
     <bread-crumbs :links="data?.breadCrumbs" />
     <main-content-wrap>
       <loft-main-block :content="data?.mainBlock" />
-      <loft-options />
+      <loft-options :content="data?.options" />
       <loft-faq :content="data?.faq" />
     </main-content-wrap>
   </div>
