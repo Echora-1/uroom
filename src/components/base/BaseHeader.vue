@@ -42,7 +42,7 @@
           >
             <icon-telega />
           </a>
-          <base-button class="header__btn">
+          <base-button class="header__btn" @click="store.setModal(true)">
             <icon-call />
             <span
               >Вызвать <br />

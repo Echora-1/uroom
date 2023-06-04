@@ -16,6 +16,9 @@
     </a>
     <base-button @click="up" class="telegram"> <icon-up /></base-button>
     <BaseFooter />
+    <base-modal :is-open="store.modal" @close="store.setModal(false)">
+      <common-form @close-modal="store.setModal(false)"
+    /></base-modal>
   </div>
 </template>
 
@@ -25,9 +28,14 @@ import BaseFooter from "@/components/base/BaseFooter.vue";
 import BaseButton from "@/components/base/BaseButton.vue";
 import IconUp from "@/components/icon/IconUp.vue";
 import BaseMenu from "@/components/base/BaseMenu.vue";
+import BaseModal from "@/components/base/BaseModal.vue";
+import CommonForm from "@/components/common/CommonForm.vue";
+import { useThemeStore } from "@/store/theme";
 
 export default {
   components: {
+    CommonForm,
+    BaseModal,
     BaseMenu,
     IconUp,
     BaseButton,
@@ -61,6 +69,12 @@ export default {
     up() {
       window.scrollTo(0, 0);
     },
+  },
+
+  setup() {
+    const store = useThemeStore();
+
+    return { store };
   },
 };
 </script>

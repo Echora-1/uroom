@@ -99,7 +99,7 @@ export default {
 }
 
 .base-input-wrapper {
-  border-bottom: 0.75px solid #e1e1e1;
+  border-bottom: 0.75px solid rgb(var(--textColor));
   width: 100%;
   transition: all 0.5s;
   position: relative;
@@ -122,15 +122,6 @@ export default {
   transition: color 0.3s;
   resize: none;
   text-overflow: ellipsis;
-
-  @media (max-width: 1000px) {
-    font-size: 14px;
-    line-height: 30px;
-  }
-
-  @media (max-width: 767px) {
-    padding: 10px 20px;
-  }
 }
 
 .base-input::placeholder {

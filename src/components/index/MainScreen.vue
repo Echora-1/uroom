@@ -7,7 +7,7 @@
         в стиле Лофт, под ключ
       </h1>
       <p>В Москве и Московской области</p>
-      <base-button class="main-screen__btn" border
+      <base-button @click="store.setModal(true)" class="main-screen__btn" border
         >Рассчитать стоимость</base-button
       >
     </div>
@@ -16,6 +16,9 @@
 <script setup>
 import BaseButton from "@/components/base/BaseButton.vue";
 import RainImg from "@/components/common/RainImg.vue";
+import { useThemeStore } from "@/store/theme";
+
+const store = useThemeStore();
 </script>
 
 <style lang="scss" scoped>

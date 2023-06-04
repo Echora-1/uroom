@@ -3,7 +3,12 @@
     <div class="container">
       <h2 class="base-title">Новости</h2>
       <div class="main-news__list">
-        <news-card v-for="(item, index) in list" :content="item" :key="index" />
+        <news-card
+          v-for="(item, index) in list"
+          class="main-news__item"
+          :content="item"
+          :key="index"
+        />
       </div>
     </div>
   </div>
@@ -49,6 +54,11 @@ export default {
 <style lang="scss" scoped>
 .base-title {
   margin-bottom: 60px;
+
+  @media (max-width: 1000px) {
+    text-align: center;
+    margin-bottom: 40px;
+  }
 }
 
 .main-news {
@@ -57,15 +67,30 @@ export default {
   background: var(--block-gradient);
   backdrop-filter: blur(10px);
 
+  @media (max-width: 1000px) {
+    padding-top: 35px;
+    padding-bottom: 60px;
+  }
+
   &__list {
     display: flex;
     flex-wrap: wrap;
     gap: 80px;
     justify-content: space-between;
+
+    @media (max-width: 1000px) {
+      flex-direction: column;
+      gap: 30px;
+      align-items: center;
+    }
   }
 
   &__item {
-    width: calc((100% / 3) - (160px / 3));
+    @media (max-width: 1000px) {
+      width: 100%;
+
+      max-width: 300px !important;
+    }
   }
 }
 </style>

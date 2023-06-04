@@ -13,13 +13,16 @@
           {{ content?.title }}
         </h1>
         <p>{{ content?.subtitle }}</p>
-        <base-button border>Рассчитать стоимость</base-button>
+        <base-button @click="store.setModal(true)" border
+          >Рассчитать стоимость</base-button
+        >
       </div>
     </div>
   </div>
 </template>
 <script>
 import BaseButton from "@/components/base/BaseButton.vue";
+import { useThemeStore } from "@/store/theme";
 
 export default {
   components: { BaseButton },
@@ -35,6 +38,12 @@ export default {
         };
       },
     },
+  },
+
+  setup() {
+    const store = useThemeStore();
+
+    return { store };
   },
 };
 </script>

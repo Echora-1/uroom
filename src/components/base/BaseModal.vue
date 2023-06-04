@@ -44,7 +44,7 @@ export default {
   left: 0;
   bottom: 0;
   right: 0;
-  background: rgba(0, 0, 0, 0.75);
+  background: rgba(0, 0, 0, 0.45);
   display: flex;
   z-index: 10000;
 }

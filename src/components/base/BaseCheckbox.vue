@@ -8,16 +8,12 @@
       :name="name"
       :value="value"
     />
-    <span class="checkmark">
-      <icon-check />
-    </span>
+    <span class="checkmark"> </span>
   </label>
 </template>
 
 <script>
-import IconCheck from "@/components/icon/IconCheck";
 export default {
-  components: { IconCheck },
   model: {
     prop: "checked",
     event: "change",
@@ -51,9 +47,9 @@ export default {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  font-size: 15px;
-  line-height: 22px;
-  color: #52525b;
+  font-size: 16px;
+  line-height: 130%;
+  color: rgb(var(--textColor));
 }
 .wrapper input {
   position: absolute;
@@ -68,13 +64,13 @@ export default {
   left: 0;
   height: 16px;
   width: 16px;
-  background: #ffffff;
-  border: 1px solid #000000;
+  background: #545454;
+  border: 0.5px solid #ec2d24;
   transition: all 0.5s;
 }
 
-.wrapper:hover input ~ .checkmark > svg {
-  fill: rgba(var(--mainColor), 0.5);
+.wrapper:hover input ~ .checkmark {
+  background: rgba(var(--mainColor), 0.5);
 }
 .checkmark > svg {
   position: absolute;
@@ -84,7 +80,7 @@ export default {
   transform: translate(-50%, -50%);
   transition: all 0.5s;
 }
-.wrapper input:checked ~ .checkmark > svg {
-  fill: rgb(var(--mainColor));
+.wrapper input:checked ~ .checkmark {
+  background: rgb(var(--mainColor));
 }
 </style>

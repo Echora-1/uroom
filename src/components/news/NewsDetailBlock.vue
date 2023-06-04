@@ -91,6 +91,15 @@ export default {
   z-index: 1;
   width: 800px;
 
+  @media (max-width: 1000px) {
+    font-size: 32px;
+    line-height: 43px;
+    letter-spacing: 1.5px;
+    width: 289px;
+    transform: translate(-138px, 44px);
+    text-align: center;
+  }
+
   &::before {
     content: "";
     position: absolute;
@@ -101,6 +110,10 @@ export default {
     width: 100%;
     z-index: -1;
     background: rgba(var(--mainColor), 0.8);
+
+    @media (max-width: 1000px) {
+      height: 6px;
+    }
   }
 }
 
@@ -109,14 +122,28 @@ export default {
   background: var(--block-gradient);
   backdrop-filter: blur(10px);
 
+  @media (max-width: 1000px) {
+    padding: 0 0 60px;
+  }
+
   &__subtitle {
     font-size: 16px;
     line-height: 27px;
     margin: 0 0 40px;
 
+    @media (max-width: 1000px) {
+      font-size: 12px;
+      line-height: 20px;
+    }
+
     span {
       font-weight: 600;
       font-style: italic;
+
+      @media (max-width: 1000px) {
+        display: block;
+        margin-bottom: 20px;
+      }
     }
   }
 
@@ -124,6 +151,11 @@ export default {
     display: flex;
     gap: 36px;
     margin-bottom: 34px;
+
+    @media (max-width: 1000px) {
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   &__left {
@@ -134,8 +166,18 @@ export default {
     margin-left: auto;
     img {
       object-fit: cover;
-      width: 100%;
       filter: grayscale(1);
+
+      @media (max-width: 1000px) {
+        margin-top: 100px;
+        height: 280px;
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 1000px) {
+      margin-left: 0;
+      width: 100%;
     }
   }
 }

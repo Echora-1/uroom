@@ -22,25 +22,8 @@
         id="phone"
         name="phone"
       />
-      <base-input
-        class="form__input"
-        type="email"
-        placeholder="Email"
-        v-model="form.email"
-        id="email"
-        name="email"
-      />
-
-      <base-input
-        textarea
-        class="form__input"
-        placeholder="Сообщение"
-        ё
-        rows="3"
-        v-model="form.message"
-        type="text"
-        id="message"
-        name="message"
+      <base-checkbox
+        label="Соглашаюсь с условиями обработки персональных данных"
       />
       <div class="form__footer">
         <base-button
@@ -68,9 +51,11 @@ import BaseButton from "@/components/base/BaseButton.vue";
 import BaseLoader from "@/components/base/BaseLoader.vue";
 import IconFormSuccess from "@/components/icon/IconFormSuccess.vue";
 import { isMobile } from "mobile-device-detect";
+import BaseCheckbox from "@/components/base/BaseCheckbox.vue";
 
 export default {
   components: {
+    BaseCheckbox,
     IconFormSuccess,
     BaseLoader,
     BaseButton,
@@ -89,9 +74,6 @@ export default {
       form: {
         name: "",
         phone: "",
-        email: "",
-        message: "",
-        file: "",
       },
     };
   },
@@ -100,13 +82,9 @@ export default {
     isMobile() {
       return isMobile;
     },
-    /*    captureFile($event) {
-      console.log($event);
-      this.form.file = $event;
-    },*/
 
     submit() {
-      if (this.form.email.length && this.form.name.length) {
+      if (this.form.name.length && this.form.phone.length) {
         this.loading = true;
         emailjs
           .sendForm(
@@ -173,11 +151,11 @@ export default {
   }
 
   &__btn {
-    margin-top: 69px;
+    margin: 69px auto 0;
     min-width: 196px;
 
     @media (max-width: 1000px) {
-      margin: 69px auto 0;
+      margin-top: 30px;
     }
   }
 

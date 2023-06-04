@@ -8,7 +8,9 @@
         43-77-300
       </p>
     </div>
-    <base-button transparent>Вызвать замерщика</base-button>
+    <base-button transparent @click="store.setModal(true)"
+      >Вызвать замерщика</base-button
+    >
   </div>
 </template>
 
@@ -58,4 +60,6 @@
 </style>
 <script setup>
 import BaseButton from "@/components/base/BaseButton.vue";
+import { useThemeStore } from "@/store/theme";
+const store = useThemeStore();
 </script>

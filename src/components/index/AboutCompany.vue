@@ -50,7 +50,7 @@
             <icon-check />
             Для всех клиентов мы предоставляем 3D-визуализацию проекта
           </span>
-          <base-button class="about-company__btn"
+          <base-button @click="store.setModal(true)" class="about-company__btn"
             >Рассчитать стоимость</base-button
           >
         </div>
@@ -247,4 +247,7 @@
 import BaseButton from "@/components/base/BaseButton.vue";
 import IconCheck from "@/components/icon/IconCheck.vue";
 import RainImg from "@/components/common/RainImg.vue";
+import { useThemeStore } from "@/store/theme";
+
+const store = useThemeStore();
 </script>

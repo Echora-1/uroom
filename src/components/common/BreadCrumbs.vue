@@ -83,6 +83,10 @@ export default {
     align-items: center;
     margin-right: 34px;
 
+    @media (max-width: 1000px) {
+      margin-right: 20px;
+    }
+
     svg {
       margin-top: 1px;
       margin-left: 10px;

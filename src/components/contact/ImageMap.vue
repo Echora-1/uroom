@@ -30,6 +30,15 @@
       rgba(27, 27, 27, 0.39) 52.49%,
       #202021 100%
     );
+
+    @media (max-width: 1000px) {
+      background: radial-gradient(
+        50% 50% at 50% 50%,
+        rgba(27, 28, 29, 0) 0%,
+        rgba(27, 27, 27, 0.39) 52.49%,
+        #202021 100%
+      );
+    }
   }
 
   &::after {
@@ -43,6 +52,10 @@
     z-index: 1;
     background: #202021;
     filter: blur(110px);
+
+    @media (max-width: 1000px) {
+      display: none;
+    }
   }
 
   &__img {
@@ -50,6 +63,11 @@
     object-position: left;
     height: 100%;
     max-height: 804px;
+
+    @media (max-width: 1000px) {
+      max-height: 508px;
+      object-position: -665px center;
+    }
   }
 }
 </style>

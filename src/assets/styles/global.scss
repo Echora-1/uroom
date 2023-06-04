@@ -137,4 +137,8 @@ button {
 
 .wrap-page {
   margin-top: 263px;
+
+  @media(max-width: 1000px) {
+    margin-top: 0;
+  }
 }
